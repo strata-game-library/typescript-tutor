@@ -69,8 +69,8 @@ export default function PixelMenu({
     {
       id: '2',
       type: 'lesson_completed',
-      title: 'Completed Python Basics',
-      description: 'Learned variables and functions',
+      title: 'Completed TypeScript Basics',
+      description: 'Learned variables and types',
       timestamp: new Date(Date.now() - 1000 * 60 * 45), // 45 mins ago
       icon: BookOpen
     },

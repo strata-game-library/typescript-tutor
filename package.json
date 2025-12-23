@@ -1,6 +1,23 @@
 {
-  "name": "rest-express",
+  "name": "@strata/typescript-tutor",
   "version": "1.0.0",
+  "description": "Learn TypeScript by building games with Strata - an interactive, mascot-driven educational experience",
+  "author": "Jon Bogaty",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbcom/strata.git",
+    "directory": "typescript-tutor"
+  },
+  "homepage": "https://typescript-tutor.strata.dev",
+  "keywords": [
+    "typescript",
+    "education",
+    "game-development",
+    "strata",
+    "learning",
+    "interactive",
+    "tutorial"
+  ],
   "type": "module",
   "license": "MIT",
   "scripts": {

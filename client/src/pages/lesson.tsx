@@ -272,16 +272,11 @@ export default function LessonEnhanced() {
 
   const getNextLessonId = (currentId: string): string | null => {
     const lessonOrder: Record<string, string | null> = {
-      'python-basics': 'control-flow',
-      'control-flow': 'loops-iteration',
-      'loops-iteration': 'data-structures',
-      'data-structures': 'functions',
-      'functions': 'object-oriented-programming',
-      'object-oriented-programming': 'error-handling',
-      'error-handling': 'file-operations',
-      'file-operations': 'pygame-intro',
-      'pygame-intro': 'first-game',
-      'first-game': null // Last lesson
+      'lesson-1': 'lesson-2',
+      'lesson-2': 'lesson-3',
+      'lesson-3': 'lesson-4',
+      'lesson-4': 'lesson-5',
+      'lesson-5': null // Last lesson
     };
     return lessonOrder[currentId] || null;
   };
@@ -335,7 +330,7 @@ export default function LessonEnhanced() {
             transition={{ duration: 2, repeat: Infinity }}
           />
           <p className="text-purple-600 dark:text-purple-400">
-            {pyodideLoading ? "Setting up Python for you..." : "Loading your lesson..."}
+            {pyodideLoading ? "Setting up TypeScript for you..." : "Loading your lesson..."}
           </p>
         </div>
       </div>

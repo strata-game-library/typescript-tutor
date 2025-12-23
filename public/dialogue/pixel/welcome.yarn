@@ -1,8 +1,8 @@
 title: Start
 ---
 <<set $mood to "welcoming">>
-Pixel: Hey there! Welcome to Pixel's PyGame Palace! I'm Pixel, your game-making buddy.
-Pixel: Ready to create something awesome together?
+Pixel: Hey there! Welcome to the Strata TypeScript Tutor! I'm Pixel, your game-making buddy.
+Pixel: Ready to learn TypeScript and create some awesome games together?
 -> Yes! Let's go!
     <<set $enthusiasm to "high">>
     <<jump IntroduceYourself>>
@@ -40,15 +40,15 @@ title: ExperienceCheck
 ---
 <<set $mood to "helpful">>
 Pixel: Sweet! Before we get started, I want to make sure I'm not telling you stuff you already know...
-Pixel: You want me to throw together a basic framework so you can get started right away, or would you like to take the opportunity to learn some Python together?
+Pixel: Want me to help you build a game right away, or would you like to learn TypeScript step by step first?
 -> Let's build something quick!
     <<set $path to "quick-build">>
     <<set $skillLevel to "confident">>
     <<jump GameSelection>>
--> I'd like to learn Python first
+-> I'd like to learn TypeScript first
     <<set $path to "learn-first">>
     <<set $skillLevel to "beginner">>
-    <<jump PythonBasicsIntro>>
+    <<jump TypeScriptBasicsIntro>>
 ===
 
 
@@ -60,10 +60,11 @@ Pixel: What are you thinking? I can do a few!
 <<jump ../game-selection/ChooseGameType>>
 ===
 
-title: PythonBasicsIntro
+title: TypeScriptBasicsIntro
 ---
 <<set $mood to "teaching">>
 Pixel: Smart choice! Building a strong foundation is always worth it.
+Pixel: TypeScript is like JavaScript with superpowers - it catches bugs before they happen!
 Pixel: We'll take it step by step, and before you know it, you'll be creating amazing games!
 -> Let's start with the basics
     <<set $learningPath to "structured">>
@@ -80,44 +81,44 @@ Pixel: Here we go! I'll be right here to help whenever you need me.
 Pixel: Just remember - there's no such thing as a silly question!
 <<set $onboardingComplete to true>>
 <<saveProfile()>>
-<<jump ../learning-path/PythonBasics>>
+<<jump ../learning-path/TypeScriptBasics>>
 ===
 
 title: InterfaceTour
 ---
 <<set $mood to "teaching">>
-Pixel: Great idea! Let me show you our cyber-workspace! 🌐
-Pixel: On the left, you've got the code editor - that's where the magic happens! ✨
+Pixel: Great idea! Let me show you our coding workspace! 🌐
+Pixel: On the left, you've got the code editor - that's where you write your TypeScript! ✨
 Pixel: The right panel is your game canvas - watch your code come to life in real-time!
-Pixel: Down below, that's the console - it'll tell you if something's not working right.
+Pixel: Down below, that's the console - it'll show you logs and any errors.
 Pixel: And I'm always here in the corner if you need me! Just click my icon! 
 -> Got it! What's next? 🚀
     <<jump ReadyToStart>>
--> Tell me more about Python 🐍
-    <<jump PythonIntro>>
+-> Tell me more about TypeScript 💻
+    <<jump TypeScriptIntro>>
 ===
 
-title: PythonIntro
+title: TypeScriptIntro
 ---
 <<set $mood to "passionate">>
-Pixel: Python is THE language for creative coding! Here's why it's amazing:
-Pixel: • It reads like English - no cryptic symbols everywhere!
-Pixel: • Pygame gives us superpowers for graphics and sound! 
-Pixel: • It's what real game developers use for prototypes!
-Pixel: • And the community is incredibly helpful!
+Pixel: TypeScript is THE language for modern game development! Here's why it's amazing:
+Pixel: • It adds types to JavaScript - no more "undefined is not a function"!
+Pixel: • The Strata engine gives us superpowers for graphics and game logic! 
+Pixel: • It runs directly in the browser - no installation needed!
+Pixel: • And the tooling is incredible - autocomplete everywhere!
 -> Sounds awesome! 
     <<set $onboardingComplete to true>>
     <<saveProfile()>>
     <<jump ../game-selection/GameSelection>>
--> How does Pygame work?
-    <<jump PygameExplanation>>
+-> How does Strata work?
+    <<jump StrataExplanation>>
 ===
 
-title: PygameExplanation
+title: StrataExplanation
 ---
 <<set $mood to "teaching">>
-Pixel: Pygame is like a toolkit full of game-making gadgets! 🛠️
-Pixel: It handles the complex stuff - drawing graphics, playing sounds, detecting collisions...
+Pixel: Strata is like a toolkit full of game-making gadgets! 🛠️
+Pixel: It handles the complex stuff - drawing sprites, playing sounds, detecting collisions...
 Pixel: You just tell it WHAT to do, and it figures out HOW!
 Pixel: Think of it as your game engine co-processor! 
 -> Let's use it! 
@@ -140,15 +141,15 @@ title: GameCreationPath
 ---
 <<set $mood to "excited">>
 Pixel: AWESOME! Let's create something amazing together! 🎮✨
-Pixel: I'll guide you step by step, no coding experience needed!
+Pixel: I'll guide you step by step, no prior experience needed!
 <<jump ../game-creation/GameCreation>>
 ===
 
 title: LearningPathIntro  
 ---
 <<set $mood to "teaching">>
-Pixel: Smart choice! Understanding Python will unlock unlimited creative potential! 📚
-Pixel: Let me be your guide through the world of code!
+Pixel: Smart choice! Understanding TypeScript will unlock unlimited creative potential! 📚
+Pixel: Let me be your guide through the world of typed code!
 <<jump ../learning-path/LearningPath>>
 ===
 
@@ -156,14 +157,14 @@ title: GalleryTourIntro
 ---
 <<set $mood to "showing">>
 Pixel: Great idea! Seeing what's possible is super inspiring! 🎨
-Pixel: Let me show you some incredible games created by other students!
+Pixel: Let me show you some incredible games created by other learners!
 <<jump ../gallery-tour/GalleryTour>>
 ===
 
 title: ExplorePath
 ---
 <<set $mood to "welcoming">>
-Pixel: Perfect! Take your time exploring the Palace! 🏰
+Pixel: Perfect! Take your time exploring! 🏰
 Pixel: The interface has lots of cool features to discover.
 Pixel: Would you like me to give you a quick tour, or do you prefer exploring on your own?
 -> Give me the tour! 🎯

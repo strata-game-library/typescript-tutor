@@ -74,5 +74,32 @@ Before considering work complete:
 
 ## Repository-Specific Notes
 
-<!-- Add repository-specific context below -->
+### Strata TypeScript Tutor
+
+This is an interactive, mascot-driven educational platform that teaches TypeScript through game development. Part of the **jbcom/strata** ecosystem.
+
+**Key Components:**
+- `client/` - React frontend with wizard-based learning flow
+- `public/dialogue/pixel/` - Yarn dialogue files for mascot (Pixel)
+- `public/api/static/lessons.json` - TypeScript lesson content
+- `docs/` - Sphinx documentation
+
+**Stack:**
+- React 18 + TypeScript
+- Vite for build
+- Tailwind CSS + shadcn/ui
+- Monaco Editor for code editing
+
+**Commands:**
+```bash
+npm run dev      # Start development server
+npm run build    # Build for production
+npm run check    # TypeScript type checking
+```
+
+**Focus Areas:**
+- TypeScript education (not Python/pygame)
+- Strata game engine integration
+- Interactive learning with Pixel mascot
+- Game types: Platformer, RPG, Dungeon Crawler, Racing, Puzzle, Space Shooter
 

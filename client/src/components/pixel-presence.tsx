@@ -64,16 +64,16 @@ export default function PixelPresence({ onNavigate, currentPath = "/" }: PixelPr
       }
     },
     {
-      id: 'learn-python',
-      label: 'Learn Python first',
+      id: 'learn-typescript',
+      label: 'Learn TypeScript first',
       icon: BookOpen,
       action: () => {
-        sessionHistory.trackChoice('learn-python', 'Learn Python first', '/lesson/python-basics');
+        sessionHistory.trackChoice('learn-typescript', 'Learn TypeScript first', '/lesson/lesson-1');
         setState('waiting-corner');
         setShowContent(true);
         setPixelImage(pixelTeaching);
         setDialogue("Perfect! Let's start with the basics!");
-        setTimeout(() => onNavigate('/lesson/python-basics'), 500);
+        setTimeout(() => onNavigate('/lesson/lesson-1'), 500);
       }
     }
   ];

@@ -9,8 +9,12 @@ Pixel: I've got access to thousands of professional game assets!
     <<jump PuzzleAssets>>
 <<elseif $selectedGenre == "racing">>
     <<jump RacingAssets>>
-<<elseif $selectedGenre == "adventure">>
-    <<jump AdventureAssets>>
+<<elseif $selectedGenre == "rpg">>
+    <<jump RPGAssets>>
+<<elseif $selectedGenre == "space">>
+    <<jump SpaceAssets>>
+<<elseif $selectedGenre == "dungeon">>
+    <<jump DungeonAssets>>
 <<else>>
     <<jump GeneralAssets>>
 <<endif>>
@@ -79,24 +83,66 @@ Pixel: Speed demons need the right look! Check these out! 🏎️
     <<jump AssetDetails>>
 ===
 
-title: AdventureAssets
+title: RPGAssets
 ---
 <<set $mood to "adventurous">>
-Pixel: Every adventure needs the right atmosphere! What world are we building? 🗺️
--> Medieval RPG ⚔️
+Pixel: Every RPG adventure needs the right atmosphere! 🗺️
+-> Medieval fantasy ⚔️
     <<set $assetPack to "rpg-pack">>
     <<jump AssetDetails>>
--> Space exploration 🚀
-    <<set $assetPack to "space-pack">>
+-> Dark fantasy 🦇
+    <<set $assetPack to "dark-fantasy">>
     <<jump AssetDetails>>
--> Dungeon crawler 🏰
+-> Sci-fi RPG 🚀
+    <<set $assetPack to "scifi-rpg">>
+    <<jump AssetDetails>>
+-> Anime style 🎌
+    <<set $assetPack to "anime-pack">>
+    <<jump AssetDetails>>
+-> Pixel art RPG 👾
+    <<set $assetPack to "pixel-rpg">>
+    <<jump AssetDetails>>
+===
+
+title: SpaceAssets
+---
+<<set $mood to "cosmic">>
+Pixel: Space shooters need that cosmic look! 🚀
+-> Classic arcade 👾
+    <<set $assetPack to "arcade-space">>
+    <<jump AssetDetails>>
+-> Realistic ships 🛸
+    <<set $assetPack to "realistic-space">>
+    <<jump AssetDetails>>
+-> Neon synthwave 💜
+    <<set $assetPack to "synthwave-space">>
+    <<jump AssetDetails>>
+-> Cute space 🌟
+    <<set $assetPack to "cute-space">>
+    <<jump AssetDetails>>
+-> Minimalist 🔲
+    <<set $assetPack to "minimal-space">>
+    <<jump AssetDetails>>
+===
+
+title: DungeonAssets
+---
+<<set $mood to "mysterious">>
+Pixel: Dungeons need that dark, mysterious atmosphere! 🏰
+-> Classic dungeon 🏰
     <<set $assetPack to "roguelike-pack">>
     <<jump AssetDetails>>
--> Pirate seas 🏴‍☠️
-    <<set $assetPack to "pirate-pack">>
+-> Crystal caves 💎
+    <<set $assetPack to "crystal-dungeon">>
     <<jump AssetDetails>>
--> Post-apocalyptic 🏚️
-    <<set $assetPack to "apocalypse-pack">>
+-> Haunted crypt 👻
+    <<set $assetPack to "haunted-pack">>
+    <<jump AssetDetails>>
+-> Sci-fi facility 🔬
+    <<set $assetPack to "scifi-dungeon">>
+    <<jump AssetDetails>>
+-> Pixel roguelike 👾
+    <<set $assetPack to "pixel-dungeon">>
     <<jump AssetDetails>>
 ===
 
@@ -140,6 +186,7 @@ title: CharacterSelected
 <<set $mood to "happy">>
 Pixel: Great choice! These {$characterStyle} characters look fantastic! 
 Pixel: They come with walk, jump, idle, and special animations!
+Pixel: In TypeScript, we'll load these as typed Sprite objects!
 -> Show me environments next
     <<jump EnvironmentAssets>>
 -> That's all I need
@@ -172,7 +219,7 @@ title: EnvironmentSelected
 ---
 <<set $mood to "excited">>
 Pixel: The {$environment} environment will make your game world come alive!
-Pixel: These tiles snap together perfectly for easy level building!
+Pixel: These tiles work perfectly with Strata's TileMap system!
 -> Show me UI elements
     <<jump UIAssets>>
 -> Add some effects
@@ -207,7 +254,7 @@ title: UISelected
 ---
 <<set $mood to "satisfied">>
 Pixel: The {$uiStyle} UI pack includes buttons, panels, icons, and health bars!
-Pixel: Everything you need for a polished interface!
+Pixel: Everything you need for a polished TypeScript game interface!
 -> Add particle effects
     <<jump EffectAssets>>
 -> That's everything!
@@ -251,7 +298,8 @@ Pixel: • Multiple character sprites with animations
 Pixel: • Tile sets for building levels
 Pixel: • Collectibles and power-ups
 Pixel: • UI elements and buttons
-Pixel: • Sound effects and music!
+Pixel: • Sound effects!
+Pixel: All fully typed for TypeScript and Strata!
 -> Perfect! Use these! ✅
     <<loadAssets($assetPack)>>
     <<jump AssetsComplete>>
@@ -279,11 +327,11 @@ title: AssetsComplete
 Pixel: Assets loaded and ready! Your game is already looking awesome! 🎉
 Pixel: You can always change these later if you want a different style!
 <<if $skillLevel == "beginner">>
-    Pixel: I've added comments in the code showing you how to use each asset!
+    Pixel: I've added TypeScript comments showing you how to use each asset!
 <<endif>>
 -> Let's add features! 🎮
     <<jump ../feature-selection/FeatureSelection>>
--> Show me the code 👩‍💻
+-> Show me the TypeScript 👩‍💻
     <<showCode("assets")>>
 -> I want to test it! ▶️
     <<runGame()>>
@@ -293,7 +341,7 @@ title: SkipAssets
 ---
 <<set $mood to "understanding">>
 Pixel: No problem! We can always add visual assets later!
-Pixel: For now, I'll use simple colored shapes so you can focus on the gameplay!
+Pixel: For now, I'll use simple colored shapes so you can focus on the TypeScript logic!
 -> Sounds good! 
     <<jump ../feature-selection/FeatureSelection>>
 ===

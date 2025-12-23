@@ -1,10 +1,10 @@
 title: Start
 ---
-Pixel: Hey there! Welcome to Pixel's PyGame Palace! I'm Pixel, your game-making buddy! 🎮
+Pixel: Hey there! Welcome to the Strata TypeScript Tutor! I'm Pixel, your game-making buddy! 🎮
 Pixel: Before we dive in, I want to make sure I'm not telling you anything you already know...
--> You want me to throw together a basic framework for your game so you can get started right away?
+-> Want me to help you build a game framework so you can get started right away?
     <<jump GamePath>>
--> Would you like to take the opportunity to learn some Python together first?
+-> Would you like to learn TypeScript step by step first?
     <<jump LearnPath>>
 ===
 
@@ -26,8 +26,8 @@ Pixel: Great, we've got ourselves a game cooking here! But it needs a direction.
 -> Puzzle - Brain-teasing challenges!
     <<set $gameType to "puzzle">>
     <<jump WorkStyle>>
--> Adventure - Story-driven exploration!
-    <<set $gameType to "adventure">>
+-> Space Shooter - Asteroids-style action!
+    <<set $gameType to "space">>
     <<jump WorkStyle>>
 ===
 
@@ -57,9 +57,9 @@ title: WizardMode
 <<elseif $gameType == "puzzle">>
     Pixel: Brain teasers! Nice! Let's design your main menu where players can choose levels!
     <<showAssets type="puzzle" scene="menu">>
-<<elseif $gameType == "adventure">>
-    Pixel: Adventure awaits! These games are all about the story. Let's create your opening scene!
-    <<showAssets type="adventure" scene="opening">>
+<<elseif $gameType == "space">>
+    Pixel: Space is the final frontier! Let's set up your starship and get ready for action!
+    <<showAssets type="space" scene="hangar">>
 <<else>>
     Pixel: Interesting choice! Let's start with the basics - your main menu!
     <<showAssets type="generic" scene="menu">>
@@ -68,7 +68,8 @@ title: WizardMode
 
 title: LearnPath
 ---
-Pixel: Perfect! Learning Python is the best way to really understand game development. Let me show you our lessons!
+Pixel: Perfect! Learning TypeScript is the best way to really understand game development.
+Pixel: TypeScript adds types to JavaScript - it's like having a smart assistant that catches bugs before they happen!
 <<openLessons>>
 ===
 
@@ -86,7 +87,7 @@ Pixel: Great choice! Now let's add some interactivity. What should happen when t
 title: PlayerControls
 ---
 <<if $gameType == "platformer">>
-    Pixel: In platformers, movement is everything! Let's set up jumping and running mechanics!
+    Pixel: In platformers, movement is everything! Let's set up jumping and running with TypeScript!
     <<setupControls type="platformer">>
 <<elseif $gameType == "rpg">>
     Pixel: RPG controls are about exploration and interaction. Let's configure your character movement!
@@ -94,6 +95,9 @@ title: PlayerControls
 <<elseif $gameType == "racing">>
     Pixel: Racing is all about speed and precision! Let's tune your vehicle controls!
     <<setupControls type="racing">>
+<<elseif $gameType == "space">>
+    Pixel: Space shooters need smooth controls! Let's set up your ship's movement and shooting!
+    <<setupControls type="space">>
 <<else>>
     Pixel: Let's get your controls set up so you can interact with the game!
     <<setupControls type="default">>
@@ -107,6 +111,8 @@ Pixel: Time to build your game world! This is where the magic happens!
     Pixel: Platformers need great level design with platforms, obstacles, and collectibles!
 <<elseif $gameType == "rpg">>
     Pixel: RPG worlds are vast and full of stories. Let's create your first area!
+<<elseif $gameType == "space">>
+    Pixel: Space shooters need asteroid fields, enemy waves, and power-ups!
 <<endif>>
 <<buildWorld type=$gameType>>
 ===
@@ -128,7 +134,7 @@ Pixel: You can now start adding your own features and making it unique!
     <<openEditor>>
 -> Start over with a different game
     <<jump Start>>
--> Learn more Python first
+-> Learn more TypeScript first
     <<openLessons>>
 ===
 

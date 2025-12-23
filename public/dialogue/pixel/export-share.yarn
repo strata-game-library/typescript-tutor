@@ -2,9 +2,9 @@ title: ExportOptions
 ---
 <<set $mood to "celebrating">>
 Pixel: {$playerName}, your game is COMPLETE! This is a huge achievement! 🎊
-Pixel: You've created something amazing from scratch!
+Pixel: You've created something amazing with TypeScript and Strata!
 <<calculateStats()>>
-Pixel: Game stats: {$linesOfCode} lines of code, {$featureCount} features, 100% awesome! 
+Pixel: Game stats: {$linesOfCode} lines of TypeScript, {$featureCount} features, 100% awesome! 
 -> Share with the world! 🌍
     <<jump PublishGame>>
 -> Save to my computer 💾
@@ -18,7 +18,7 @@ Pixel: Game stats: {$linesOfCode} lines of code, {$featureCount} features, 100% 
 title: PublishGame
 ---
 <<set $mood to "excited">>
-Pixel: Let's share your creation with the Pygame Academy community! 🚀
+Pixel: Let's share your creation with the Strata community! 🚀
 Pixel: First, let's give your game an awesome title!
 -> Enter game title
     <<set $gameTitle to "{input}">>
@@ -70,10 +70,10 @@ title: PublishSuccess
 ---
 <<set $mood to "celebrating">>
 Pixel: 🎉 YOUR GAME IS LIVE! 🎉
-Pixel: "{$gameTitle}" is now in the Pygame Academy Gallery!
+Pixel: "{$gameTitle}" is now in the Strata TypeScript Tutor Gallery!
 <<generateShareLink()>>
 Pixel: Share link: {$shareLink}
-Pixel: Your friends can play it right in their browser!
+Pixel: Your friends can play it right in their browser - no downloads needed!
 -> View in gallery 🖼️
     <<navigate("gallery")>>
 -> Share on social 📱
@@ -87,10 +87,10 @@ Pixel: Your friends can play it right in their browser!
 title: SocialShare
 ---
 <<set $mood to "social">>
-Pixel: Let's tell the world about your game! Where should we share?
+Pixel: Let's tell the world about your TypeScript game! Where should we share?
 -> Copy share message 📋
     <<copyShareMessage()>>
-    Pixel: Copied! Message: "Check out {$gameTitle} - my new game made with Pygame Academy! {$shareLink} 🎮"
+    Pixel: Copied! Message: "Check out {$gameTitle} - my new game made with TypeScript and Strata! {$shareLink} 🎮"
 -> Generate social card 🎴
     <<generateSocialCard()>>
     Pixel: Social media card created and downloaded!
@@ -104,18 +104,18 @@ Pixel: Let's tell the world about your game! Where should we share?
 title: DownloadGame
 ---
 <<set $mood to "helpful">>
-Pixel: Let's package your game for download! Choose your format:
--> Python file (.py) 🐍
-    <<packagePython()>>
-    <<jump DownloadReady>>
+Pixel: Let's package your TypeScript game for download! Choose your format:
 -> Web version (HTML5) 🌐
     <<packageWeb()>>
     <<jump DownloadReady>>
--> Executable (.exe) 💻
-    <<packageExecutable()>>
+-> TypeScript source (.ts) 💻
+    <<packageTypeScript()>>
     <<jump DownloadReady>>
 -> Project folder (ZIP) 📁
     <<packageProject()>>
+    <<jump DownloadReady>>
+-> npm package 📦
+    <<packageNpm()>>
     <<jump DownloadReady>>
 ===
 
@@ -124,13 +124,15 @@ title: DownloadReady
 <<set $mood to "accomplished">>
 Pixel: Your game is packaged and ready! 📦
 <<startDownload()>>
-Pixel: Download started! You can run this anywhere!
-<<if $packageType == "python">>
-    Pixel: Just need Python and Pygame installed to run it!
-<<elseif $packageType == "web">>
+Pixel: Download started! 
+<<if $packageType == "web">>
     Pixel: Open the HTML file in any browser to play!
-<<elseif $packageType == "executable">>
-    Pixel: Double-click to run - no installation needed!
+    Pixel: It's self-contained - no server needed!
+<<elseif $packageType == "typescript">>
+    Pixel: You'll need TypeScript and the Strata library installed to run it!
+    Pixel: Run: npm install && npm start
+<<elseif $packageType == "npm">>
+    Pixel: Publish to npm or use locally with npm link!
 <<endif>>
 -> Also publish online 🌍
     <<jump PublishGame>>
@@ -174,12 +176,12 @@ title: Goodbye
 <<set $mood to "grateful">>
 Pixel: {$playerName}, you've been AMAZING today! 🌟
 <<if $gamesCreated == 1>>
-    Pixel: You created your first game! That's a huge milestone!
+    Pixel: You created your first TypeScript game! That's a huge milestone!
 <<else>>
     Pixel: You've created {$gamesCreated} games! You're on fire!
 <<endif>>
 Pixel: Remember, every expert was once a beginner who never gave up!
-Pixel: I'll be here whenever you're ready to create more magic! 💜
+Pixel: Keep building with TypeScript and Strata - the possibilities are endless! 💜
 -> One more game! 🎮
     <<jump NewGame>>
 -> See you later, Pixel! 👋
@@ -203,7 +205,7 @@ Pixel: You've unlocked an achievement! 🏆
 title: CommunityFeatures
 ---
 <<set $mood to "community">>
-Pixel: Want to see what other creators are building? 
+Pixel: Want to see what other TypeScript developers are building? 
 -> Browse gallery 🖼️
     <<navigate("gallery")>>
 -> Join a game jam 🏃
@@ -214,41 +216,20 @@ Pixel: Want to see what other creators are building?
     <<jump ExportOptions>>
 ===
 
-title: GameJamInfo
----
-<<set $mood to "competitive">>
-Pixel: Game jams are timed challenges where you build games around a theme!
-Pixel: Current jam: "{$currentJamTheme}" - {$timeRemaining} left!
--> Enter the jam! 🎯
-    <<enterGameJam()>>
-    <<jump JamEntered>>
--> Maybe later
-    <<jump CommunityFeatures>>
-===
-
-title: JamEntered
----
-<<set $mood to "determined">>
-Pixel: You're in! Your game will be automatically submitted when you publish!
-Pixel: Pro tip: Games that match the theme best often win! 
--> Let's build! 🏗️
-    <<jump ../game-selection/GameSelection>>
-===
-
 title: TechnicalExport
 ---
 <<set $mood to "technical">>
-Pixel: Advanced export options for the pro developer! 🛠️
+Pixel: Advanced export options for the pro TypeScript developer! 🛠️
 -> GitHub repository 🐙
     <<exportToGithub()>>
     <<jump GithubExported>>
--> Replit project 💻
-    <<exportToReplit()>>
-    <<jump ReplitExported>>
--> CodePen 🖊️
-    <<exportToCodePen()>>
-    <<jump CodePenExported>>
--> Raw code 📝
+-> CodeSandbox 📦
+    <<exportToCodeSandbox()>>
+    <<jump CodeSandboxExported>>
+-> StackBlitz 💻
+    <<exportToStackBlitz()>>
+    <<jump StackBlitzExported>>
+-> Raw TypeScript 📝
     <<showRawCode()>>
 ===
 
@@ -256,8 +237,28 @@ title: GithubExported
 ---
 <<set $mood to "professional">>
 Pixel: Your game is now a GitHub repository! 
-Pixel: I've included a README, .gitignore, and requirements.txt!
+Pixel: I've included a README, tsconfig.json, package.json, and all your assets!
 Pixel: Repository: {$githubUrl}
+-> Awesome! ✨
+    <<jump ExportOptions>>
+===
+
+title: CodeSandboxExported
+---
+<<set $mood to "professional">>
+Pixel: Your game is now on CodeSandbox!
+Pixel: Anyone can fork and remix your TypeScript code!
+Pixel: Sandbox: {$sandboxUrl}
+-> Awesome! ✨
+    <<jump ExportOptions>>
+===
+
+title: StackBlitzExported
+---
+<<set $mood to "professional">>
+Pixel: Your game is now on StackBlitz!
+Pixel: Full TypeScript IDE in the browser!
+Pixel: Project: {$stackblitzUrl}
 -> Awesome! ✨
     <<jump ExportOptions>>
 ===
@@ -267,8 +268,9 @@ title: SuccessStory
 <<set $mood to "inspiring">>
 Pixel: {$playerName}, let me tell you something...
 Pixel: You just did what many people only dream about - you CREATED A GAME!
-Pixel: From blank canvas to working game. That's real programming! 
-Pixel: You're officially a game developer now! 🎓
+Pixel: Using TypeScript, you built something with real type safety and structure!
+Pixel: From blank canvas to working game. That's real software engineering! 
+Pixel: You're officially a TypeScript game developer now! 🎓
 -> I feel proud! 😊
     <<set $mood to "celebrating">>
     Pixel: You SHOULD! This is just the beginning of your journey!

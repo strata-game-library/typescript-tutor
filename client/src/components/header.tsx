@@ -50,7 +50,7 @@ export default function Header({ lesson, progress, onBack }: HeaderProps) {
                 </div>
               </div>
               <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Pixel's PyGame Palace
+                Strata TypeScript Tutor
               </h1>
             </motion.div>
             

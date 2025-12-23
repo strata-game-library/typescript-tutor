@@ -12,22 +12,22 @@ Pixel: I'll be here to guide you every step of the way!
 title: LessonIntroduction
 ---
 <<if $lessonId == "lesson-1">>
-    Pixel: Welcome to Python Basics! 🐍
-    Pixel: We'll start with variables - they're like containers that hold your game data!
-    Pixel: Think of them as treasure chests in your game that can store different types of loot.
+    Pixel: Welcome to TypeScript Basics! 💻
+    Pixel: We'll start with variables and types - they're the foundation of everything!
+    Pixel: Think of types as labels that tell TypeScript what kind of data you're working with.
 <<elseif $lessonId == "lesson-2">>
-    Pixel: Time to learn about making decisions in your code! 🤔
-    Pixel: If-else statements are like crossroads in an adventure game.
-    Pixel: Your code can choose different paths based on what's happening!
+    Pixel: Time to learn about functions! 🎯
+    Pixel: Functions are like reusable spells - write them once, use them anywhere!
+    Pixel: TypeScript makes functions even better with typed parameters!
 <<elseif $lessonId == "lesson-3">>
-    Pixel: Loops are super powerful! They're like having a robot helper that repeats tasks for you. 🔄
-    Pixel: Perfect for making things happen over and over in your game!
+    Pixel: Arrays and collections are super powerful! They're like treasure chests for your data. 📦
+    Pixel: Perfect for managing inventories, enemy lists, and high scores!
 <<elseif $lessonId == "lesson-4">>
-    Pixel: Functions are like spells in your coding toolbox! ✨
-    Pixel: Write them once, use them anywhere - super efficient!
+    Pixel: Classes are blueprints for game objects! 🏗️
+    Pixel: Create players, enemies, and items that know how to behave!
 <<elseif $lessonId == "lesson-5">>
-    Pixel: Lists are perfect for managing collections in games! 📝
-    Pixel: Think inventory items, high scores, or enemy positions!
+    Pixel: Time to build a REAL game! 🎮
+    Pixel: We'll use everything you've learned plus the Strata engine!
 <<else>>
     Pixel: Let's dive into this lesson! I'm excited to teach you! 🎓
 <<endif>>
@@ -43,16 +43,28 @@ title: LessonDetails
 ---
 <<if $lessonId == "lesson-1">>
     Pixel: In this lesson, you'll learn:
-    Pixel: • How to create and use variables
-    Pixel: • Different data types (numbers, text, true/false)
-    Pixel: • How to display information to players
+    Pixel: • How to create typed variables
+    Pixel: • Different data types (string, number, boolean)
+    Pixel: • How to use interfaces for game objects
     Pixel: It's the foundation for everything else! 
 <<elseif $lessonId == "lesson-2">>
     Pixel: You'll master:
-    Pixel: • If statements for simple decisions
-    Pixel: • Else and elif for multiple choices
-    Pixel: • Comparison operators (>, <, ==, etc.)
+    Pixel: • Functions with typed parameters
+    Pixel: • Arrow functions for callbacks
+    Pixel: • Return types and void
     Pixel: Essential for game logic!
+<<elseif $lessonId == "lesson-3">>
+    Pixel: This lesson covers:
+    Pixel: • Typed arrays for collections
+    Pixel: • filter, map, find, and reduce
+    Pixel: • Building inventory systems
+    Pixel: Perfect for managing game objects!
+<<elseif $lessonId == "lesson-4">>
+    Pixel: You'll learn:
+    Pixel: • Creating classes with properties and methods
+    Pixel: • Constructors and access modifiers
+    Pixel: • Inheritance with extends
+    Pixel: The foundation of object-oriented games!
 <<else>>
     Pixel: This lesson covers important concepts that will level up your coding skills!
 <<endif>>
@@ -141,13 +153,13 @@ title: LessonComplete
 Pixel: AMAZING WORK, {$playerName}! You completed the lesson! 🏆
 Pixel: You've earned {$pointsEarned} points!
 <<if $perfectScore is true>>
-    Pixel: And you got a PERFECT score! You're a natural! ⭐
+    Pixel: And you got a PERFECT score! You're a TypeScript natural! ⭐
 <<endif>>
 -> Next lesson please! 
     <<navigateNextLesson()>>
 -> Practice more
     <<jump PracticeMode>>
--> Back to projects
+-> Back to building games
     <<navigate("project-builder")>>
 ===
 
@@ -167,16 +179,24 @@ title: ConceptExplanation
 ---
 <<if $concept == "variable">>
     Pixel: Variables are like labeled boxes 📦
-    Pixel: You put stuff in them, and you can change what's inside later!
-    Pixel: In games, you might store the player's score, health, or position.
+    Pixel: You put data in them, and TypeScript knows what type of data it is!
+    Pixel: In games, you store player health, score, and position in variables.
 <<elseif $concept == "function">>
     Pixel: Functions are like recipes! 🍕
-    Pixel: You write the steps once, then follow the recipe whenever you need it.
+    Pixel: You write the steps once, then call the function whenever you need it.
     Pixel: Super useful for actions that happen multiple times in games!
-<<elseif $concept == "loop">>
-    Pixel: Loops repeat code automatically! 🔁
-    Pixel: Instead of writing the same thing 100 times, write it once in a loop!
-    Pixel: Perfect for moving multiple enemies or checking all items in an inventory.
+<<elseif $concept == "interface">>
+    Pixel: Interfaces define the shape of objects! 📐
+    Pixel: They tell TypeScript exactly what properties an object should have.
+    Pixel: Perfect for defining players, enemies, and items!
+<<elseif $concept == "class">>
+    Pixel: Classes are blueprints for creating objects! 🏗️
+    Pixel: They combine data and behavior into reusable templates.
+    Pixel: Every game entity can be a class!
+<<elseif $concept == "array">>
+    Pixel: Arrays hold collections of items! 📋
+    Pixel: With TypeScript, you know exactly what type of items are in the array.
+    Pixel: Perfect for inventories, enemy lists, and projectiles!
 <<else>>
     Pixel: Let me explain {$concept} in a simple way...
 <<endif>>
