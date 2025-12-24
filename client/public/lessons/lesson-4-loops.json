@@ -4,7 +4,7 @@
       "id": "start",
       "speaker": "Pixel",
       "text": "Level 4 - LOOPS! The secret to not repeating yourself a million times! 🔄",
-      "followUp": "Imagine typing 'spawn enemy' 100 times... Nah! Let's make Python do the repetitive work!",
+      "followUp": "Imagine typing 'spawn enemy' 100 times... Nah! Let's make TypeScript do the repetitive work in Strata!",
       "options": [
         {
           "text": "Show me the loop magic!",
@@ -32,7 +32,7 @@
       "id": "whileLoop",
       "speaker": "Pixel",
       "text": "The 'while' loop keeps running as long as something is true - like 'while game is running'!",
-      "codeExample": "health = 100\n\nwhile health > 0:\n    print(f'Still alive! HP: {health}')\n    health = health - 20\n    \nprint('Game Over!')",
+      "codeExample": "let health = 100;\n\nwhile (health > 0) {\n    console.log(`Still alive! HP: ${health}`);\n    health = health - 20;\n}\n    \nconsole.log('Game Over!');",
       "followUp": "It checks the condition, runs the code, then checks again. Repeat until false!",
       "options": [
         {
@@ -49,7 +49,7 @@
       "id": "infiniteLoop",
       "speaker": "Pixel",
       "text": "Ah, the dreaded infinite loop! If the condition never becomes false, it runs FOREVER!",
-      "codeExample": "# DON'T RUN THIS!\nwhile True:\n    print('This never stops!')\n    \n# Better - with an exit condition:\nrunning = True\nturns = 0\n\nwhile running:\n    turns += 1\n    print(f'Turn {turns}')\n    if turns >= 5:\n        running = False",
+      "codeExample": "// DON'T RUN THIS!\n// while (true) {\n//     console.log('This never stops!');\n// }\n    \n// Better - with an exit condition:\nlet isRunning = true;\nlet turns = 0;\n\nwhile (isRunning) {\n    turns += 1;\n    console.log(`Turn ${turns}`);\n    if (turns >= 5) {\n        isRunning = false;\n    }\n}",
       "followUp": "Always make sure your loop has a way to end, or your game will freeze!",
       "options": [
         {
@@ -62,7 +62,7 @@
       "id": "whileExamples",
       "speaker": "Pixel",
       "text": "Here's a mini game loop - collecting coins until you have enough!",
-      "codeExample": "coins = 0\ngoal = 50\n\nwhile coins < goal:\n    print(f'Coins: {coins}/{goal}')\n    found = 10  # Found 10 coins!\n    coins += found\n    print(f'Found {found} coins!')\n    \nprint(f'Success! You collected {coins} coins!')",
+      "codeExample": "let coins = 0;\nlet goal = 50;\n\nwhile (coins < goal) {\n    console.log(`Coins: ${coins}/${goal}`);\n    let found = 10;  // Found 10 coins!\n    coins += found;\n    console.log(`Found ${found} coins!`);\n}\n    \nconsole.log(`Success! You collected ${coins} coins!`);",
       "followUp": "Perfect for any 'keep doing until' situation in games!",
       "options": [
         {
@@ -75,7 +75,7 @@
       "id": "breakContinue",
       "speaker": "Pixel",
       "text": "'break' and 'continue' give you superpowers over loops!",
-      "codeExample": "# break - escape the loop immediately!\nlives = 3\nwhile True:\n    print(f'Lives: {lives}')\n    lives -= 1\n    if lives == 0:\n        print('No lives left!')\n        break  # Exit loop!\n        \n# continue - skip to next iteration\nfor num in range(1, 6):\n    if num == 3:\n        continue  # Skip 3!\n    print(num)  # Prints: 1, 2, 4, 5",
+      "codeExample": "// break - escape the loop immediately!\nlet lives = 3;\nwhile (true) {\n    console.log(`Lives: ${lives}`);\n    lives -= 1;\n    if (lives === 0) {\n        console.log('No lives left!');\n        break;  // Exit loop!\n    }\n}\n        \n// continue - skip to next iteration\nfor (let i = 1; i <= 5; i++) {\n    if (i === 3) {\n        continue;  // Skip 3!\n    }\n    console.log(i);  // Prints: 1, 2, 4, 5\n}",
       "followUp": "'break' is the emergency exit, 'continue' is the skip button!",
       "options": [
         {
@@ -88,38 +88,38 @@
       "id": "forLoop",
       "speaker": "Pixel",
       "text": "The 'for' loop is perfect when you know how many times to repeat - like spawning 5 enemies!",
-      "codeExample": "# Spawn exactly 5 enemies\nfor enemy_number in range(5):\n    print(f'Spawning enemy #{enemy_number + 1}')\n    \n# range(5) gives us: 0, 1, 2, 3, 4",
-      "followUp": "The range() function is your best friend for counting!",
+      "codeExample": "// Spawn exactly 5 enemies\nfor (let i = 0; i < 5; i++) {\n    console.log(`Spawning enemy #${i + 1}`);\n}",
+      "followUp": "In TypeScript, the common for-loop has three parts: starting point, condition, and update!",
       "options": [
         {
-          "text": "Tell me more about range!",
-          "next": "rangeFunction"
+          "text": "Explain those three parts!",
+          "next": "forParts"
         },
         {
           "text": "Can I loop through other things?",
-          "next": "forIterables"
+          "next": "forOfLoop"
         }
       ]
     },
-    "rangeFunction": {
-      "id": "rangeFunction",
+    "forParts": {
+      "id": "forParts",
       "speaker": "Pixel",
-      "text": "range() is super flexible! You can control start, stop, and step!",
-      "codeExample": "# Count from 0 to 4\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n    \n# Count from 1 to 5\nfor i in range(1, 6):\n    print(i)  # 1, 2, 3, 4, 5\n    \n# Count by 2s\nfor i in range(0, 10, 2):\n    print(i)  # 0, 2, 4, 6, 8\n    \n# Count backwards!\nfor i in range(10, 0, -1):\n    print(f'Countdown: {i}')",
-      "followUp": "range(start, stop, step) - remember, it NEVER includes the stop value!",
+      "text": "Sure! for (let i = 0; i < 5; i++) means: Start i at 0, keep going while i is less than 5, and add 1 to i every time!",
+      "codeExample": "// let i = 0  -> Starting point\n// i < 5      -> Keep going condition\n// i++        -> Add 1 after each time\n\nfor (let i = 0; i < 10; i += 2) {\n    console.log(i); // Prints: 0, 2, 4, 6, 8\n}",
+      "followUp": "It's super flexible - you can count up, down, or skip numbers!",
       "options": [
         {
-          "text": "What else can I loop through?",
-          "next": "forIterables"
+          "text": "What about looping through collections?",
+          "next": "forOfLoop"
         }
       ]
     },
-    "forIterables": {
-      "id": "forIterables",
+    "forOfLoop": {
+      "id": "forOfLoop",
       "speaker": "Pixel",
-      "text": "You can loop through ANYTHING that's a collection - strings, lists, even dictionaries later!",
-      "codeExample": "# Loop through a string\nword = 'PIXEL'\nfor letter in word:\n    print(f'Give me a {letter}!')\n    \n# Loop through a list (preview!)\ninventory = ['sword', 'shield', 'potion']\nfor item in inventory:\n    print(f'You have: {item}')\n    \n# Loop with index\nfor index, item in enumerate(inventory):\n    print(f'Slot {index + 1}: {item}')",
-      "followUp": "For loops make it easy to process every item in a collection!",
+      "text": "If you just want to go through a collection of items, the 'for...of' loop is even easier!",
+      "codeExample": "// Loop through an array (collection)\nlet inventory = ['sword', 'shield', 'potion'];\nfor (let item of inventory) {\n    console.log(`You have: ${item}`);\n}\n\n// Loop through a string\nlet word = 'PIXEL';\nfor (let letter of word) {\n    console.log(`Give me a ${letter}!`);\n}",
+      "followUp": "'for...of' is like saying 'for each item in the collection'!",
       "options": [
         {
           "text": "Can I nest loops?",
@@ -135,7 +135,7 @@
       "id": "nestedLoops",
       "speaker": "Pixel",
       "text": "Nested loops are loops inside loops - perfect for grids, like game boards!",
-      "codeExample": "# Create a 3x3 grid\nfor row in range(3):\n    for col in range(3):\n        print(f'({row},{col})', end=' ')\n    print()  # New line after each row\n    \n# Output:\n# (0,0) (0,1) (0,2)\n# (1,0) (1,1) (1,2)\n# (2,0) (2,1) (2,2)",
+      "codeExample": "// Create a 3x3 grid\nfor (let row = 0; row < 3; row++) {\n    let rowText = '';\n    for (let col = 0; col < 3; col++) {\n        rowText += `(${row},${col}) `;\n    }\n    console.log(rowText);\n}\n    \n// Output:\n// (0,0) (0,1) (0,2) \n// (1,0) (1,1) (1,2) \n// (2,0) (2,1) (2,2) ",
       "followUp": "The inner loop runs completely for each iteration of the outer loop!",
       "options": [
         {
@@ -148,8 +148,8 @@
       "id": "tileExample",
       "speaker": "Pixel",
       "text": "Exactly! Here's how you'd generate a game map!",
-      "codeExample": "# Simple map generation\nimport random\n\nwidth = 5\nheight = 3\n\nfor y in range(height):\n    for x in range(width):\n        tile = random.choice(['🌲', '🌳', '⬜', '⬜', '⬜'])\n        print(tile, end='')\n    print()\n    \n# Creates random forest/grass map!",
-      "followUp": "Nested loops are the foundation of 2D game worlds!",
+      "codeExample": "// Simple map generation\nlet width = 5;\nlet height = 3;\nlet tiles = ['🌲', '🌳', '⬜'];\n\nfor (let y = 0; y < height; y++) {\n    let row = '';\n    for (let x = 0; x < width; x++) {\n        let randomTile = tiles[Math.floor(Math.random() * tiles.length)];\n        row += randomTile;\n    }\n    console.log(row);\n}\n    \n// Creates random forest/grass map!",
+      "followUp": "Nested loops are the foundation of 2D game worlds in Strata!",
       "options": [
         {
           "text": "Show me more game uses!",
@@ -161,7 +161,7 @@
       "id": "gameExample",
       "speaker": "Pixel",
       "text": "Let's build a complete battle system with loops!",
-      "codeExample": "# Turn-based combat\nplayer_hp = 100\nenemy_hp = 150\nturn = 0\n\nwhile player_hp > 0 and enemy_hp > 0:\n    turn += 1\n    print(f'\\n--- Turn {turn} ---')\n    \n    # Player attacks\n    damage = 25\n    enemy_hp -= damage\n    print(f'You deal {damage} damage!')\n    \n    if enemy_hp <= 0:\n        print('Victory!')\n        break\n        \n    # Enemy attacks\n    damage = 15\n    player_hp -= damage\n    print(f'Enemy deals {damage} damage!')\n    \n    print(f'Your HP: {player_hp} | Enemy HP: {enemy_hp}')\n\nif player_hp <= 0:\n    print('Defeat...')",
+      "codeExample": "// Turn-based combat\nlet playerHp = 100;\nlet enemyHp = 150;\nlet turn = 0;\n\nwhile (playerHp > 0 && enemyHp > 0) {\n    turn++;\n    console.log(`\\n--- Turn ${turn} ---`);\n    \n    // Player attacks\n    let damage = 25;\n    enemyHp -= damage;\n    console.log(`You deal ${damage} damage!`);\n    \n    if (enemyHp <= 0) {\n        console.log('Victory!');\n        break;\n    }\n        \n    // Enemy attacks\n    let enemyDamage = 15;\n    playerHp -= enemyDamage;\n    console.log(`Enemy deals ${enemyDamage} damage!`);\n    \n    console.log(`Your HP: ${playerHp} | Enemy HP: ${enemyHp}`);\n}\n\nif (playerHp <= 0) {\n    console.log('Defeat...');\n}",
       "followUp": "See how the loop handles the entire battle? That's the power of loops!",
       "options": [
         {
@@ -174,28 +174,11 @@
       "id": "practiceChallenge",
       "speaker": "Pixel",
       "text": "Challenge time! Create a countdown timer for a bomb defusal mini-game!",
-      "followUp": "Count from 10 to 1, then print 'BOOM!' or 'Defused!' based on a random chance.",
-      "codeExample": "import random\nimport time\n\nprint('Defusing bomb...')\n\nfor seconds in range(10, 0, -1):\n    print(f'{seconds} seconds left!')\n    # time.sleep(1)  # Uncomment for real timing!\n    \n    # 30% chance to defuse each second\n    if random.randint(1, 100) <= 30:\n        print('💣 BOMB DEFUSED! 🎉')\n        break\nelse:\n    # This runs if loop completes without break\n    print('💥 BOOM! 💥')",
+      "followUp": "Count from 10 down to 1. If you get lucky, the bomb is defused early!",
+      "codeExample": "console.log('Defusing bomb...');\nlet defused = false;\n\nfor (let seconds = 10; seconds > 0; seconds--) {\n    console.log(`${seconds} seconds left!`);\n    \n    // 30% chance to defuse each second\n    if (Math.random() < 0.3) {\n        console.log('💣 BOMB DEFUSED! 🎉');\n        defused = true;\n        break;\n    }\n}\n\nif (!defused) {\n    console.log('💥 BOOM! 💥');\n}",
       "options": [
         {
-          "text": "The for-else combo is clever!",
-          "next": "forElse"
-        },
-        {
-          "text": "I'm ready for the next lesson!",
-          "next": "lessonComplete"
-        }
-      ]
-    },
-    "forElse": {
-      "id": "forElse",
-      "speaker": "Pixel",
-      "text": "The else clause on loops is Python magic! It runs if the loop completes without breaking!",
-      "codeExample": "# Search for an item\ninventory = ['sword', 'shield', 'potion']\nsearch = 'key'\n\nfor item in inventory:\n    if item == search:\n        print(f'Found {search}!')\n        break\nelse:\n    print(f'{search} not in inventory!')\n    \n# The else only runs if we never break!",
-      "followUp": "Super useful for search operations in games!",
-      "options": [
-        {
-          "text": "Python keeps surprising me!",
+          "text": "I understand loops now!",
           "next": "lessonComplete"
         }
       ]
@@ -209,7 +192,7 @@
       "actionParams": { "lesson": 4, "nextLesson": 5 },
       "options": [
         {
-          "text": "On to Lesson 5 - Lists & Collections!",
+          "text": "On to Lesson 5 - Arrays & Collections!",
           "action": "loadLesson",
           "actionParams": { "lesson": 5 }
         },

@@ -541,26 +541,25 @@ function parseColor(color: any): string {
 }
 
 // Enhanced pygame shim object with real rendering
-export const pygameShim = {
-  // Core pygame functions
+export const strata = {
+  // Core strata/pygame functions
   init() { return true; },
   quit() { 
     isRenderingActive = false;
     canvasContext = null;
     frameBuffer = [];
   },
+  isRunning() { return isRenderingActive; },
   
   // Time module with Clock
   time: {
-    Clock() {
-      return new PygameClock();
-    },
+    Clock: PygameClock,
     get_ticks() {
       return performance.now();
     },
     wait(milliseconds: number) {
       // Non-blocking simulation of wait
-      console.log(`⏱️ Pygame wait: ${milliseconds}ms (simulated)`);
+      console.log(`⏱️ Strata wait: ${milliseconds}ms (simulated)`);
     }
   },
   
@@ -577,14 +576,14 @@ export const pygameShim = {
   
   // Display module with real surface creation
   display: {
-    set_mode(size: [number, number] = [800, 600]) {
+    setMode(size: [number, number] = [800, 600]) {
       const surface = new RenderingSurface(size[0], size[1], true);
       if (isRenderingActive) {
         frameBuffer.push({ type: 'clear', args: [] });
       }
       return surface;
     },
-    set_caption(title: string) {
+    setCaption(title: string) {
       console.log(`📺 Display caption: ${title}`);
     },
     flip() {
@@ -597,7 +596,7 @@ export const pygameShim = {
         flushFrameBuffer();
       }
     },
-    get_surface() {
+    getSurface() {
       return new RenderingSurface(800, 600, true);
     }
   },
@@ -627,7 +626,7 @@ export const pygameShim = {
       stop() {
         console.log('🔇 Music stopped');
       },
-      set_volume(volume: number) {
+      setVolume(volume: number) {
         console.log(`🔊 Music volume: ${volume}`);
       }
     }
@@ -705,12 +704,11 @@ export const pygameShim = {
 
   // Key module
   key: {
-    get_pressed() { 
+    getPressed() { 
       // Return array of 512 False values to simulate no keys pressed
-      // This prevents IndexError when accessing key indices like pygame.K_LEFT (276)
       return new Array(512).fill(false);
     },
-    get_focused() {
+    getFocused() {
       return true; // Assume window has focus
     }
   },
@@ -744,11 +742,23 @@ export const pygameShim = {
     MAGENTA: [255, 0, 255]
   },
   
+  // Constants
+  QUIT: 12,
+  KEYDOWN: 2,
+  KEYUP: 3,
+  K_LEFT: 276,
+  K_RIGHT: 275,
+  K_UP: 273,
+  K_DOWN: 274,
+  K_SPACE: 32,
+  
   // Rect constructor
-  Rect(x: number = 0, y: number = 0, width: number = 0, height: number = 0) {
-    return new PygameRect(x, y, width, height);
-  }
+  Rect: PygameRect
 };
+
+// Also keep pygameShim for backward compatibility
+export const pygameShim = strata;
+
 
 // Function to register pygame shim in Pyodide
 // Pygame shim verification functions

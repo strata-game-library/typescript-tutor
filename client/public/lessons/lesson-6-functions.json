@@ -4,7 +4,7 @@
       "id": "start",
       "speaker": "Pixel",
       "text": "Level 6 - FUNCTIONS! Time to create your own commands! 🎯",
-      "followUp": "Functions are like creating your own power-ups - write once, use anywhere!",
+      "followUp": "Functions are like creating your own power-ups - write once, use anywhere in your Strata game!",
       "options": [
         {
           "text": "Show me function power!",
@@ -31,9 +31,9 @@
     "firstFunction": {
       "id": "firstFunction",
       "speaker": "Pixel",
-      "text": "Functions are defined with 'def' and called by name. Like creating a spell, then casting it!",
-      "codeExample": "# Define the function (create the spell)\ndef attack():\n    print('Swinging sword!')\n    print('Enemy takes 10 damage!')\n\n# Call the function (cast the spell)\nattack()\nattack()  # Can use it multiple times!",
-      "followUp": "See? Define once with 'def', then call it whenever you need!",
+      "text": "Functions are defined with the 'function' keyword. Like creating a spell, then casting it!",
+      "codeExample": "// Define the function (create the spell)\nfunction attack() {\n    console.log('Swinging sword!');\n    console.log('Enemy takes 10 damage!');\n}\n\n// Call the function (cast the spell)\nattack();\nattack(); // Can use it multiple times!",
+      "followUp": "See? Define it once, then call it by name whenever you need!",
       "options": [
         {
           "text": "Can functions take inputs?",
@@ -49,7 +49,7 @@
       "id": "parameters",
       "speaker": "Pixel",
       "text": "Yes! Parameters let functions accept inputs - like damage amounts or enemy names!",
-      "codeExample": "# Function with parameters\ndef attack(enemy_name, damage):\n    print(f'Attacking {enemy_name}!')\n    print(f'{enemy_name} takes {damage} damage!')\n\n# Call with different values\nattack('Goblin', 25)\nattack('Dragon', 50)\nattack('Slime', 10)",
+      "codeExample": "// Function with parameters\nfunction attack(enemyName, damage) {\n    console.log(`Attacking ${enemyName}!`);\n    console.log(`${enemyName} takes ${damage} damage!`);\n}\n\n// Call with different values\nattack('Goblin', 25);\nattack('Dragon', 50);\nattack('Slime', 10);",
       "followUp": "Parameters make functions flexible - one function, infinite possibilities!",
       "options": [
         {
@@ -66,8 +66,8 @@
       "id": "defaultParams",
       "speaker": "Pixel",
       "text": "Default parameters give fallback values - perfect for optional settings!",
-      "codeExample": "# Default parameters\ndef heal(amount=50, show_effect=True):\n    print(f'Healing {amount} HP!')\n    if show_effect:\n        print('✨ Sparkles appear! ✨')\n\n# Different ways to call\nheal()           # Uses defaults: 50, True\nheal(30)         # Custom amount: 30, True\nheal(100, False) # Full custom: 100, False\nheal(show_effect=False)  # Named parameter!",
-      "followUp": "Defaults make functions user-friendly - they work even if you forget parameters!",
+      "codeExample": "// Default parameters\nfunction heal(amount = 50, showEffect = true) {\n    console.log(`Healing ${amount} HP!`);\n    if (showEffect) {\n        console.log('✨ Sparkles appear! ✨');\n    }\n}\n\n// Different ways to call\nheal();           // Uses defaults: 50, true\nheal(30);         // Custom amount: 30, true\nheal(100, false); // Full custom: 100, false",
+      "followUp": "Defaults make functions user-friendly - they work even if you don't provide all the arguments!",
       "options": [
         {
           "text": "Show me return values!",
@@ -79,16 +79,29 @@
       "id": "returnValues",
       "speaker": "Pixel",
       "text": "Functions can return values - like asking 'how much damage?' and getting an answer!",
-      "codeExample": "# Function that returns a value\ndef calculate_damage(base, multiplier):\n    total = base * multiplier\n    return total\n\n# Use the returned value\ndamage = calculate_damage(10, 3)\nprint(f'Total damage: {damage}')  # 30\n\n# Return multiple values!\ndef get_stats():\n    return 100, 50, 25  # health, mana, armor\n\nhp, mp, armor = get_stats()\nprint(f'HP: {hp}, MP: {mp}, Armor: {armor}')",
-      "followUp": "Return sends values back to whoever called the function!",
+      "codeExample": "// Function that returns a value\nfunction calculateDamage(base, multiplier) {\n    let total = base * multiplier;\n    return total;\n}\n\n// Use the returned value\nlet damage = calculateDamage(10, 3);\nconsole.log(`Total damage: ${damage}`); // 30",
+      "followUp": "Return sends values back to whoever called the function! It's like a result from a quest!",
       "options": [
         {
           "text": "Can functions call other functions?",
           "next": "functionCalls"
         },
         {
-          "text": "Show me a complete example!",
-          "next": "completeExample"
+          "text": "Show me arrow functions!",
+          "next": "arrowFunctions"
+        }
+      ]
+    },
+    "arrowFunctions": {
+      "id": "arrowFunctions",
+      "speaker": "Pixel",
+      "text": "TypeScript has a shorter way to write functions called 'Arrow Functions'. They're super popular!",
+      "codeExample": "// Regular function\nfunction double(x) {\n    return x * 2;\n}\n\n// Arrow function - same thing!\nconst doubleArrow = (x) => x * 2;\n\nconsole.log(doubleArrow(5)); // 10",
+      "followUp": "They're great for quick, one-line operations and look really modern!",
+      "options": [
+        {
+          "text": "Cool! Can functions call each other?",
+          "next": "functionCalls"
         }
       ]
     },
@@ -96,28 +109,24 @@
       "id": "functionCalls",
       "speaker": "Pixel",
       "text": "Functions can call other functions - like combo attacks in fighting games!",
-      "codeExample": "def roll_dice():\n    import random\n    return random.randint(1, 6)\n\ndef attack_with_critical():\n    base_damage = 10\n    dice_roll = roll_dice()  # Call another function!\n    \n    if dice_roll == 6:\n        print('CRITICAL HIT!')\n        return base_damage * 3\n    else:\n        return base_damage\n\n# Use it\ndamage = attack_with_critical()\nprint(f'Dealt {damage} damage!')",
+      "codeExample": "function rollDice() {\n    return Math.floor(Math.random() * 6) + 1;\n}\n\nfunction attackWithCritical() {\n    let baseDamage = 10;\n    let diceRoll = rollDice(); // Call another function!\n    \n    if (diceRoll === 6) {\n        console.log('CRITICAL HIT!');\n        return baseDamage * 3;\n    } else {\n        return baseDamage;\n    }\n}\n\n// Use it\nlet finalDamage = attackWithCritical();\nconsole.log(`Dealt ${finalDamage} damage!`);",
       "followUp": "Functions calling functions - that's how complex games are built!",
       "options": [
         {
           "text": "What about variable scope?",
           "next": "scope"
-        },
-        {
-          "text": "Show me more examples!",
-          "next": "completeExample"
         }
       ]
     },
     "scope": {
       "id": "scope",
       "speaker": "Pixel",
-      "text": "Variables inside functions are 'local' - they only exist in that function's bubble!",
-      "codeExample": "player_gold = 100  # Global variable\n\ndef buy_item(cost):\n    # Local variable - only exists here\n    tax = cost * 0.1\n    total = cost + tax\n    \n    global player_gold  # Access global variable\n    if player_gold >= total:\n        player_gold -= total\n        return True\n    return False\n\n# Use it\nif buy_item(50):\n    print(f'Purchase complete! Gold left: {player_gold}')\nelse:\n    print('Not enough gold!')",
-      "followUp": "Local variables = function's private stuff. Global = shared with everyone!",
+      "text": "Variables inside functions are 'local' - they only exist inside that function's world!",
+      "codeExample": "let playerGold = 100; // Global variable (visible everywhere)\n\nfunction buyItem(cost) {\n    let tax = cost * 0.1; // Local variable (only inside here)\n    let total = cost + tax;\n    \n    if (playerGold >= total) {\n        playerGold -= total;\n        return true;\n    }\n    return false;\n}\n\nif (buyItem(50)) {\n    console.log(`Purchase complete! Gold left: ${playerGold}`);\n} else {\n    console.log('Not enough gold!');\n}",
+      "followUp": "Local variables are private to the function. Global variables are shared by everything!",
       "options": [
         {
-          "text": "Show me a game system example!",
+          "text": "Show me a complete game system!",
           "next": "completeExample"
         }
       ]
@@ -126,21 +135,8 @@
       "id": "completeExample",
       "speaker": "Pixel",
       "text": "Let's build a complete combat system with functions!",
-      "codeExample": "# Combat System\nimport random\n\ndef create_character(name, hp, attack):\n    return {'name': name, 'hp': hp, 'attack': attack}\n\ndef attack_enemy(attacker, defender):\n    damage = random.randint(1, attacker['attack'])\n    defender['hp'] -= damage\n    print(f\"{attacker['name']} deals {damage} damage!\")\n    return damage\n\ndef is_alive(character):\n    return character['hp'] > 0\n\ndef battle(player, enemy):\n    print(f\"Battle: {player['name']} vs {enemy['name']}!\")\n    \n    while is_alive(player) and is_alive(enemy):\n        attack_enemy(player, enemy)\n        if is_alive(enemy):\n            attack_enemy(enemy, player)\n        print(f\"HP - {player['name']}: {player['hp']}, {enemy['name']}: {enemy['hp']}\")\n    \n    winner = player if is_alive(player) else enemy\n    print(f\"{winner['name']} wins!\")\n\n# Use the system\nhero = create_character('Hero', 100, 20)\ngoblin = create_character('Goblin', 50, 15)\nbattle(hero, goblin)",
+      "codeExample": "// Combat System\nfunction createCharacter(name, hp, attack) {\n    return { name, hp, attack };\n}\n\nfunction attackEnemy(attacker, defender) {\n    let damage = Math.floor(Math.random() * attacker.attack) + 1;\n    defender.hp -= damage;\n    console.log(`${attacker.name} deals ${damage} damage!`);\n    return damage;\n}\n\nconst isAlive = (char) => char.hp > 0;\n\nfunction battle(player, enemy) {\n    console.log(`Battle: ${player.name} vs ${enemy.name}!`);\n    \n    while (isAlive(player) && isAlive(enemy)) {\n        attackEnemy(player, enemy);\n        if (isAlive(enemy)) {\n            attackEnemy(enemy, player);\n        }\n        console.log(`HP - ${player.name}: ${player.hp}, ${enemy.name}: ${enemy.hp}`);\n    }\n    \n    let winner = isAlive(player) ? player : enemy;\n    console.log(`${winner.name} wins!`);\n}\n\n// Use the system\nlet hero = createCharacter('Hero', 100, 20);\nlet goblin = createCharacter('Goblin', 50, 15);\nbattle(hero, goblin);",
       "followUp": "See how functions work together to create a complete system? That's modular programming!",
-      "options": [
-        {
-          "text": "Functions are like LEGO blocks!",
-          "next": "lambdaIntro"
-        }
-      ]
-    },
-    "lambdaIntro": {
-      "id": "lambdaIntro",
-      "speaker": "Pixel",
-      "text": "Bonus power-up: Lambda functions! Mini-functions for quick operations!",
-      "codeExample": "# Regular function\ndef double(x):\n    return x * 2\n\n# Lambda function - same thing!\ndouble = lambda x: x * 2\n\n# Great for sorting!\nenemies = [\n    {'name': 'Goblin', 'hp': 30},\n    {'name': 'Orc', 'hp': 50},\n    {'name': 'Slime', 'hp': 10}\n]\n\n# Sort by HP\nenemies.sort(key=lambda e: e['hp'])\nprint('Weakest to strongest:')\nfor enemy in enemies:\n    print(f\"{enemy['name']}: {enemy['hp']} HP\")",
-      "followUp": "Lambdas are like instant spells - quick, one-line functions!",
       "options": [
         {
           "text": "Time for practice!",
@@ -152,8 +148,8 @@
       "id": "practiceChallenge",
       "speaker": "Pixel",
       "text": "Ultimate Challenge: Create a shop system with functions!",
-      "followUp": "Make functions for: displaying items, buying, selling, and checking gold!",
-      "codeExample": "# Shop System Challenge\nplayer_gold = 100\ninventory = []\n\ndef show_shop(items):\n    print('=== SHOP ===')\n    for i, item in enumerate(items, 1):\n        print(f\"{i}. {item['name']} - {item['price']}g\")\n\ndef buy_item(item, gold):\n    if gold >= item['price']:\n        inventory.append(item['name'])\n        return gold - item['price']\n    else:\n        print('Not enough gold!')\n        return gold\n\ndef sell_item(item_name, sell_price):\n    global player_gold\n    if item_name in inventory:\n        inventory.remove(item_name)\n        player_gold += sell_price\n        print(f'Sold {item_name} for {sell_price}g!')\n    else:\n        print(\"You don't have that item!\")\n\n# Test the shop!\nshop_items = [\n    {'name': 'Sword', 'price': 50},\n    {'name': 'Potion', 'price': 20}\n]\n\nshow_shop(shop_items)\nplayer_gold = buy_item(shop_items[1], player_gold)\nprint(f'Gold: {player_gold}, Inventory: {inventory}')",
+      "followUp": "Make functions for: displaying items and buying items with gold!",
+      "codeExample": "let playerGold = 100;\nlet inventory = [];\n\nfunction showShop(items) {\n    console.log('=== SHOP ===');\n    items.forEach((item, i) => {\n        console.log(`${i + 1}. ${item.name} - ${item.price}g`);\n    });\n}\n\nfunction buyItem(item) {\n    if (playerGold >= item.price) {\n        inventory.push(item.name);\n        playerGold -= item.price;\n        console.log('Bought ' + item.name);\n    } else {\n        console.log('Not enough gold!');\n    }\n}\n\nlet shopItems = [\n    { name: 'Sword', price: 50 },\n    { name: 'Potion', price: 20 }\n];\n\nshowShop(shopItems);\nbuyItem(shopItems[1]);\nconsole.log(`Gold: ${playerGold}, Inventory: ${inventory}`);",
       "options": [
         {
           "text": "Functions make everything easier!",
@@ -165,12 +161,12 @@
       "id": "lessonComplete",
       "speaker": "Pixel",
       "text": "🎊 LEVEL 6 COMPLETE! You can now create your own commands! ⚡",
-      "followUp": "Functions are the building blocks of every game - now you can build anything!",
+      "followUp": "Functions are the building blocks of every game - now you can build anything in Strata!",
       "action": "completeLesson",
       "actionParams": { "lesson": 6, "nextLesson": 7 },
       "options": [
         {
-          "text": "On to Lesson 7 - Dictionaries!",
+          "text": "On to Lesson 7 - Objects!",
           "action": "loadLesson",
           "actionParams": { "lesson": 7 }
         },

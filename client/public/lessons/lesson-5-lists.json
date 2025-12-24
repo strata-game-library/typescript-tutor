@@ -3,12 +3,12 @@
     "start": {
       "id": "start",
       "speaker": "Pixel",
-      "text": "Level 5 - LISTS! Time to organize your data like a pro! 📋",
-      "followUp": "Think of lists as your game's inventory system - holding multiple items in one place!",
+      "text": "Level 5 - ARRAYS! Time to organize your data like a pro! 📋",
+      "followUp": "In TypeScript, we call lists 'arrays'. Think of them as your game's inventory system - holding multiple items in one place!",
       "options": [
         {
-          "text": "Show me how lists work!",
-          "next": "createList"
+          "text": "Show me how arrays work!",
+          "next": "createArray"
         },
         {
           "text": "Like an inventory in RPGs?",
@@ -19,21 +19,21 @@
     "inventoryAnalogy": {
       "id": "inventoryAnalogy",
       "speaker": "Pixel",
-      "text": "EXACTLY! Lists are perfect for inventories, high scores, enemy waves, bullet arrays... everything!",
-      "followUp": "Any time you need to track multiple things of the same type, lists are your answer!",
+      "text": "EXACTLY! Arrays are perfect for inventories, high scores, enemy waves, projectile groups... everything!",
+      "followUp": "Any time you need to track multiple things of the same type, arrays are your answer!",
       "options": [
         {
-          "text": "Teach me list magic!",
-          "next": "createList"
+          "text": "Teach me array magic!",
+          "next": "createArray"
         }
       ]
     },
-    "createList": {
-      "id": "createList",
+    "createArray": {
+      "id": "createArray",
       "speaker": "Pixel",
-      "text": "Creating a list is easy - just use square brackets and separate items with commas!",
-      "codeExample": "# Empty list\ninventory = []\n\n# List with items\nweapons = ['sword', 'bow', 'staff']\n\n# Mixed types (Python is flexible!)\nplayer_stats = ['Hero', 100, 15.5, True]\n\n# Numbers list\nhigh_scores = [1000, 850, 720, 650, 500]",
-      "followUp": "Lists can hold anything - strings, numbers, even other lists!",
+      "text": "Creating an array is easy - just use square brackets and separate items with commas!",
+      "codeExample": "// Empty array\nlet inventory = [];\n\n// Array with items\nlet weapons = ['sword', 'bow', 'staff'];\n\n// Numbers array\nlet highScores = [1000, 850, 720, 650, 500];",
+      "followUp": "Arrays can hold anything - strings, numbers, booleans, even other arrays!",
       "options": [
         {
           "text": "How do I access items?",
@@ -41,20 +41,20 @@
         },
         {
           "text": "Can I change them?",
-          "next": "modifyList"
+          "next": "modifyArray"
         }
       ]
     },
     "indexing": {
       "id": "indexing",
       "speaker": "Pixel",
-      "text": "Lists use index numbers starting at 0 - like array positions in games!",
-      "codeExample": "inventory = ['potion', 'sword', 'shield', 'map']\n\n# Access items by index\nfirst_item = inventory[0]   # 'potion'\nsecond_item = inventory[1]  # 'sword'\nlast_item = inventory[-1]   # 'map' (negative counts from end!)\n\n# Check how many items\ncount = len(inventory)  # 4",
-      "followUp": "Remember: First item is [0], not [1]! Classic programmer counting!",
+      "text": "Arrays use index numbers starting at 0 - like slots in a game's quick-bar!",
+      "codeExample": "let inventory = ['potion', 'sword', 'shield', 'map'];\n\n// Access items by index\nlet firstItem = inventory[0];   // 'potion'\nlet secondItem = inventory[1];  // 'sword'\n\n// Check how many items\nlet count = inventory.length;  // 4",
+      "followUp": "Remember: The first item is [0], not [1]! It's one of the most important rules in programming!",
       "options": [
         {
           "text": "What if I use a wrong index?",
-          "next": "indexError"
+          "next": "undefinedIndex"
         },
         {
           "text": "How do I add items?",
@@ -62,25 +62,25 @@
         }
       ]
     },
-    "indexError": {
-      "id": "indexError",
+    "undefinedIndex": {
+      "id": "undefinedIndex",
       "speaker": "Pixel",
-      "text": "Using an invalid index causes an IndexError - like trying to equip slot 10 when you only have 5 slots!",
-      "codeExample": "items = ['sword', 'shield']\n\n# This works\nprint(items[0])  # 'sword'\n\n# This crashes!\n# print(items[5])  # IndexError!\n\n# Safe way to check:\nif len(items) > 5:\n    print(items[5])\nelse:\n    print('No item in slot 5!')",
-      "followUp": "Always check your list length or use try/except for safety!",
+      "text": "If you try to access an index that doesn't exist, TypeScript gives you 'undefined' - like trying to open a treasure chest that isn't there!",
+      "codeExample": "let items = ['sword', 'shield'];\n\nconsole.log(items[0]); // 'sword'\nconsole.log(items[5]); // undefined\n\n// Safe way to check:\nif (items.length > 5) {\n    console.log(items[5]);\n} else {\n    console.log('No item in slot 5!');\n}",
+      "followUp": "Always check your array length to stay safe!",
       "options": [
         {
-          "text": "Show me how to add items safely",
+          "text": "Show me how to add items!",
           "next": "addItems"
         }
       ]
     },
-    "modifyList": {
-      "id": "modifyList",
+    "modifyArray": {
+      "id": "modifyArray",
       "speaker": "Pixel",
-      "text": "Lists are mutable - you can change them anytime! Perfect for dynamic game states!",
-      "codeExample": "inventory = ['sword', 'shield', 'potion']\n\n# Change an item\ninventory[0] = 'magic sword'  # Upgrade!\n\n# Swap items\ninventory[1], inventory[2] = inventory[2], inventory[1]\n\nprint(inventory)  # ['magic sword', 'potion', 'shield']",
-      "followUp": "You can modify lists in-place, unlike strings which are immutable!",
+      "text": "Arrays can be changed anytime! Perfect for upgrading gear or swapping items!",
+      "codeExample": "let inventory = ['sword', 'shield', 'potion'];\n\n// Change an item\ninventory[0] = 'magic sword';  // Upgrade!\n\nconsole.log(inventory); // ['magic sword', 'shield', 'potion']",
+      "followUp": "Just use the index and the equals sign to swap what's in that slot!",
       "options": [
         {
           "text": "How do I add new items?",
@@ -91,17 +91,17 @@
     "addItems": {
       "id": "addItems",
       "speaker": "Pixel",
-      "text": "Multiple ways to add items - like picking up loot in a dungeon!",
-      "codeExample": "inventory = ['sword']\n\n# Add one item at the end\ninventory.append('potion')\n\n# Add multiple items\ninventory.extend(['shield', 'map'])\n\n# Insert at specific position\ninventory.insert(1, 'armor')  # Insert at index 1\n\nprint(inventory)\n# ['sword', 'armor', 'potion', 'shield', 'map']",
-      "followUp": "append() for single items, extend() for multiple, insert() for specific positions!",
+      "text": "There are several ways to add items - like picking up loot in a dungeon!",
+      "codeExample": "let inventory = ['sword'];\n\n// Add one item at the end\ninventory.push('potion');\n\n// Add an item at the beginning\ninventory.unshift('shield');\n\n// Add at a specific position (index 1)\ninventory.splice(1, 0, 'map');\n\nconsole.log(inventory);\n// ['shield', 'map', 'sword', 'potion']",
+      "followUp": "push() is your most common tool for adding new loot to the end of a list!",
       "options": [
         {
           "text": "How do I remove items?",
           "next": "removeItems"
         },
         {
-          "text": "Can I search lists?",
-          "next": "searchList"
+          "text": "Can I search arrays?",
+          "next": "searchArray"
         }
       ]
     },
@@ -109,25 +109,25 @@
       "id": "removeItems",
       "speaker": "Pixel",
       "text": "Removing items is like using consumables - they disappear from your inventory!",
-      "codeExample": "inventory = ['sword', 'potion', 'shield', 'potion', 'map']\n\n# Remove specific item (first occurrence)\ninventory.remove('potion')  # Removes first potion\n\n# Remove by index\ndel inventory[0]  # Removes first item\n\n# Remove and return last item\nlast_item = inventory.pop()  # Returns 'map'\n\n# Remove and return specific index\nitem = inventory.pop(1)  # Returns item at index 1\n\n# Clear everything\n# inventory.clear()  # Empty list!",
-      "followUp": "remove() by value, pop() to get the item back, del to delete by index!",
+      "codeExample": "let inventory = ['sword', 'potion', 'shield', 'map'];\n\n// Remove the last item and get it back\nlet last = inventory.pop(); // last is 'map'\n\n// Remove the first item\nlet first = inventory.shift(); // first is 'sword'\n\n// Remove by index (index 1, remove 1 item)\ninventory.splice(1, 1);\n\nconsole.log(inventory); // ['potion']",
+      "followUp": "pop() removes the end, shift() removes the start, and splice() can remove from anywhere!",
       "options": [
         {
           "text": "What about searching?",
-          "next": "searchList"
+          "next": "searchArray"
         }
       ]
     },
-    "searchList": {
-      "id": "searchList",
+    "searchArray": {
+      "id": "searchArray",
       "speaker": "Pixel",
-      "text": "Searching lists is crucial for game logic - checking if player has an item!",
-      "codeExample": "inventory = ['sword', 'shield', 'potion', 'map', 'potion']\n\n# Check if item exists\nif 'key' in inventory:\n    print('You can unlock the door!')\nelse:\n    print('You need a key!')\n\n# Count occurrences\npotion_count = inventory.count('potion')  # Returns 2\n\n# Find index of item\nif 'map' in inventory:\n    map_position = inventory.index('map')  # Returns 3\n    print(f'Map is in slot {map_position}')",
-      "followUp": "'in' checks existence, count() counts occurrences, index() finds position!",
+      "text": "Searching arrays is crucial for game logic - like checking if the player has a key!",
+      "codeExample": "let inventory = ['sword', 'shield', 'potion', 'map'];\n\n// Check if item exists\nif (inventory.includes('key')) {\n    console.log('You can unlock the door!');\n} else {\n    console.log('You need a key!');\n}\n\n// Find the position of an item\nlet mapPosition = inventory.indexOf('map'); // 3\nif (mapPosition !== -1) {\n    console.log('Map is in slot ' + mapPosition);\n}",
+      "followUp": "includes() tells you if it's there, and indexOf() tells you exactly where!",
       "options": [
         {
-          "text": "Can I sort lists?",
-          "next": "sortList"
+          "text": "Can I sort arrays?",
+          "next": "sortArray"
         },
         {
           "text": "Show me slicing!",
@@ -135,15 +135,15 @@
         }
       ]
     },
-    "sortList": {
-      "id": "sortList",
+    "sortArray": {
+      "id": "sortArray",
       "speaker": "Pixel",
       "text": "Sorting is perfect for leaderboards and organizing inventory!",
-      "codeExample": "# High scores\nscores = [500, 1200, 300, 950, 750]\nscores.sort()  # Sorts in-place\nprint(scores)  # [300, 500, 750, 950, 1200]\n\n# Reverse order (highest first)\nscores.sort(reverse=True)\nprint(scores)  # [1200, 950, 750, 500, 300]\n\n# Sort without changing original\noriginal = [5, 2, 8, 1]\nsorted_copy = sorted(original)  # Returns new list\nprint(original)  # Still [5, 2, 8, 1]\nprint(sorted_copy)  # [1, 2, 5, 8]",
-      "followUp": "sort() changes the list, sorted() returns a new sorted list!",
+      "codeExample": "// High scores\nlet scores = [500, 1200, 300, 950, 750];\nscores.sort((a, b) => a - b); // Sorts smallest to largest\nconsole.log(scores);\n\n// Reverse sort (largest first)\nscores.sort((a, b) => b - a);\nconsole.log(scores); // [1200, 950, 750, 500, 300]",
+      "followUp": "sort() changes the array itself. For numbers, we give it a little helper function to get the order right!",
       "options": [
         {
-          "text": "What's list slicing?",
+          "text": "What's array slicing?",
           "next": "slicing"
         }
       ]
@@ -151,39 +151,39 @@
     "slicing": {
       "id": "slicing",
       "speaker": "Pixel",
-      "text": "Slicing lets you grab chunks of a list - like selecting multiple items at once!",
-      "codeExample": "items = ['sword', 'shield', 'bow', 'arrow', 'potion', 'map']\n\n# Get first 3 items\nfirst_three = items[0:3]  # ['sword', 'shield', 'bow']\n# Or shorter:\nfirst_three = items[:3]   # Same result!\n\n# Get last 2 items\nlast_two = items[-2:]  # ['potion', 'map']\n\n# Get middle items\nmiddle = items[2:5]  # ['bow', 'arrow', 'potion']\n\n# Copy entire list\ncopy = items[:]  # Full copy!\n\n# Every other item\nevery_other = items[::2]  # ['sword', 'bow', 'potion']",
-      "followUp": "[start:end:step] - super powerful for list manipulation!",
+      "text": "Slicing lets you grab chunks of an array - like selecting a subset of items!",
+      "codeExample": "let items = ['sword', 'shield', 'bow', 'arrow', 'potion', 'map'];\n\n// Get first 3 items (from index 0 to 3, but not including 3)\nlet firstThree = items.slice(0, 3); // ['sword', 'shield', 'bow']\n\n// Get everything from index 4 onwards\nlet lastTwo = items.slice(4);\n\n// Copy the entire array\nlet copy = items.slice();",
+      "followUp": "slice(start, end) is perfect for creating sub-inventories or copies of data!",
       "options": [
         {
-          "text": "Can lists contain lists?",
-          "next": "nestedLists"
+          "text": "Can arrays contain arrays?",
+          "next": "nestedArrays"
         },
         {
-          "text": "Show me list tricks!",
-          "next": "listTricks"
+          "text": "Show me array tricks!",
+          "next": "arrayTricks"
         }
       ]
     },
-    "nestedLists": {
-      "id": "nestedLists",
+    "nestedArrays": {
+      "id": "nestedArrays",
       "speaker": "Pixel",
-      "text": "Lists can contain other lists - perfect for game grids and 2D maps!",
-      "codeExample": "# Game board (tic-tac-toe)\nboard = [\n    ['X', 'O', 'X'],\n    ['O', 'X', 'O'],\n    ['O', 'X', 'X']\n]\n\n# Access specific cell\ntop_left = board[0][0]  # 'X'\nmiddle = board[1][1]    # 'X'\n\n# Inventory with categories\ninventory = [\n    ['sword', 'dagger', 'bow'],      # Weapons\n    ['helmet', 'armor', 'boots'],    # Armor\n    ['potion', 'elixir', 'antidote'] # Consumables\n]\n\nweapons = inventory[0]\nfirst_weapon = inventory[0][0]  # 'sword'",
-      "followUp": "Nested lists are the foundation of 2D game worlds!",
+      "text": "Arrays can contain other arrays - perfect for game grids and 2D maps!",
+      "codeExample": "// Game board (tic-tac-toe)\nlet board = [\n    ['X', 'O', 'X'],\n    ['O', 'X', 'O'],\n    ['O', 'X', 'X']\n];\n\n// Access specific cell [row][column]\nlet middle = board[1][1]; // 'X'\n\n// Inventory with categories\nlet categories = [\n    ['sword', 'bow'],     // Weapons\n    ['potion', 'herb']    // Consumables\n];\nlet firstWeapon = categories[0][0]; // 'sword'",
+      "followUp": "Nested arrays are how we build 2D worlds in Strata!",
       "options": [
         {
-          "text": "Show me cool list tricks!",
-          "next": "listTricks"
+          "text": "Show me cool array tricks!",
+          "next": "arrayTricks"
         }
       ]
     },
-    "listTricks": {
-      "id": "listTricks",
+    "arrayTricks": {
+      "id": "arrayTricks",
       "speaker": "Pixel",
-      "text": "Here are some pro list techniques for game development!",
-      "codeExample": "# List comprehension - create lists fast!\nenemies_hp = [100 for _ in range(5)]  # [100, 100, 100, 100, 100]\n\n# Filter a list\nitems = ['sword', 'potion', 'key', 'potion', 'map']\npotions = [item for item in items if item == 'potion']\n\n# Transform a list\ndamages = [10, 20, 15, 25]\ndoubled = [d * 2 for d in damages]  # [20, 40, 30, 50]\n\n# Zip lists together\nnames = ['Hero', 'Mage', 'Rogue']\nlevels = [10, 8, 12]\ncharacters = list(zip(names, levels))\n# [('Hero', 10), ('Mage', 8), ('Rogue', 12)]",
-      "followUp": "List comprehensions are Python's superpower for creating lists!",
+      "text": "Here are some pro techniques for game development in TypeScript!",
+      "codeExample": "// Create an array of 5 identical enemies\nlet enemies = Array(5).fill('goblin');\n\n// Filter: Keep only the potions\nlet items = ['sword', 'potion', 'key', 'potion'];\nlet potions = items.filter(item => item === 'potion');\n\n// Map: Double all damage values\nlet damages = [10, 20, 15];\nlet doubled = damages.map(d => d * 2); // [20, 40, 30]",
+      "followUp": "filter() and map() are super powerful tools for handling game data!",
       "options": [
         {
           "text": "Time to practice!",
@@ -195,11 +195,11 @@
       "id": "practiceChallenge",
       "speaker": "Pixel",
       "text": "Boss Challenge! Create an inventory management system!",
-      "followUp": "Track items, add loot, use potions, check for keys, and display everything!",
-      "codeExample": "# Inventory System Challenge\ninventory = ['sword', 'potion', 'potion']\nmax_size = 10\n\n# Add item if space\ndef add_item(item):\n    if len(inventory) < max_size:\n        inventory.append(item)\n        print(f'Added {item}')\n    else:\n        print('Inventory full!')\n\n# Use item\ndef use_item(item):\n    if item in inventory:\n        inventory.remove(item)\n        print(f'Used {item}')\n    else:\n        print(f'No {item} in inventory!')\n\n# Test it!\nadd_item('key')\nuse_item('potion')\nprint('Current inventory:', inventory)",
+      "followUp": "Track items, add loot, use potions, and check if you're full!",
+      "codeExample": "let inventory = ['sword', 'potion'];\nlet maxSize = 5;\n\nfunction addItem(item) {\n    if (inventory.length < maxSize) {\n        inventory.push(item);\n        console.log('Added ' + item);\n    } else {\n        console.log('Inventory full!');\n    }\n}\n\nfunction useItem(item) {\n    let index = inventory.indexOf(item);\n    if (index !== -1) {\n        inventory.splice(index, 1);\n        console.log('Used ' + item);\n    } else {\n        console.log('No ' + item + ' found!');\n    }\n}\n\naddItem('shield');\nuseItem('potion');\nconsole.log('Current inventory:', inventory);",
       "options": [
         {
-          "text": "Lists are powerful!",
+          "text": "Arrays are powerful!",
           "next": "lessonComplete"
         }
       ]
@@ -207,8 +207,8 @@
     "lessonComplete": {
       "id": "lessonComplete",
       "speaker": "Pixel",
-      "text": "🎊 LEVEL 5 COMPLETE! You're now a List Master! 📜",
-      "followUp": "Lists are everywhere in games - inventories, enemies, tiles, scores... You've got the power now!",
+      "text": "🎊 LEVEL 5 COMPLETE! You're now an Array Master! 📜",
+      "followUp": "Arrays are everywhere in games - inventories, enemies, tiles, scores... You've got the power now!",
       "action": "completeLesson",
       "actionParams": { "lesson": 5, "nextLesson": 6 },
       "options": [
