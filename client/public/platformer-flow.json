@@ -13,8 +13,8 @@
       {
         "text": "A: Forest Adventure - Lush greenery, wooden platforms, nature sounds",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "worldTheme", 
+        "actionParams": {
+          "componentId": "worldTheme",
           "variant": "A",
           "bundle": ["forest_bg", "wood_platforms", "nature_music"]
         },
@@ -23,8 +23,8 @@
       {
         "text": "B: Desert Challenge - Sandy dunes, stone blocks, mystical ambience",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "worldTheme", 
+        "actionParams": {
+          "componentId": "worldTheme",
           "variant": "B",
           "bundle": ["desert_bg", "stone_platforms", "mystic_music"]
         },
@@ -265,8 +265,8 @@
       {
         "text": "A: Mario Style - Mushrooms for size, flowers for projectiles, coins for lives",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "powerUpSystem", 
+        "actionParams": {
+          "componentId": "powerUpSystem",
           "variant": "A",
           "bundle": ["mushroom", "fireflower", "coins", "1up"]
         },
@@ -275,8 +275,8 @@
       {
         "text": "B: Sonic Style - Rings for health, shields for protection, speed boosts",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "powerUpSystem", 
+        "actionParams": {
+          "componentId": "powerUpSystem",
           "variant": "B",
           "bundle": ["rings", "shields", "speedboost", "invincibility"]
         },
@@ -447,8 +447,8 @@
         "action": "launchPyodideGame"
       },
       {
-        "text": "Export as Python file",
-        "action": "exportPyodideGame"  
+        "text": "Export as TypeScript",
+        "action": "exportPyodideGame"
       },
       {
         "text": "Open in Pro Editor",

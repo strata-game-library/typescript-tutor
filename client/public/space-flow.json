@@ -13,8 +13,8 @@
       {
         "text": "A: Retro Arcade - Pixel art, 8-bit fonts, CRT effects, neon colors",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "titleDesign", 
+        "actionParams": {
+          "componentId": "titleDesign",
           "variant": "A",
           "bundle": ["pixel_ui", "8bit_fonts", "crt_effect", "neon_palette"]
         },
@@ -23,8 +23,8 @@
       {
         "text": "B: Modern Sci-Fi - Sleek graphics, holographic UI, lens flares, metallic theme",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "titleDesign", 
+        "actionParams": {
+          "componentId": "titleDesign",
           "variant": "B",
           "bundle": ["modern_ui", "futuristic_fonts", "lens_flare", "metal_palette"]
         },
@@ -65,8 +65,8 @@
       {
         "text": "A: Classic Asteroids - Navigate asteroid fields, mine resources, survive debris",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "coreTheme", 
+        "actionParams": {
+          "componentId": "coreTheme",
           "variant": "A",
           "bundle": ["asteroids", "mining_powerups", "debris_physics"]
         },
@@ -75,8 +75,8 @@
       {
         "text": "B: Alien Invasion - Defend Earth from waves of extraterrestrial attackers",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "coreTheme", 
+        "actionParams": {
+          "componentId": "coreTheme",
           "variant": "B",
           "bundle": ["alien_enemies", "defense_powerups", "invasion_waves"]
         },
@@ -98,8 +98,8 @@
       {
         "text": "A: Small Fighter - Fast, agile, rapid fire, lower health",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "playerShip", 
+        "actionParams": {
+          "componentId": "playerShip",
           "variant": "A",
           "bundle": ["fighter_sprite", "high_speed", "rapid_fire", "low_health"]
         },
@@ -108,8 +108,8 @@
       {
         "text": "B: Heavy Cruiser - Slow, tanky, powerful shots, high health",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "playerShip", 
+        "actionParams": {
+          "componentId": "playerShip",
           "variant": "B",
           "bundle": ["cruiser_sprite", "low_speed", "heavy_cannon", "high_health"]
         },
@@ -156,8 +156,8 @@
       {
         "text": "A: Laser Beams - Continuous streams, heat management, piercing damage",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "weaponType", 
+        "actionParams": {
+          "componentId": "weaponType",
           "variant": "A",
           "bundle": ["laser_effect", "heat_gauge", "pierce_mechanic"]
         },
@@ -166,8 +166,8 @@
       {
         "text": "B: Projectile Bullets - Rapid fire, limited ammo, spread patterns",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "weaponType", 
+        "actionParams": {
+          "componentId": "weaponType",
           "variant": "B",
           "bundle": ["bullet_sprites", "ammo_counter", "spread_shot"]
         },
@@ -189,8 +189,8 @@
       {
         "text": "A: Shield Focus - Energy shields, damage reduction, temporary invincibility",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "powerUpFocus", 
+        "actionParams": {
+          "componentId": "powerUpFocus",
           "variant": "A",
           "bundle": ["shield_bubble", "damage_resist", "invuln_star"]
         },
@@ -199,8 +199,8 @@
       {
         "text": "B: Weapon Upgrades - Triple shot, homing missiles, damage boost",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "powerUpFocus", 
+        "actionParams": {
+          "componentId": "powerUpFocus",
           "variant": "B",
           "bundle": ["triple_shot", "homing_missile", "damage_amp"]
         },
@@ -222,8 +222,8 @@
       {
         "text": "A: Predictable Patterns - Classic formations, learnable movements",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "enemyFormation", 
+        "actionParams": {
+          "componentId": "enemyFormation",
           "variant": "A",
           "bundle": ["pattern_formations", "wave_timer", "classic_ai"]
         },
@@ -232,8 +232,8 @@
       {
         "text": "B: Random Chaos - Unpredictable spawns, adaptive AI behavior",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "enemyFormation", 
+        "actionParams": {
+          "componentId": "enemyFormation",
           "variant": "B",
           "bundle": ["random_spawn", "smart_ai", "chaos_mode"]
         },
@@ -255,8 +255,8 @@
       {
         "text": "A: Single Mothership - One massive enemy with multiple weak points",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "bossType", 
+        "actionParams": {
+          "componentId": "bossType",
           "variant": "A",
           "bundle": ["mothership_sprite", "weakpoint_system", "boss_health_bar"]
         },
@@ -265,8 +265,8 @@
       {
         "text": "B: Multi-Phase Boss - Transforming enemy with escalating difficulty",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "bossType", 
+        "actionParams": {
+          "componentId": "bossType",
           "variant": "B",
           "bundle": ["phase_boss", "transformation", "escalating_attacks"]
         },
@@ -288,8 +288,8 @@
       {
         "text": "A: Vertical Scrolling - Classic top-down space shooter style",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "scrollType", 
+        "actionParams": {
+          "componentId": "scrollType",
           "variant": "A",
           "bundle": ["vertical_bg", "top_spawn", "bottom_exit"]
         },
@@ -298,8 +298,8 @@
       {
         "text": "B: Horizontal Scrolling - Side-scrolling space adventure",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "scrollType", 
+        "actionParams": {
+          "componentId": "scrollType",
           "variant": "B",
           "bundle": ["horizontal_bg", "side_spawn", "right_exit"]
         },
@@ -321,8 +321,8 @@
       {
         "text": "A: Points System - Earn points for enemies, combos, and accuracy",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "scoringMethod", 
+        "actionParams": {
+          "componentId": "scoringMethod",
           "variant": "A",
           "bundle": ["point_counter", "combo_multiplier", "accuracy_bonus"]
         },
@@ -331,8 +331,8 @@
       {
         "text": "B: Survival Time - Track how long you can survive the onslaught",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "scoringMethod", 
+        "actionParams": {
+          "componentId": "scoringMethod",
           "variant": "B",
           "bundle": ["timer_display", "wave_counter", "endurance_mode"]
         },
@@ -354,8 +354,8 @@
       {
         "text": "A: Limited Lives - Classic 3 lives with instant death",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "healthSystem", 
+        "actionParams": {
+          "componentId": "healthSystem",
           "variant": "A",
           "bundle": ["life_icons", "instant_death", "extra_life_powerup"]
         },
@@ -364,8 +364,8 @@
       {
         "text": "B: Shield & Health - Regenerating shields with health underneath",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "healthSystem", 
+        "actionParams": {
+          "componentId": "healthSystem",
           "variant": "B",
           "bundle": ["shield_bar", "health_bar", "regen_mechanic"]
         },
@@ -387,8 +387,8 @@
       {
         "text": "A: Screen Bomb - Clear all enemies with a massive explosion",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "specialPower", 
+        "actionParams": {
+          "componentId": "specialPower",
           "variant": "A",
           "bundle": ["bomb_effect", "screen_clear", "bomb_counter"]
         },
@@ -397,8 +397,8 @@
       {
         "text": "B: Time Slow - Slow down time for precision dodging",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "specialPower", 
+        "actionParams": {
+          "componentId": "specialPower",
           "variant": "B",
           "bundle": ["slowmo_effect", "time_gauge", "bullet_time"]
         },
@@ -420,8 +420,8 @@
       {
         "text": "A: Wave Completion - Beat set waves to achieve victory",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "gameEnd", 
+        "actionParams": {
+          "componentId": "gameEnd",
           "variant": "A",
           "bundle": ["wave_structure", "level_progression", "final_wave"]
         },
@@ -430,8 +430,8 @@
       {
         "text": "B: Endless Mode - Survive as long as possible",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "gameEnd", 
+        "actionParams": {
+          "componentId": "gameEnd",
           "variant": "B",
           "bundle": ["endless_waves", "difficulty_scaling", "highscore_chase"]
         },
@@ -453,8 +453,8 @@
       {
         "text": "A: High Score Board - Classic arcade leaderboard with initials",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "victory", 
+        "actionParams": {
+          "componentId": "victory",
           "variant": "A",
           "bundle": ["leaderboard_ui", "initial_entry", "score_ranking"]
         },
@@ -463,8 +463,8 @@
       {
         "text": "B: Achievement Gallery - Unlock medals and view statistics",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "victory", 
+        "actionParams": {
+          "componentId": "victory",
           "variant": "B",
           "bundle": ["medal_display", "stat_tracker", "achievement_list"]
         },
@@ -488,7 +488,7 @@
         "action": "launchPyodideGame"
       },
       {
-        "text": "Export as Python file",
+        "text": "Export as TypeScript",
         "action": "exportPyodideGame"
       },
       {

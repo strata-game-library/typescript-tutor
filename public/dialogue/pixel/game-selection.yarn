@@ -8,18 +8,18 @@ Pixel: What type of game speaks to you today?
 -> Puzzle - Brain Teasers 🧩
     <<set $selectedGenre to "puzzle">>
     <<jump PuzzleSelection>>
--> Adventure - Explore Worlds 🌍
-    <<set $selectedGenre to "adventure">>
-    <<jump AdventureSelection>>
+-> RPG - Epic Adventures 🗺️
+    <<set $selectedGenre to "rpg">>
+    <<jump RPGSelection>>
 -> Racing - Speed Thrills 🏎️
     <<set $selectedGenre to "racing">>
     <<jump RacingSelection>>
--> Music - Rhythm & Beats 🎵
-    <<set $selectedGenre to "music">>
-    <<jump MusicSelection>>
--> Tower Defense - Strategy 🏰
-    <<set $selectedGenre to "tower-defense">>
-    <<jump TowerDefenseSelection>>
+-> Space Shooter - Asteroid Action 🚀
+    <<set $selectedGenre to "space">>
+    <<jump SpaceSelection>>
+-> Dungeon Crawler - Explore Depths 🏰
+    <<set $selectedGenre to "dungeon">>
+    <<jump DungeonSelection>>
 -> Endless Runner 🏃‍♂️
     <<set $selectedGenre to "endless-runner">>
     <<jump EndlessRunnerSelection>>
@@ -30,7 +30,7 @@ Pixel: What type of game speaks to you today?
 title: PlatformerSelection
 ---
 Pixel: Platformers are classic! Jump, run, and explore! 🏃
-Pixel: I have several templates for you:
+Pixel: I have several TypeScript templates for you:
 -> Classic Mario-style
     <<createProject("classic-platformer")>>
     <<jump ProjectCreated>>
@@ -64,21 +64,18 @@ Pixel: What style interests you?
     <<jump GameSelection>>
 ===
 
-title: AdventureSelection
+title: RPGSelection
 ---
-Pixel: Adventure games let you tell amazing stories! 🗺️
+Pixel: RPGs let you tell amazing stories! 🗺️
 Pixel: Choose your adventure style:
--> Top-down RPG
-    <<createProject("rpg-adventure")>>
+-> Top-down action RPG
+    <<createProject("action-rpg")>>
     <<jump ProjectCreated>>
--> Point-and-click mystery
-    <<createProject("point-click")>>
+-> Turn-based combat
+    <<createProject("turn-based-rpg")>>
     <<jump ProjectCreated>>
--> Text adventure
-    <<createProject("text-adventure")>>
-    <<jump ProjectCreated>>
--> Dungeon crawler
-    <<createProject("dungeon-crawler")>>
+-> Monster collector
+    <<createProject("monster-collector")>>
     <<jump ProjectCreated>>
 -> Back to genres
     <<jump GameSelection>>
@@ -101,35 +98,35 @@ Pixel: Pick your racing style:
     <<jump GameSelection>>
 ===
 
-title: MusicSelection
+title: SpaceSelection
 ---
-Pixel: Music games are so much fun! Let's make some beats! 🎵
-Pixel: What sounds good?
--> Rhythm game like Guitar Hero
-    <<createProject("rhythm-game")>>
+Pixel: Space is the final frontier! 🚀
+Pixel: What sounds exciting?
+-> Asteroids-style shooter
+    <<createProject("asteroids")>>
     <<jump ProjectCreated>>
--> Music maker/sequencer
-    <<createProject("music-maker")>>
+-> Wave-based defense
+    <<createProject("space-defense")>>
     <<jump ProjectCreated>>
--> Dance game
-    <<createProject("dance-game")>>
+-> Space exploration
+    <<createProject("space-explorer")>>
     <<jump ProjectCreated>>
 -> Back to genres
     <<jump GameSelection>>
 ===
 
-title: TowerDefenseSelection
+title: DungeonSelection
 ---
-Pixel: Strategy time! Defend your base! 🏰
-Pixel: Choose your defense style:
--> Classic tower defense
-    <<createProject("tower-defense")>>
+Pixel: Into the dungeon we go! 🏰
+Pixel: What style calls to you?
+-> Classic dungeon crawler
+    <<createProject("dungeon-crawler")>>
     <<jump ProjectCreated>>
--> Plants vs Zombies style
-    <<createProject("lane-defense")>>
+-> Roguelike with permadeath
+    <<createProject("roguelike")>>
     <<jump ProjectCreated>>
--> Maze builder defense
-    <<createProject("maze-defense")>>
+-> Loot and explore
+    <<createProject("loot-dungeon")>>
     <<jump ProjectCreated>>
 -> Back to genres
     <<jump GameSelection>>
@@ -140,7 +137,7 @@ title: EndlessRunnerSelection
 Pixel: Endless runners are addictive and fun! 🏃‍♂️
 Pixel: What style do you prefer?
 -> Temple Run style
-    <<createProject("3d-runner")>>
+    <<createProject("temple-runner")>>
     <<jump ProjectCreated>>
 -> Flappy Bird style
     <<createProject("flappy-style")>>
@@ -163,17 +160,17 @@ Pixel: I love surprises! Let me pick something fun for you! 🎲
     Pixel: Let's make a puzzle game!
     <<createProject("match3")>>
 <<elseif $randomPick == 3>>
-    Pixel: Adventure awaits!
-    <<createProject("rpg-adventure")>>
+    Pixel: RPG adventure awaits!
+    <<createProject("action-rpg")>>
 <<elseif $randomPick == 4>>
-    Pixel: Speed is calling!
+    Pixel: Speed is calling - racing game!
     <<createProject("top-down-racer")>>
 <<elseif $randomPick == 5>>
-    Pixel: Time for some rhythm!
-    <<createProject("rhythm-game")>>
+    Pixel: Space shooter it is!
+    <<createProject("asteroids")>>
 <<else>>
-    Pixel: Tower defense it is!
-    <<createProject("tower-defense")>>
+    Pixel: Dungeon crawler time!
+    <<createProject("dungeon-crawler")>>
 <<endif>>
 <<jump ProjectCreated>>
 ===
@@ -181,7 +178,7 @@ Pixel: I love surprises! Let me pick something fun for you! 🎲
 title: ProjectCreated
 ---
 Pixel: Awesome! I've set up your {$selectedGenre} game! 🎮
-Pixel: The template is loaded and ready for you to customize!
+Pixel: The TypeScript template is loaded and ready for you to customize!
 <<if $skillLevel == "beginner">>
     Pixel: I've added helpful comments to guide you through the code.
     Pixel: Feel free to ask me if anything seems confusing!
@@ -201,13 +198,17 @@ title: TemplateOverview
 ---
 Pixel: Let me show you the key parts of your game! 🔍
 Pixel: The main game loop handles all the action.
-Pixel: You've got player controls, game objects, and collision detection all set up.
+Pixel: You've got the Game class, Sprite management, and input handling all set up.
 <<if $selectedGenre == "platformer">>
     Pixel: Your platformer has jumping, gravity, and platform collision ready to go!
 <<elseif $selectedGenre == "puzzle">>
     Pixel: The puzzle logic is all set - matching, clearing, and scoring!
 <<elseif $selectedGenre == "racing">>
     Pixel: Speed, steering, and track boundaries are configured!
+<<elseif $selectedGenre == "space">>
+    Pixel: Your ship, bullets, and asteroids are all ready!
+<<elseif $selectedGenre == "dungeon">>
+    Pixel: Dungeon generation, player movement, and combat are set up!
 <<endif>>
 -> Show me the player code
     <<highlightCode("player")>>
@@ -236,12 +237,13 @@ title: GraphicsCustomization
 Pixel: Let's give your game a fresh look! 🎨
 Pixel: You can change colors, sprites, or even the whole art style!
 -> How do I change colors?
-    Pixel: Look for the color variables at the top of your code!
-    Pixel: Just change the RGB values to any colors you like!
+    Pixel: Look for the color constants at the top of your code!
+    Pixel: Just change the hex values to any colors you like!
+    Pixel: TypeScript tip: Use the Color type for type-safe colors!
     <<showCodeExample("colors")>>
 -> How do I add sprites?
-    Pixel: You can load image files or draw shapes with code!
-    Pixel: I'll show you both methods!
+    Pixel: You can load image files or use shapes!
+    Pixel: The Strata engine makes sprite management easy!
     <<showCodeExample("sprites")>>
 -> Back to customization
     <<jump CustomizationGuide>>
@@ -256,6 +258,8 @@ Pixel: Let's tune the challenge level! ⚖️
     Pixel: Try changing the timer, board size, or matching requirements!
 <<elseif $selectedGenre == "racing">>
     Pixel: Tweak the car speed, track width, or add more obstacles!
+<<elseif $selectedGenre == "space">>
+    Pixel: Adjust asteroid speed, spawn rate, or player lives!
 <<endif>>
 -> Show me where to change this
     <<highlightCode("difficulty")>>
@@ -282,6 +286,13 @@ Pixel: Let's add some cool features to make your game stand out! ✨
         <<showFeatureCode("special-blocks")>>
     -> Add time bonus
         <<showFeatureCode("time-bonus")>>
+<<elseif $selectedGenre == "space">>
+    -> Add shields
+        <<showFeatureCode("shields")>>
+    -> Add weapon upgrades
+        <<showFeatureCode("weapons")>>
+    -> Add boss fights
+        <<showFeatureCode("bosses")>>
 <<endif>>
 -> Back to customization
     <<jump CustomizationGuide>>
@@ -320,7 +331,7 @@ Pixel: Need help with your template? I'm here! 🤝
 title: TroubleshootingRun
 ---
 Pixel: Let me help you get it running! 🔧
-Pixel: First, let me check for common issues...
+Pixel: First, let me check for common TypeScript issues...
 <<checkForErrors()>>
 <<if $errorFound is true>>
     Pixel: I found the issue! {$errorDescription}
@@ -344,11 +355,29 @@ Pixel: Try these tests:
 Pixel: • Move your character around
 Pixel: • Check if collisions work
 Pixel: • Make sure the score updates
-Pixel: • Test game over conditions
+Pixel: • Test win/lose conditions
 -> My character won't move
     <<jump FixMovement>>
 -> Collisions aren't working
     <<jump FixCollisions>>
 -> All good!
     Pixel: Awesome! Keep experimenting! 🎉
+===
+
+title: TroubleshootingBroken
+---
+Pixel: Don't worry! Every coder breaks things sometimes! 🔧
+Pixel: TypeScript errors might look scary, but they're actually helpful!
+Pixel: Let me see what's happening...
+<<checkForErrors()>>
+<<if $errorFound is true>>
+    Pixel: Found it! {$errorDescription}
+    Pixel: TypeScript caught this error before it could cause problems in your game!
+    -> Fix it
+        <<autoFix()>>
+    -> Explain the error
+        Pixel: {$errorExplanation}
+<<else>>
+    Pixel: The code looks fine to me! Try refreshing?
+<<endif>>
 ===

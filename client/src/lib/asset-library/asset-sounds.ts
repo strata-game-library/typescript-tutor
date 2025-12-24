@@ -1,7 +1,7 @@
 // Sound Asset Definitions
 // CC0 sound effects and music for games
 
-import { SoundAsset } from './asset-types';
+import type { SoundAsset } from './asset-types';
 
 // Sound effect assets
 export const soundEffects: SoundAsset[] = [
@@ -17,7 +17,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Use when player jumps or hops',
     duration: 0.3,
-    volume: 0.7
+    volume: 0.7,
   },
   {
     id: 'jump-double',
@@ -30,9 +30,9 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Perfect for double jump mechanics',
     duration: 0.4,
-    volume: 0.8
+    volume: 0.8,
   },
-  
+
   // Collect sounds
   {
     id: 'collect-coin',
@@ -45,7 +45,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Play when collecting coins or points',
     duration: 0.5,
-    volume: 0.6
+    volume: 0.6,
   },
   {
     id: 'collect-gem',
@@ -58,7 +58,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Use for valuable item collection',
     duration: 0.7,
-    volume: 0.7
+    volume: 0.7,
   },
   {
     id: 'collect-powerup',
@@ -71,9 +71,9 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Play when gaining special abilities',
     duration: 1.0,
-    volume: 0.8
+    volume: 0.8,
   },
-  
+
   // Hit/damage sounds
   {
     id: 'hit-damage',
@@ -86,7 +86,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'When player gets hit by enemy',
     duration: 0.4,
-    volume: 0.7
+    volume: 0.7,
   },
   {
     id: 'hit-enemy',
@@ -99,7 +99,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'When enemy is damaged',
     duration: 0.3,
-    volume: 0.6
+    volume: 0.6,
   },
   {
     id: 'explosion-small',
@@ -112,9 +112,9 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'For enemy defeats or small explosions',
     duration: 0.6,
-    volume: 0.7
+    volume: 0.7,
   },
-  
+
   // UI sounds
   {
     id: 'ui-click',
@@ -127,7 +127,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Menu button interactions',
     duration: 0.1,
-    volume: 0.5
+    volume: 0.5,
   },
   {
     id: 'ui-success',
@@ -140,7 +140,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Level completion or achievements',
     duration: 1.5,
-    volume: 0.8
+    volume: 0.8,
   },
   {
     id: 'ui-fail',
@@ -153,9 +153,9 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Game over or failure states',
     duration: 1.2,
-    volume: 0.7
+    volume: 0.7,
   },
-  
+
   // Shoot sounds
   {
     id: 'shoot-laser',
@@ -168,7 +168,7 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Laser weapon firing',
     duration: 0.3,
-    volume: 0.6
+    volume: 0.6,
   },
   {
     id: 'shoot-projectile',
@@ -181,8 +181,8 @@ export const soundEffects: SoundAsset[] = [
     license: 'CC0 - Public Domain',
     suggestedUse: 'Throwing or shooting projectiles',
     duration: 0.4,
-    volume: 0.6
-  }
+    volume: 0.6,
+  },
 ];
 
 // Background music tracks
@@ -199,7 +199,7 @@ export const musicTracks: SoundAsset[] = [
     suggestedUse: 'Main gameplay background music',
     duration: 120,
     loop: true,
-    volume: 0.4
+    volume: 0.4,
   },
   {
     id: 'music-menu',
@@ -213,7 +213,7 @@ export const musicTracks: SoundAsset[] = [
     suggestedUse: 'Main menu and pause screens',
     duration: 90,
     loop: true,
-    volume: 0.3
+    volume: 0.3,
   },
   {
     id: 'music-boss',
@@ -227,7 +227,7 @@ export const musicTracks: SoundAsset[] = [
     suggestedUse: 'Boss fights and intense moments',
     duration: 150,
     loop: true,
-    volume: 0.5
+    volume: 0.5,
   },
   {
     id: 'music-peaceful',
@@ -241,7 +241,7 @@ export const musicTracks: SoundAsset[] = [
     suggestedUse: 'Safe zones or peaceful levels',
     duration: 180,
     loop: true,
-    volume: 0.3
+    volume: 0.3,
   },
   {
     id: 'music-victory',
@@ -255,8 +255,8 @@ export const musicTracks: SoundAsset[] = [
     suggestedUse: 'Level completion or victory screens',
     duration: 10,
     loop: false,
-    volume: 0.6
-  }
+    volume: 0.6,
+  },
 ];
 
 // Ambient sounds
@@ -273,7 +273,7 @@ export const ambientSounds: SoundAsset[] = [
     suggestedUse: 'Forest or nature levels',
     duration: 30,
     loop: true,
-    volume: 0.2
+    volume: 0.2,
   },
   {
     id: 'ambient-space',
@@ -287,24 +287,20 @@ export const ambientSounds: SoundAsset[] = [
     suggestedUse: 'Space or sci-fi levels',
     duration: 30,
     loop: true,
-    volume: 0.2
-  }
+    volume: 0.2,
+  },
 ];
 
 // Export all sounds
-export const allSounds: SoundAsset[] = [
-  ...soundEffects,
-  ...musicTracks,
-  ...ambientSounds
-];
+export const allSounds: SoundAsset[] = [...soundEffects, ...musicTracks, ...ambientSounds];
 
 // Helper functions
 export function getSoundById(id: string): SoundAsset | undefined {
-  return allSounds.find(sound => sound.id === id);
+  return allSounds.find((sound) => sound.id === id);
 }
 
 export function getSoundsByCategory(category: string): SoundAsset[] {
-  return allSounds.filter(sound => sound.category === category);
+  return allSounds.filter((sound) => sound.category === category);
 }
 
 export function getMusicTracks(): SoundAsset[] {

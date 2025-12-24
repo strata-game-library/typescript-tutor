@@ -1,49 +1,28 @@
 // PyGame Component Library - Main entry point
 // Re-exports all components from modular files
 
-// Import types
-import type { 
-  PyGameComponent,
-  ComponentType
-} from './pygame-component-types';
-
-import {
-  hexToRgb,
-  drawStar,
-  drawHeart,
-  drawCloud
-} from './pygame-component-types';
-
+import { ballComponent } from './pygame-component-ball';
+import { collectibleComponent } from './pygame-component-collectible';
+import { backgroundComponent, particleEffectComponent } from './pygame-component-effects';
+import { enemyComponent } from './pygame-component-enemy';
+import { paddleComponent } from './pygame-component-paddle';
+import { platformComponent } from './pygame-component-platform';
 // Import individual components
 import { spriteComponent } from './pygame-component-sprite';
-import { platformComponent } from './pygame-component-platform';
-import { ballComponent } from './pygame-component-ball';
-import { paddleComponent } from './pygame-component-paddle';
-import { enemyComponent } from './pygame-component-enemy';
-import { collectibleComponent } from './pygame-component-collectible';
-import { 
-  scoreTextComponent, 
-  buttonComponent, 
-  timerComponent, 
-  healthBarComponent 
+// Import types
+import type { ComponentType, PyGameComponent } from './pygame-component-types';
+import { drawCloud, drawHeart, drawStar, hexToRgb } from './pygame-component-types';
+import {
+  buttonComponent,
+  healthBarComponent,
+  scoreTextComponent,
+  timerComponent,
 } from './pygame-component-ui';
-import { 
-  particleEffectComponent, 
-  backgroundComponent 
-} from './pygame-component-effects';
 
 // Re-export types
-export type {
-  PyGameComponent,
-  ComponentType
-};
+export type { PyGameComponent, ComponentType };
 
-export {
-  hexToRgb,
-  drawStar,
-  drawHeart,
-  drawCloud
-};
+export { hexToRgb, drawStar, drawHeart, drawCloud };
 
 // Combine all components into a single array
 export const pygameComponents: PyGameComponent[] = [
@@ -58,7 +37,7 @@ export const pygameComponents: PyGameComponent[] = [
   buttonComponent,
   particleEffectComponent,
   timerComponent,
-  healthBarComponent
+  healthBarComponent,
 ];
 
 // Export as allComponents for backward compatibility
@@ -69,11 +48,11 @@ export const allComponents = pygameComponents;
 // ============================================================================
 
 export function getComponentById(id: string): PyGameComponent | undefined {
-  return pygameComponents.find(c => c.id === id);
+  return pygameComponents.find((c) => c.id === id);
 }
 
 export function getComponentByType(type: ComponentType): PyGameComponent | undefined {
-  return pygameComponents.find(c => c.type === type);
+  return pygameComponents.find((c) => c.type === type);
 }
 
 export function getAllComponents(): PyGameComponent[] {
@@ -84,7 +63,7 @@ export function getAllComponents(): PyGameComponent[] {
 if (typeof window !== 'undefined') {
   (window as any).testPygameComponents = () => {
     console.log('🎮 PyGame Components Available:');
-    pygameComponents.forEach(comp => {
+    pygameComponents.forEach((comp) => {
       console.log(`  - ${comp.name} (${comp.type}): ${comp.description}`);
     });
     return pygameComponents;

@@ -1,10 +1,10 @@
-import type { UserProfile, WizardState } from "@shared/schema";
+import type { UserProfile, WizardState } from '@shared/schema';
 
 // User Profile Management
 export const getUserProfile = (): UserProfile | null => {
   const stored = localStorage.getItem('pygame_academy_profile');
   if (!stored) return null;
-  
+
   try {
     return JSON.parse(stored) as UserProfile;
   } catch (e) {
@@ -20,13 +20,13 @@ export const saveUserProfile = (profile: UserProfile): void => {
 export const updateUserProfile = (updates: Partial<UserProfile>): UserProfile | null => {
   const current = getUserProfile();
   if (!current) return null;
-  
+
   const updated = {
     ...current,
     ...updates,
-    lastVisitAt: new Date()
+    lastVisitAt: new Date(),
   };
-  
+
   saveUserProfile(updated);
   return updated;
 };
@@ -38,10 +38,10 @@ export const getWizardState = (): WizardState => {
     return {
       currentStep: 'welcome',
       answers: {},
-      suggestedTemplates: []
+      suggestedTemplates: [],
     };
   }
-  
+
   try {
     return JSON.parse(stored) as WizardState;
   } catch (e) {
@@ -49,7 +49,7 @@ export const getWizardState = (): WizardState => {
     return {
       currentStep: 'welcome',
       answers: {},
-      suggestedTemplates: []
+      suggestedTemplates: [],
     };
   }
 };
@@ -66,7 +66,7 @@ export const resetWizardState = (): void => {
 export const getConversationHistory = (): any[] => {
   const stored = localStorage.getItem('pygame_academy_conversations');
   if (!stored) return [];
-  
+
   try {
     return JSON.parse(stored);
   } catch (e) {
@@ -96,7 +96,10 @@ export const getUserSkillLevel = (): string => {
   return profile?.skillLevel || 'beginner';
 };
 
-export const createNewProfile = (name: string, skillLevel: UserProfile['skillLevel']): UserProfile => {
+export const createNewProfile = (
+  name: string,
+  skillLevel: UserProfile['skillLevel']
+): UserProfile => {
   const now = new Date();
   const profile: UserProfile = {
     id: `user-${Date.now()}`,
@@ -108,9 +111,9 @@ export const createNewProfile = (name: string, skillLevel: UserProfile['skillLev
     preferredGenres: [],
     completedLessons: [],
     mascotName: 'Pixel',
-    onboardingComplete: false
+    onboardingComplete: false,
   };
-  
+
   saveUserProfile(profile);
   return profile;
 };

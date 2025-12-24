@@ -9,8 +9,8 @@ title: ReturningUser
         <<jump ContinueProject>>
     -> Start something new ✨
         <<jump NewProject>>
-    -> Practice Python 📝
-        <<jump PythonPractice>>
+    -> Practice TypeScript 📝
+        <<jump TypeScriptPractice>>
     -> Browse gallery 🖼️
         <<navigate("gallery")>>
 <<else>>
@@ -18,8 +18,8 @@ title: ReturningUser
     Pixel: What would you like to work on today?
     -> Start a new game 🆕
         <<jump NewProject>>
-    -> Learn Python 📚
-        <<jump PythonPractice>>
+    -> Learn TypeScript 📚
+        <<jump TypeScriptPractice>>
     -> Explore templates 🎨
         <<jump ExploreTemplates>>
     -> Check out the gallery 🖼️
@@ -53,36 +53,36 @@ Pixel: What type of game are you in the mood to build?
     <<createProject("blank")>>
 ===
 
-title: PythonPractice
+title: TypeScriptPractice
 ---
 <<if $skillLevel == "beginner">>
-    Pixel: Let's strengthen those Python skills! 📚
+    Pixel: Let's strengthen those TypeScript skills! 📚
     Pixel: I recommend starting with the basics.
-    -> Variables and Data Types
+    -> Variables and Types
         <<navigate("lesson/lesson-1")>>
-    -> Control Flow (if/else)
+    -> Functions and Logic
         <<navigate("lesson/lesson-2")>>
-    -> Loops and Iteration
+    -> Arrays and Collections
         <<navigate("lesson/lesson-3")>>
     -> Show all lessons
         <<navigate("lessons")>>
 <<elseif $skillLevel == "learning">>
-    Pixel: Ready to level up your Python game? 🚀
-    -> Functions and Methods
+    Pixel: Ready to level up your TypeScript game? 🚀
+    -> Classes and Objects
         <<navigate("lesson/lesson-4")>>
-    -> Working with Lists
+    -> Building Your First Game
         <<navigate("lesson/lesson-5")>>
-    -> Object-Oriented Basics
+    -> Advanced Types
         <<navigate("lesson/lesson-6")>>
     -> Show all lessons
         <<navigate("lessons")>>
 <<else>>
     Pixel: Let's tackle some advanced concepts! 🔥
-    -> Advanced OOP
+    -> Generics and Utility Types
         <<navigate("lesson/lesson-7")>>
-    -> Game Physics
+    -> Game Physics with Strata
         <<navigate("lesson/lesson-8")>>
-    -> AI and Behaviors
+    -> Component Architecture
         <<navigate("lesson/lesson-9")>>
     -> Show all lessons
         <<navigate("lessons")>>
@@ -91,8 +91,8 @@ title: PythonPractice
 
 title: ExploreTemplates
 ---
-Pixel: I've got tons of cool templates for you to explore! 🎨
-Pixel: Each one is fully customizable - you can make it totally your own.
+Pixel: I've got tons of cool TypeScript game templates for you! 🎨
+Pixel: Each one uses the Strata engine and is fully customizable!
 -> Show me everything! 
     <<navigate("templates")>>
 -> Filter by difficulty
@@ -119,19 +119,20 @@ Pixel: What genre sounds fun?
     <<suggestTemplates("platformer")>>
 -> Puzzle Games 🧩
     <<suggestTemplates("puzzle")>>
--> Adventure Games 🗺️
-    <<suggestTemplates("adventure")>>
--> Action Games ⚡
-    <<suggestTemplates("action")>>
--> Creative/Sandbox 🎨
-    <<suggestTemplates("sandbox")>>
+-> RPG/Adventure 🗺️
+    <<suggestTemplates("rpg")>>
+-> Space Shooters 🚀
+    <<suggestTemplates("space")>>
+-> Dungeon Crawlers 🏰
+    <<suggestTemplates("dungeon")>>
 ===
 
 title: Encouragement
 ---
 <<if $errorsCount > 3>>
     Pixel: Hey, don't worry about those errors! They're just part of learning. 💪
-    Pixel: Want me to help you fix them?
+    Pixel: TypeScript errors are actually helpful - they catch bugs early!
+    Pixel: Want me to help you understand them?
     -> Yes please! 🆘
         <<jump ErrorHelp>>
     -> I'll keep trying 💭
@@ -143,18 +144,38 @@ title: Encouragement
 
 title: ErrorHelp
 ---
-Pixel: Let me take a look at those errors... 🔍
-<<if $lastError contains "SyntaxError">>
-    Pixel: Looks like a syntax issue! Check your colons and indentation.
-<<elseif $lastError contains "NameError">>
-    Pixel: You're using a variable that hasn't been defined yet. Make sure to create it first!
-<<elseif $lastError contains "TypeError">>
-    Pixel: There's a type mismatch. Check if you're using the right data types.
+Pixel: Let me take a look at those TypeScript errors... 🔍
+<<if $lastError contains "Property">>
+    Pixel: Looks like a property access issue! Make sure the object has that property.
+<<elseif $lastError contains "type">>
+    Pixel: There's a type mismatch. TypeScript expected one type but got another!
+<<elseif $lastError contains "Cannot find">>
+    Pixel: You're using something that hasn't been defined yet. Make sure to import or declare it first!
+<<elseif $lastError contains "undefined">>
+    Pixel: Something might be null or undefined. Try using optional chaining (?.) or null checks!
 <<else>>
     Pixel: Let me show you how to debug this step by step.
 <<endif>>
 -> Show me how to fix it
     <<showErrorFix($lastError)>>
+-> Explain TypeScript errors
+    Pixel: TypeScript errors are your friend! They catch problems before your game runs.
+    Pixel: The error message tells you exactly what's wrong and where!
 -> Let me try again
     // Continue
+===
+
+title: GameSelection
+---
+Pixel: What kind of game should we build? 🎮
+-> Platformer - Jump and run! 🏃
+    <<createProject("platformer")>>
+-> RPG - Epic adventure! ⚔️
+    <<createProject("rpg")>>
+-> Space Shooter - Asteroids action! 🚀
+    <<createProject("space")>>
+-> Puzzle - Brain teasers! 🧩
+    <<createProject("puzzle")>>
+-> Dungeon Crawler - Explore! 🏰
+    <<createProject("dungeon")>>
 ===

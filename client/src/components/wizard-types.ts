@@ -1,4 +1,4 @@
-import { ComponentType } from 'react';
+import type { ComponentType } from 'react';
 
 // Main component props
 export interface UniversalWizardProps {
@@ -19,11 +19,12 @@ export interface WizardNode {
     gameType: Record<string, string>;
   };
   speaker?: string;
+  character?: string;
   multiStep?: string[];
   options?: WizardOption[];
   action?: string; // Can be 'openWYSIWYGEditor', 'openEditor', 'openLessons', 'showAssets', 'minimizePixel'
   additionalAction?: string;
-  params?: Record<string, any>;
+  params?: Record<string, unknown>;
   tags?: string[];
   conditional?: {
     condition: string;
@@ -57,11 +58,12 @@ export interface GameChoice {
 export interface WizardOption {
   text: string;
   next: string;
-  setVariable?: Record<string, any>;
+  setVariable?: Record<string, unknown>;
   updatePreview?: GameChoice;
   previewComment?: string;
   action?: string; // Option can also have an action
-  actionParams?: Record<string, any>;
+  actionParams?: Record<string, unknown>;
+  params?: Record<string, unknown>;
 }
 
 // Session Actions for tracking user progress
@@ -93,7 +95,12 @@ export interface SessionActions {
 // Session action for PixelMenu
 export interface SessionAction {
   id: string;
-  type: 'game_created' | 'lesson_completed' | 'asset_selected' | 'code_generated' | 'settings_changed';
+  type:
+    | 'game_created'
+    | 'lesson_completed'
+    | 'asset_selected'
+    | 'code_generated'
+    | 'settings_changed';
   title: string;
   description?: string;
   timestamp: Date;
@@ -104,7 +111,12 @@ export interface SessionAction {
 export type LayoutMode = 'desktop' | 'phone-portrait' | 'phone-landscape';
 
 // Embedded component types
-export type EmbeddedComponentType = 'none' | 'code-editor' | 'professional-editor' | 'block-builder' | 'pygame-runner';
+export type EmbeddedComponentType =
+  | 'none'
+  | 'code-editor'
+  | 'professional-editor'
+  | 'block-builder'
+  | 'pygame-runner';
 
 // Pixel state
 export type PixelState = 'center-stage' | 'minimized';

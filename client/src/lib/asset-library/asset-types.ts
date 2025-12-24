@@ -1,7 +1,10 @@
-// Asset Library Type Definitions
-// CC0 Asset management system for PyGame Palace
+/**
+ * Asset Library Type Definitions
+ * CC0 Asset management system for Strata TypeScript Tutor
+ */
 
-export type AssetCategory = 
+/** Categories for sprite assets */
+export type AssetCategory =
   | 'characters'
   | 'enemies'
   | 'items'
@@ -11,13 +14,11 @@ export type AssetCategory =
   | 'ui'
   | 'misc';
 
-export type AssetType = 
-  | 'sprite'
-  | 'sound'
-  | 'music'
-  | 'background';
+/** Types of assets available */
+export type AssetType = 'sprite' | 'sound' | 'music' | 'background';
 
-export type SoundCategory = 
+/** Categories for sound effects and music */
+export type SoundCategory =
   | 'jump'
   | 'collect'
   | 'hit'
@@ -25,8 +26,10 @@ export type SoundCategory =
   | 'powerup'
   | 'ui'
   | 'ambient'
-  | 'music';
+  | 'music'
+  | 'misc';
 
+/** Categories for background images */
 export type BackgroundCategory =
   | 'space'
   | 'forest'
@@ -35,7 +38,11 @@ export type BackgroundCategory =
   | 'desert'
   | 'dungeon'
   | 'abstract'
-  | 'solid';
+  | 'solid'
+  | 'misc'
+  | 'tiles'
+  | 'enemies'
+  | 'backgrounds';
 
 // Base asset interface
 export interface BaseAsset {
@@ -70,10 +77,11 @@ export interface SpriteAsset extends BaseAsset {
   defaultAnimation?: string;
 }
 
-// Sound asset interface
-export interface SoundAsset extends BaseAsset {
+/** Sound asset interface */
+export interface SoundAsset extends Omit<BaseAsset, 'description'> {
   type: 'sound' | 'music';
-  category: SoundCategory;
+  category?: SoundCategory;
+  description?: string;
   duration?: number;
   loop?: boolean;
   volume?: number;

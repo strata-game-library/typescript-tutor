@@ -1,8 +1,9 @@
 // Export all grading functionality
-export * from './types';
+
 export * from './ast';
-export * from './runtime';
 export * from './engine';
+export * from './runtime';
+export * from './types';
 
 // Legacy exports for backwards compatibility
 export interface TestResult {
@@ -21,13 +22,13 @@ export interface GradingResult {
 }
 
 export function gradeTests(testResults: TestResult[]): GradingResult {
-  const allTestsPassed = testResults.every(t => t.passed);
-  let feedback = "";
+  const allTestsPassed = testResults.every((t) => t.passed);
+  let feedback = '';
 
   if (allTestsPassed) {
-    feedback = "✅ Perfect! Your code passes all tests.";
+    feedback = '✅ Perfect! Your code passes all tests.';
   } else {
-    const failedTests = testResults.filter(t => !t.passed);
+    const failedTests = testResults.filter((t) => !t.passed);
     if (failedTests.length === 1) {
       feedback = `❌ Test failed. Expected: "${failedTests[0].expectedOutput}" but got: "${failedTests[0].actualOutput}"`;
     } else {
@@ -38,7 +39,7 @@ export function gradeTests(testResults: TestResult[]): GradingResult {
   return {
     passed: allTestsPassed,
     feedback,
-    expectedOutput: testResults[0]?.expectedOutput || "",
-    actualOutput: testResults[0]?.actualOutput || ""
+    expectedOutput: testResults[0]?.expectedOutput || '',
+    actualOutput: testResults[0]?.actualOutput || '',
   };
 }

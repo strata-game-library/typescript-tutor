@@ -976,7 +976,7 @@
     "editChoice": {
       "id": "editChoice",
       "speaker": "Pixel",
-      "text": "Sure thing! What's not quite right?"
+      "text": "Sure thing! What's not quite right?",
       "options": [
         {
           "text": "Change the character",
@@ -1137,11 +1137,11 @@
     "codeGeneration": {
       "id": "codeGeneration",
       "speaker": "Pixel",
-      "text": "Here's your complete Python code! This is real PyGame code that you can run!",
+      "text": "Here's your complete TypeScript code! This is real Strata code that you can run!",
       "followUp": "You can copy this code, modify it, and make it even more awesome!",
       "action": "generateCode",
       "actionParams": { 
-        "format": "pygame",
+        "format": "strata",
         "includeComments": true,
         "educational": true
       },
@@ -1168,8 +1168,8 @@
       "speaker": "Pixel",
       "text": "Let me explain the main parts of your game code!",
       "multiStep": [
-        "First, we import PyGame and set up the game window. This creates the screen where your game appears!",
-        "Then we load all your assets - the sprites, sounds, and backgrounds you chose. PyGame turns these into objects we can move around!",
+        "First, we import Strata and set up the game window. This creates the screen where your game appears!",
+        "Then we load all your assets - the sprites, sounds, and backgrounds you chose. Strata turns these into objects we can move around!",
         "The game loop runs 60 times per second, checking for player input, moving things, and drawing everything!",
         "Collision detection checks when things touch - like when the player hits an enemy or collects a gem!",
         "Finally, we update the display to show all the changes. And that's how your game comes to life!"
@@ -1246,7 +1246,7 @@
       "id": "unlockFullEditor",
       "speaker": "Pixel",
       "text": "🎉 You're ready for the full WYSIWYG editor! This is where you can have complete control!",
-      "followUp": "You can drag components, edit properties in real-time, add custom logic, and see your Python code generate live!",
+      "followUp": "You can drag components, edit properties in real-time, add custom logic, and see your TypeScript code generate live!",
       "action": "openWYSIWYGEditor",
       "actionParams": { 
         "preloadGame": true,
@@ -1711,7 +1711,7 @@
       "text": "Here's your code in the editor! You can modify it and see changes live!",
       "action": "openCodeEditor",
       "actionParams": { 
-        "syntax": "python",
+        "syntax": "typescript",
         "livePreview": true
       }
     },

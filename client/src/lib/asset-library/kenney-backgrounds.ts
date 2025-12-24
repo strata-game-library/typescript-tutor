@@ -1,4 +1,4 @@
-import { BackgroundAsset } from './asset-types';
+import type { BackgroundAsset } from './asset-types';
 
 export const kenneyBackgrounds: BackgroundAsset[] = [
   {
@@ -9,8 +9,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_Preview.png',
     thumbnail: '/assets/misc/1-bit_pack_Preview.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_Sample_fantasy',
@@ -20,8 +20,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_Sample_fantasy.png',
     thumbnail: '/assets/misc/1-bit_pack_Sample_fantasy.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_Sample_interior',
@@ -31,8 +31,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_Sample_interior.png',
     thumbnail: '/assets/misc/1-bit_pack_Sample_interior.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_Sample_platformer',
@@ -42,8 +42,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_Sample_platformer.png',
     thumbnail: '/assets/misc/1-bit_pack_Sample_platformer.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_Sample_urban',
@@ -53,8 +53,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_Sample_urban.png',
     thumbnail: '/assets/misc/1-bit_pack_Sample_urban.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_colored-transparent',
@@ -64,8 +64,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_colored-transparent.png',
     thumbnail: '/assets/misc/1-bit_pack_colored-transparent.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_colored-transparent_packed',
@@ -75,8 +75,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_colored-transparent_packed.png',
     thumbnail: '/assets/misc/1-bit_pack_colored-transparent_packed.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_colored',
@@ -86,8 +86,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_colored.png',
     thumbnail: '/assets/misc/1-bit_pack_colored.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_colored_packed',
@@ -97,8 +97,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_colored_packed.png',
     thumbnail: '/assets/misc/1-bit_pack_colored_packed.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_monochrome-transparent',
@@ -108,8 +108,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_monochrome-transparent.png',
     thumbnail: '/assets/misc/1-bit_pack_monochrome-transparent.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_monochrome-transparent_packed',
@@ -119,8 +119,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_monochrome-transparent_packed.png',
     thumbnail: '/assets/misc/1-bit_pack_monochrome-transparent_packed.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_monochrome',
@@ -130,8 +130,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_monochrome.png',
     thumbnail: '/assets/misc/1-bit_pack_monochrome.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_pack_monochrome_packed',
@@ -141,8 +141,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/1-bit_pack_monochrome_packed.png',
     thumbnail: '/assets/misc/1-bit_pack_monochrome_packed.png',
-    tags: ["misc", "1-bit_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', '1-bit_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_platformer_pack_Preview',
@@ -152,8 +152,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/1-bit_platformer_pack_Preview.png',
     thumbnail: '/assets/tiles/1-bit_platformer_pack_Preview.png',
-    tags: ["tiles", "1-bit_platformer_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['tiles', '1-bit_platformer_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: '1-bit_platformer_pack_Sample',
@@ -163,8 +163,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/1-bit_platformer_pack_Sample.png',
     thumbnail: '/assets/tiles/1-bit_platformer_pack_Sample.png',
-    tags: ["tiles", "1-bit_platformer_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['tiles', '1-bit_platformer_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_Preview',
@@ -174,8 +174,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_Preview.png',
     thumbnail: '/assets/misc/abstract_platformer_Preview.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_Sample',
@@ -185,8 +185,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_Sample.png',
     thumbnail: '/assets/misc/abstract_platformer_Sample.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set1_background',
@@ -196,8 +196,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set1_background.png',
     thumbnail: '/assets/misc/abstract_platformer_set1_background.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set1_hills',
@@ -207,8 +207,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set1_hills.png',
     thumbnail: '/assets/misc/abstract_platformer_set1_hills.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set2_background',
@@ -218,8 +218,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set2_background.png',
     thumbnail: '/assets/misc/abstract_platformer_set2_background.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set2_hills',
@@ -229,8 +229,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set2_hills.png',
     thumbnail: '/assets/misc/abstract_platformer_set2_hills.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set3_background',
@@ -240,8 +240,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set3_background.png',
     thumbnail: '/assets/misc/abstract_platformer_set3_background.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set3_hills',
@@ -251,8 +251,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set3_hills.png',
     thumbnail: '/assets/misc/abstract_platformer_set3_hills.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set4_background',
@@ -262,8 +262,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set4_background.png',
     thumbnail: '/assets/misc/abstract_platformer_set4_background.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'abstract_platformer_set4_hills',
@@ -273,8 +273,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_set4_hills.png',
     thumbnail: '/assets/misc/abstract_platformer_set4_hills.png',
-    tags: ["misc", "abstract_platformer"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'abstract_platformer'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'alien_ufo_pack_Preview',
@@ -284,8 +284,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_Preview.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_Preview.png',
-    tags: ["enemies", "alien_ufo_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['enemies', 'alien_ufo_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'alien_ufo_pack_Sample',
@@ -295,8 +295,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_Sample.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_Sample.png',
-    tags: ["enemies", "alien_ufo_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['enemies', 'alien_ufo_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'animal_pack_Preview',
@@ -306,8 +306,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_Preview.png',
     thumbnail: '/assets/enemies/animal_pack_Preview.png',
-    tags: ["enemies", "animal_pack"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['enemies', 'animal_pack'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'animal_pack_redux_Preview',
@@ -317,8 +317,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_Preview.png',
     thumbnail: '/assets/enemies/animal_pack_redux_Preview.png',
-    tags: ["enemies", "animal_pack_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['enemies', 'animal_pack_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'axonometric_blocks_Preview',
@@ -328,8 +328,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/axonometric_blocks_Preview.png',
     thumbnail: '/assets/misc/axonometric_blocks_Preview.png',
-    tags: ["misc", "axonometric_blocks"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'axonometric_blocks'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'axonometric_blocks_Sample_1',
@@ -339,8 +339,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/axonometric_blocks_Sample_1.png',
     thumbnail: '/assets/misc/axonometric_blocks_Sample_1.png',
-    tags: ["misc", "axonometric_blocks"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'axonometric_blocks'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'axonometric_blocks_Sample_2',
@@ -350,8 +350,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/axonometric_blocks_Sample_2.png',
     thumbnail: '/assets/misc/axonometric_blocks_Sample_2.png',
-    tags: ["misc", "axonometric_blocks"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'axonometric_blocks'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'axonometric_blocks_Sample_3',
@@ -361,8 +361,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'misc',
     path: '/assets/misc/axonometric_blocks_Sample_3.png',
     thumbnail: '/assets/misc/axonometric_blocks_Sample_3.png',
-    tags: ["misc", "axonometric_blocks"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['misc', 'axonometric_blocks'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_Preview',
@@ -372,8 +372,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_Preview.png',
     thumbnail: '/assets/backgrounds/background_elements_Preview.png',
-    tags: ["backgrounds", "background_elements"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_Sample',
@@ -383,8 +383,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_Sample.png',
     thumbnail: '/assets/backgrounds/background_elements_Sample.png',
-    tags: ["backgrounds", "background_elements"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_Preview',
@@ -394,8 +394,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_Preview.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_Preview.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_Sample',
@@ -405,8 +405,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_Sample.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_Sample.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundCastles',
@@ -416,8 +416,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundCastles.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundCastles.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundColorDesert',
@@ -427,8 +427,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundColorDesert.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundColorDesert.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundColorFall',
@@ -438,8 +438,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundColorFall.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundColorFall.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundColorForest',
@@ -449,8 +449,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundColorForest.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundColorForest.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundColorGrass',
@@ -460,8 +460,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundColorGrass.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundColorGrass.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundDesert',
@@ -471,8 +471,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundDesert.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundDesert.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundEmpty',
@@ -482,8 +482,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundEmpty.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundEmpty.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_backgroundForest',
@@ -493,8 +493,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_backgroundForest.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_backgroundForest.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_cloudLayer1',
@@ -504,8 +504,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_cloudLayer1.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_cloudLayer1.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_cloudLayer2',
@@ -515,8 +515,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_cloudLayer2.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_cloudLayer2.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_cloudLayerB1',
@@ -526,8 +526,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_cloudLayerB1.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_cloudLayerB1.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_cloudLayerB2',
@@ -537,8 +537,8 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_cloudLayerB2.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_cloudLayerB2.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
   {
     id: 'background_elements_redux_groundLayer1',
@@ -548,7 +548,7 @@ export const kenneyBackgrounds: BackgroundAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_groundLayer1.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_groundLayer1.png',
-    tags: ["backgrounds", "background_elements_redux"],
-    license: 'CC0 - Kenney.nl'
+    tags: ['backgrounds', 'background_elements_redux'],
+    license: 'CC0 - Kenney.nl',
   },
 ];

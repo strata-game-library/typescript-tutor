@@ -36,5 +36,4 @@ export interface GradingContext {
   step: any;
   input?: string;
   runner: any;
-  pyodide: any;
 }

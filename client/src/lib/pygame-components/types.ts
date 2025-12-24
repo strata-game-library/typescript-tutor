@@ -4,7 +4,7 @@ export interface PygameComponent {
   id: string;
   name: string;
   category: 'movement' | 'combat' | 'ui' | 'world';
-  
+
   // Asset slots that can be swapped
   assetSlots: {
     character?: string;
@@ -13,7 +13,7 @@ export interface PygameComponent {
     sound?: string;
     effect?: string;
   };
-  
+
   // A/B variations
   variants: {
     A: {
@@ -27,7 +27,7 @@ export interface PygameComponent {
       pythonCode: string;
     };
   };
-  
+
   // Parameters that can be tweaked
   parameters: {
     [key: string]: number | boolean | string;

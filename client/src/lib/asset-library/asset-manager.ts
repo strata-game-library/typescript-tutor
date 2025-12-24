@@ -1,23 +1,22 @@
 // Asset Manager System
 // Main system for loading, managing, and searching game assets
 
-import { 
-  GameAsset, 
-  AssetFilter, 
-  AssetSelection, 
-  AssetLoadStatus,
-  SpriteAsset,
-  SoundAsset,
-  BackgroundAsset 
-} from './asset-types';
-import { allSprites } from './asset-sprites';
-import { allSounds } from './asset-sounds';
 import { allBackgrounds } from './asset-backgrounds';
-
+import { allSounds } from './asset-sounds';
+import { allSprites } from './asset-sprites';
+import type {
+  AssetFilter,
+  AssetLoadStatus,
+  AssetSelection,
+  BackgroundAsset,
+  GameAsset,
+  SoundAsset,
+  SpriteAsset,
+} from './asset-types';
+import { kenneyBackgrounds } from './kenney-backgrounds';
+import { kenneyMusic, kenneySounds } from './kenney-sounds';
 // Import real Kenney assets
 import { kenneySprites } from './kenney-sprites';
-import { kenneyBackgrounds } from './kenney-backgrounds';
-import { kenneySounds, kenneyMusic } from './kenney-sounds';
 
 // Asset Manager Class
 export class AssetManager {
@@ -35,7 +34,7 @@ export class AssetManager {
       total: 0,
       loaded: 0,
       failed: [],
-      isLoading: false
+      isLoading: false,
     };
     this.selection = {
       player: undefined,
@@ -43,7 +42,7 @@ export class AssetManager {
       items: [],
       background: undefined,
       sounds: [],
-      music: undefined
+      music: undefined,
     };
 
     // Initialize with all available assets
@@ -53,37 +52,37 @@ export class AssetManager {
   // Initialize asset registry
   private initializeAssets() {
     // Add placeholder sprites (for fallback)
-    allSprites.forEach(sprite => {
+    allSprites.forEach((sprite) => {
       this.assets.set(sprite.id, sprite);
     });
 
     // Add placeholder sounds (for fallback)
-    allSounds.forEach(sound => {
+    allSounds.forEach((sound) => {
       this.assets.set(sound.id, sound);
     });
 
     // Add placeholder backgrounds (for fallback)
-    allBackgrounds.forEach(bg => {
+    allBackgrounds.forEach((bg) => {
       this.assets.set(bg.id, bg);
     });
 
     // Add REAL Kenney sprites
-    kenneySprites.forEach(sprite => {
+    kenneySprites.forEach((sprite) => {
       this.assets.set(sprite.id, sprite as any);
     });
 
     // Add REAL Kenney backgrounds
-    kenneyBackgrounds.forEach(bg => {
+    kenneyBackgrounds.forEach((bg) => {
       this.assets.set(bg.id, bg as any);
     });
 
     // Add REAL Kenney sounds
-    kenneySounds.forEach(sound => {
+    kenneySounds.forEach((sound) => {
       this.assets.set(sound.id, sound as any);
     });
 
     // Add REAL Kenney music
-    kenneyMusic.forEach(music => {
+    kenneyMusic.forEach((music) => {
       this.assets.set(music.id, music as any);
     });
 
@@ -106,12 +105,12 @@ export class AssetManager {
 
     // Filter by type
     if (filter.type) {
-      results = results.filter(asset => asset.type === filter.type);
+      results = results.filter((asset) => asset.type === filter.type);
     }
 
     // Filter by category
     if (filter.category) {
-      results = results.filter(asset => {
+      results = results.filter((asset) => {
         if ('category' in asset) {
           return asset.category === filter.category;
         }
@@ -121,18 +120,17 @@ export class AssetManager {
 
     // Filter by tags
     if (filter.tags && filter.tags.length > 0) {
-      results = results.filter(asset => 
-        filter.tags!.some(tag => asset.tags.includes(tag))
-      );
+      results = results.filter((asset) => filter.tags!.some((tag) => asset.tags.includes(tag)));
     }
 
     // Search by name or description
     if (filter.search) {
       const searchLower = filter.search.toLowerCase();
-      results = results.filter(asset =>
-        asset.name.toLowerCase().includes(searchLower) ||
-        asset.description.toLowerCase().includes(searchLower) ||
-        asset.tags.some(tag => tag.toLowerCase().includes(searchLower))
+      results = results.filter(
+        (asset) =>
+          asset.name.toLowerCase().includes(searchLower) ||
+          (asset.description?.toLowerCase().includes(searchLower) ?? false) ||
+          asset.tags.some((tag) => tag.toLowerCase().includes(searchLower))
       );
     }
 
@@ -228,7 +226,7 @@ export class AssetManager {
   // Preload multiple assets
   async preloadAssets(assetIds: string[]): Promise<void> {
     this.loadStatus.isLoading = true;
-    
+
     const promises = assetIds.map(async (id) => {
       const asset = this.assets.get(id);
       if (!asset) return;
@@ -310,7 +308,7 @@ export class AssetManager {
       items: [],
       background: undefined,
       sounds: [],
-      music: undefined
+      music: undefined,
     };
   }
 
@@ -322,7 +320,7 @@ export class AssetManager {
       items: [],
       background: undefined,
       sounds: [],
-      music: undefined
+      music: undefined,
     };
 
     switch (gameType) {
@@ -330,11 +328,11 @@ export class AssetManager {
         suggestions.player = this.assets.get('robot-blue') as SpriteAsset;
         suggestions.enemies = [
           this.assets.get('ghost-floating') as SpriteAsset,
-          this.assets.get('spikey-hazard') as SpriteAsset
+          this.assets.get('spikey-hazard') as SpriteAsset,
         ];
         suggestions.items = [
           this.assets.get('gem-blue') as SpriteAsset,
-          this.assets.get('key-green') as SpriteAsset
+          this.assets.get('key-green') as SpriteAsset,
         ];
         suggestions.background = this.assets.get('bg-forest') as BackgroundAsset;
         suggestions.music = this.assets.get('music-adventure') as SoundAsset;
@@ -342,12 +340,8 @@ export class AssetManager {
 
       case 'space':
         suggestions.player = this.assets.get('robot-grey') as SpriteAsset;
-        suggestions.enemies = [
-          this.assets.get('alien-flying') as SpriteAsset
-        ];
-        suggestions.items = [
-          this.assets.get('crystal-blue') as SpriteAsset
-        ];
+        suggestions.enemies = [this.assets.get('alien-flying') as SpriteAsset];
+        suggestions.items = [this.assets.get('crystal-blue') as SpriteAsset];
         suggestions.background = this.assets.get('bg-space-stars') as BackgroundAsset;
         suggestions.music = this.assets.get('music-boss') as SoundAsset;
         break;
@@ -356,11 +350,11 @@ export class AssetManager {
         suggestions.player = this.assets.get('robot-red') as SpriteAsset;
         suggestions.enemies = [
           this.assets.get('ghost-floating') as SpriteAsset,
-          this.assets.get('walker-enemy') as SpriteAsset
+          this.assets.get('walker-enemy') as SpriteAsset,
         ];
         suggestions.items = [
           this.assets.get('key-red') as SpriteAsset,
-          this.assets.get('gem-red') as SpriteAsset
+          this.assets.get('gem-red') as SpriteAsset,
         ];
         suggestions.background = this.assets.get('bg-dungeon-stone') as BackgroundAsset;
         break;

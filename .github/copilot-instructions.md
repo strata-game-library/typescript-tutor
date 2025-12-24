@@ -1,25 +1,45 @@
-# TypeScript/Node.js Copilot Instructions
+# Strata TypeScript Tutor - Copilot Instructions
 
-## Environment Setup
+## Project Overview
 
-### Package Manager: pnpm (preferred)
+This is an educational platform teaching TypeScript through interactive projects using the [@jbcom/strata](https://www.npmjs.com/package/@jbcom/strata) 3D graphics library.
+
+## Quick Reference
+
+### Package Manager: pnpm
 ```bash
-# Install pnpm if not present
-npm install -g pnpm
-
 # Install dependencies
 pnpm install
+
+# Add a new dependency
+pnpm add <package>
+
+# Add dev dependency
+pnpm add -D <package>
 ```
 
-### Node Version
-Check `.nvmrc` or `package.json` engines field for required version.
+### Linting: Biome (NOT ESLint/Prettier)
 ```bash
-nvm use  # If .nvmrc exists
+# Check for issues
+pnpm lint
+
+# Fix issues automatically
+pnpm lint:fix
+
+# Format code
+pnpm format
 ```
 
-## Development Commands
+### TypeScript
+```bash
+# Type check
+pnpm check
 
-### Testing (ALWAYS run tests)
+# Build
+pnpm build
+```
+
+### Testing
 ```bash
 # Run all tests
 pnpm test
@@ -30,205 +50,201 @@ pnpm test:watch
 # Run with coverage
 pnpm test:coverage
 
-# Run specific test file
-pnpm test -- src/__tests__/specific.test.ts
-
-# Run tests matching pattern
-pnpm test -- -t "pattern"
-```
-
-### Linting & Formatting
-```bash
-# Lint (ESLint or Biome)
-pnpm lint
-
-# Fix lint issues
-pnpm lint:fix
-
-# Format (Prettier or Biome)
-pnpm format
-
-# Check formatting
-pnpm format:check
-
-# Type checking
-pnpm typecheck
-```
-
-### Building
-```bash
-# Build for production
-pnpm build
-
-# Build in watch mode
-pnpm build:watch
-
-# Clean build artifacts
-pnpm clean
+# Run E2E tests
+pnpm test:e2e
 ```
 
 ## Code Patterns
 
-### Imports
+### TypeScript Best Practices
+
 ```typescript
-// Node built-ins first
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-
-// External packages
-import { z } from 'zod';
-
-// Internal absolute imports
-import { config } from '@/config';
-import { logger } from '@/utils/logger';
-
-// Relative imports last
-import { helper } from './helper';
-```
-
-### Type Definitions
-```typescript
-// Prefer interfaces for object shapes
-interface UserConfig {
+// Use interfaces for object types
+interface UserProgress {
   readonly id: string;
-  name: string;
-  settings?: Settings;
+  lessonId: string;
+  completed: boolean;
+  currentStep: number;
 }
 
-// Use type for unions/intersections
-type Result<T> = Success<T> | Failure;
+// Use type for unions/aliases
+type LessonStatus = 'pending' | 'in_progress' | 'completed';
 
-// Export types explicitly
-export type { UserConfig, Result };
-```
-
-### Error Handling
-```typescript
-// Custom error classes
-class ProcessingError extends Error {
-  constructor(
-    message: string,
-    public readonly code: string,
-    public readonly cause?: Error
-  ) {
-    super(message);
-    this.name = 'ProcessingError';
+// Prefer unknown over any
+function processData(data: unknown): void {
+  if (typeof data === 'string') {
+    console.log(data.toUpperCase());
   }
 }
 
-// Result pattern (alternative to exceptions)
-type Result<T, E = Error> = 
-  | { success: true; data: T }
-  | { success: false; error: E };
+// Use const assertions for literals
+const GAME_TYPES = ['platformer', 'rpg', 'puzzle'] as const;
+type GameType = (typeof GAME_TYPES)[number];
 ```
 
-### Async Patterns
+### React Component Pattern
+
 ```typescript
-// Prefer async/await over .then()
-async function fetchData(url: string): Promise<Data> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new FetchError(`HTTP ${response.status}`);
-  }
-  return response.json();
+import type { ReactNode } from 'react';
+
+interface ButtonProps {
+  variant?: 'primary' | 'secondary';
+  disabled?: boolean;
+  onClick?: () => void;
+  children: ReactNode;
 }
 
-// Use Promise.all for parallel operations
-const [users, posts] = await Promise.all([
-  fetchUsers(),
-  fetchPosts(),
-]);
+export function Button({
+  variant = 'primary',
+  disabled = false,
+  onClick,
+  children,
+}: ButtonProps) {
+  return (
+    <button
+      className={cn('btn', variant === 'primary' && 'btn-primary')}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+}
 ```
 
-### Testing Patterns
+### Async Pattern
+
+```typescript
+// Prefer async/await
+async function fetchLesson(id: string): Promise<Lesson | undefined> {
+  try {
+    const response = await fetch(`/api/lessons/${id}`);
+    if (!response.ok) {
+      return undefined;
+    }
+    return response.json();
+  } catch (error) {
+    console.error('Failed to fetch lesson:', error);
+    return undefined;
+  }
+}
+```
+
+### Testing Pattern
+
 ```typescript
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
-describe('Processor', () => {
-  let processor: Processor;
-
+describe('LessonManager', () => {
   beforeEach(() => {
-    processor = new Processor({ debug: false });
+    vi.clearAllMocks();
   });
 
-  it('should process valid input', async () => {
-    const result = await processor.process('valid');
-    expect(result.success).toBe(true);
-  });
-
-  it('should throw on invalid input', async () => {
-    await expect(processor.process('')).rejects.toThrow('Invalid');
-  });
-
-  it('should call external service', async () => {
-    const mockService = vi.fn().mockResolvedValue({ data: 'test' });
-    // ...
+  it('should load lesson by id', async () => {
+    const lesson = await lessonManager.getLesson('lesson-1');
+    expect(lesson).toBeDefined();
+    expect(lesson?.id).toBe('lesson-1');
   });
 });
 ```
 
-### React Patterns (if applicable)
-```typescript
-// Functional components with proper typing
-interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  disabled?: boolean;
-}
+## Project Structure
 
-export function Button({ label, onClick, disabled = false }: ButtonProps) {
+```
+├── client/src/
+│   ├── components/     # React components (shadcn/ui based)
+│   ├── hooks/          # Custom React hooks
+│   ├── lib/            # Utility functions
+│   ├── pages/          # Route pages
+│   └── types/          # TypeScript declarations
+├── server/             # Express.js backend
+├── shared/             # Shared schemas/types
+├── public/
+│   ├── api/static/     # lessons.json
+│   └── dialogue/       # Yarn Spinner files
+└── tests/              # Test files
+```
+
+## Key Configuration Files
+
+| File | Purpose |
+|------|---------|
+| `biome.json` | Linting and formatting |
+| `tsconfig.json` | TypeScript configuration |
+| `vite.config.ts` | Vite build configuration |
+| `vitest.config.ts` | Test configuration |
+
+## Strata Library (@jbcom/strata)
+
+The Strata library is a procedural 3D graphics library for React Three Fiber.
+
+### Key Exports
+
+```typescript
+// Main components
+import { Terrain, Water, Vegetation, Sky } from '@jbcom/strata/components';
+
+// Shader utilities
+import { noise, gradient } from '@jbcom/strata/shaders';
+
+// Helper utilities
+import { createTerrainMesh } from '@jbcom/strata/utils';
+
+// Preset configurations
+import { forestPreset, desertPreset } from '@jbcom/strata/presets';
+```
+
+### Usage in Lessons
+
+Lessons teach TypeScript through building 3D scenes:
+
+```typescript
+import { Canvas } from '@react-three/fiber';
+import { Terrain, Water } from '@jbcom/strata/components';
+
+function Scene() {
   return (
-    <button onClick={onClick} disabled={disabled}>
-      {label}
-    </button>
+    <Canvas>
+      <Terrain 
+        size={100}
+        resolution={128}
+        maxHeight={10}
+      />
+      <Water 
+        position={[0, 2, 0]}
+        size={100}
+      />
+    </Canvas>
   );
 }
-
-// Hooks
-function useDebounce<T>(value: T, delay: number): T {
-  const [debouncedValue, setDebouncedValue] = useState(value);
-  // ...
-  return debouncedValue;
-}
 ```
 
-## Common Issues
+## Common Tasks
 
-### "Cannot find module"
-```bash
-# Rebuild TypeScript
-pnpm build
+### Adding a New Lesson
 
-# Check tsconfig.json paths
-```
+1. Edit `public/api/static/lessons.json`
+2. Add lesson object with steps
+3. Ensure code examples use TypeScript
+4. Test in the editor
 
-### Type errors after package update
-```bash
-# Regenerate types
-pnpm install
-pnpm typecheck
-```
+### Updating Dialogue
 
-### ESM vs CommonJS issues
-```typescript
-// In ESM (type: "module" in package.json)
-import { something } from './module.js';  // .js extension required
+1. Edit files in `public/dialogue/pixel/`
+2. Use Yarn Spinner syntax
+3. Reference TypeScript/Strata concepts
 
-// For JSON imports
-import config from './config.json' with { type: 'json' };
-```
+### Adding Components
 
-## File Structure
-```
-src/
-├── index.ts           # Main entry point
-├── core/              # Core logic (no framework deps)
-├── components/        # React components (if applicable)
-├── hooks/             # React hooks
-├── utils/             # Utility functions
-├── types/             # Type definitions
-└── __tests__/         # Unit tests
-tests/
-├── integration/       # Integration tests
-└── e2e/              # End-to-end tests
-```
+1. Create in `client/src/components/`
+2. Use shadcn/ui patterns
+3. Add proper TypeScript types
+4. Export from index if needed
+
+## Don't Do
+
+- ❌ Use npm (use pnpm)
+- ❌ Use ESLint/Prettier (use Biome)  
+- ❌ Use `any` type (use `unknown`)
+- ❌ Skip type checking
+- ❌ Reference Python/Pygame (use TypeScript/Strata)

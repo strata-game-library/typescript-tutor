@@ -1,15 +1,19 @@
 title: FeatureSelection
 ---
 <<set $mood to "excited">>
-Pixel: Now for the fun part - let's add some cool features to make your game unique! 🎮
+Pixel: Now for the fun part - let's add some cool TypeScript-powered features! 🎮
 <<if $selectedGenre == "platformer">>
     <<jump PlatformerFeatures>>
 <<elseif $selectedGenre == "puzzle">>
     <<jump PuzzleFeatures>>
 <<elseif $selectedGenre == "racing">>
     <<jump RacingFeatures>>
-<<elseif $selectedGenre == "adventure">>
-    <<jump AdventureFeatures>>
+<<elseif $selectedGenre == "rpg">>
+    <<jump RPGFeatures>>
+<<elseif $selectedGenre == "space">>
+    <<jump SpaceFeatures>>
+<<elseif $selectedGenre == "dungeon">>
+    <<jump DungeonFeatures>>
 <<else>>
     <<jump GeneralFeatures>>
 <<endif>>
@@ -18,7 +22,7 @@ Pixel: Now for the fun part - let's add some cool features to make your game uni
 title: PlatformerFeatures
 ---
 <<set $mood to "enthusiastic">>
-Pixel: Let's power up your platformer! What feature sounds most exciting? 🏃
+Pixel: Let's power up your platformer with Strata components! 🏃
 -> Double jump! 🦘
     <<addFeature("double-jump")>>
     <<jump FeatureAdded>>
@@ -66,7 +70,7 @@ Pixel: Puzzle games need that perfect mechanic! What should we add? 🧩
 title: RacingFeatures
 ---
 <<set $mood to "speedy">>
-Pixel: Let's turbocharge your racing game! Pick your upgrade! 🏎️
+Pixel: Let's turbocharge your racing game with TypeScript! 🏎️
 -> Nitro boost! 🚀
     <<addFeature("nitro")>>
     <<jump FeatureAdded>>
@@ -87,10 +91,10 @@ Pixel: Let's turbocharge your racing game! Pick your upgrade! 🏎️
     <<jump AllFeaturesAdded>>
 ===
 
-title: AdventureFeatures
+title: RPGFeatures
 ---
 <<set $mood to "adventurous">>
-Pixel: Every adventure needs epic features! What calls to you? 🗺️
+Pixel: Every RPG needs epic features! TypeScript makes them type-safe! 🗺️
 -> Inventory system 🎒
     <<addFeature("inventory")>>
     <<jump FeatureAdded>>
@@ -103,22 +107,70 @@ Pixel: Every adventure needs epic features! What calls to you? 🗺️
 -> Combat system ⚔️
     <<addFeature("combat")>>
     <<jump FeatureAdded>>
--> Map system 🗺️
-    <<addFeature("minimap")>>
+-> Character stats 📊
+    <<addFeature("stats")>>
     <<jump FeatureAdded>>
 -> Full RPG! 🎭
-    <<addFeature("adventure-complete")>>
+    <<addFeature("rpg-complete")>>
+    <<jump AllFeaturesAdded>>
+===
+
+title: SpaceFeatures
+---
+<<set $mood to "cosmic">>
+Pixel: Space shooters need action! Let's add some firepower! 🚀
+-> Shield system 🛡️
+    <<addFeature("shields")>>
+    <<jump FeatureAdded>>
+-> Weapon upgrades 🔫
+    <<addFeature("weapons")>>
+    <<jump FeatureAdded>>
+-> Asteroid physics 🪨
+    <<addFeature("asteroids")>>
+    <<jump FeatureAdded>>
+-> Wave system 📊
+    <<addFeature("waves")>>
+    <<jump FeatureAdded>>
+-> Boss fights 👹
+    <<addFeature("bosses")>>
+    <<jump FeatureAdded>>
+-> Full space package! 🌟
+    <<addFeature("space-complete")>>
+    <<jump AllFeaturesAdded>>
+===
+
+title: DungeonFeatures
+---
+<<set $mood to "mysterious">>
+Pixel: Dungeon crawlers need depth! Let's add some exploration features! 🏰
+-> Fog of war 🌫️
+    <<addFeature("fog")>>
+    <<jump FeatureAdded>>
+-> Procedural generation 🎲
+    <<addFeature("procgen")>>
+    <<jump FeatureAdded>>
+-> Loot system 💰
+    <<addFeature("loot")>>
+    <<jump FeatureAdded>>
+-> Enemy variety 👾
+    <<addFeature("enemies")>>
+    <<jump FeatureAdded>>
+-> Traps and hazards ⚠️
+    <<addFeature("traps")>>
+    <<jump FeatureAdded>>
+-> Full dungeon package! 🏆
+    <<addFeature("dungeon-complete")>>
     <<jump AllFeaturesAdded>>
 ===
 
 title: GeneralFeatures
 ---
 <<set $mood to "creative">>
-Pixel: Let's browse all the cool features we can add! 🎨
+Pixel: Let's browse all the TypeScript-powered features! 🎨
 -> Scoring system 🏆
     <<addFeature("scoring")>>
     <<jump FeatureAdded>>
--> Save/Load game 💾
+-> Save/Load (localStorage) 💾
     <<addFeature("save-system")>>
     <<jump FeatureAdded>>
 -> Particle effects ✨
@@ -140,14 +192,14 @@ title: FeatureAdded
 <<set $mood to "proud">>
 Pixel: Feature installed! Your game just got {$lastFeature} more awesome! ✨
 <<if $skillLevel == "beginner">>
-    Pixel: I've added helpful comments explaining how this feature works!
+    Pixel: I've added TypeScript comments explaining how this feature works!
 <<endif>>
 -> Add another feature! ➕
     <<jump MoreFeatures>>
 -> Test it out! ▶️
     <<testFeature($lastFeature)>>
     <<jump TestingFeature>>
--> Show me the code 👩‍💻
+-> Show me the TypeScript 👩‍💻
     <<showFeatureCode($lastFeature)>>
     <<jump CodeExplanation>>
 -> That's enough! ✅
@@ -164,8 +216,12 @@ Pixel: More features = more fun! What else should we add? 🎮
     <<jump PuzzleFeatures>>
 <<elseif $selectedGenre == "racing">>
     <<jump RacingFeatures>>
-<<elseif $selectedGenre == "adventure">>
-    <<jump AdventureFeatures>>
+<<elseif $selectedGenre == "rpg">>
+    <<jump RPGFeatures>>
+<<elseif $selectedGenre == "space">>
+    <<jump SpaceFeatures>>
+<<elseif $selectedGenre == "dungeon">>
+    <<jump DungeonFeatures>>
 <<else>>
     <<jump GeneralFeatures>>
 <<endif>>
@@ -188,7 +244,7 @@ Pixel: It works perfectly! Try it yourself - {$featureTestInstructions}
 title: CustomizeFeature
 ---
 <<set $mood to "technical">>
-Pixel: Let's tweak the {$lastFeature} settings! What do you want to adjust?
+Pixel: Let's tweak the {$lastFeature} settings! TypeScript makes this type-safe!
 <<if $lastFeature == "double-jump">>
     -> Jump height 📏
         <<adjustSetting("jump-height")>>
@@ -226,14 +282,14 @@ Pixel: Perfect! The {$lastFeature} is now customized exactly how you want it!
 title: AllFeaturesAdded
 ---
 <<set $mood to "celebrating">>
-Pixel: WOW! Full feature pack activated! Your game is LOADED with awesome! 🎉
+Pixel: WOW! Full feature pack activated! Your TypeScript game is LOADED! 🎉
 Pixel: You've got:
 <<listAddedFeatures()>>
 Pixel: This is going to be EPIC!
 -> Let's test everything! ▶️
     <<runGame()>>
     <<jump GameTesting>>
--> Show me all the code 📝
+-> Show me all the TypeScript 📝
     <<showAllCode()>>
 -> I'm ready to polish! ✨
     <<jump FeaturesComplete>>
@@ -242,12 +298,13 @@ Pixel: This is going to be EPIC!
 title: CodeExplanation
 ---
 <<set $mood to "teaching">>
-Pixel: Here's how the {$lastFeature} code works:
+Pixel: Here's how the {$lastFeature} TypeScript code works:
 <<explainFeature($lastFeature)>>
 <<if $skillLevel == "beginner">>
-    Pixel: Don't worry if it looks complex - I'll help you understand each part!
+    Pixel: Notice how TypeScript catches errors before your game runs!
+    Pixel: The types make sure you're using the right data everywhere!
 <<elseif $skillLevel == "pro">>
-    Pixel: Feel free to modify this however you like - the architecture is flexible!
+    Pixel: Feel free to modify this - the architecture is flexible and type-safe!
 <<endif>>
 -> I get it! 💡
     <<jump FeatureAdded>>
@@ -263,6 +320,7 @@ title: DetailedCodeExplanation
 <<set $mood to "patient">>
 Pixel: Let me break it down step by step:
 <<stepByStepExplanation($lastFeature)>>
+Pixel: TypeScript tip: Hover over any variable in the editor to see its type!
 Pixel: Makes sense? Remember, you learn by doing!
 -> Crystal clear! 💎
     <<jump FeatureAdded>>
@@ -285,7 +343,8 @@ Pixel: Your game is running! How does it feel? 🎮
 title: Debugging
 ---
 <<set $mood to "helpful">>
-Pixel: No worries! Debugging is part of the process! What's happening?
+Pixel: No worries! Debugging is part of programming! What's happening?
+Pixel: TypeScript usually catches issues at compile time, so let's check!
 -> Game won't start ❌
     <<debugIssue("startup")>>
     <<jump IssueFixed>>
@@ -295,8 +354,43 @@ Pixel: No worries! Debugging is part of the process! What's happening?
 -> Graphics are glitchy 🖼️
     <<debugIssue("graphics")>>
     <<jump IssueFixed>>
+-> TypeScript error in console
+    <<jump TypeScriptErrorHelp>>
 -> Something else... 
     <<jump CustomDebug>>
+===
+
+title: TypeScriptErrorHelp
+---
+<<set $mood to "teaching">>
+Pixel: TypeScript errors look scary but they're actually super helpful! 🔍
+Pixel: They tell you exactly what's wrong BEFORE your game runs!
+Pixel: Let me check your code...
+<<checkTypeErrors()>>
+<<if $typeError is defined>>
+    Pixel: Found it! {$typeError}
+    Pixel: This means: {$typeErrorExplanation}
+    -> Fix it for me
+        <<autoFix()>>
+        Pixel: Fixed! TypeScript is happy now!
+    -> Show me how to fix it
+        <<showTypeFix($typeError)>>
+<<else>>
+    Pixel: No TypeScript errors found! The issue might be in your game logic.
+    <<jump RuntimeDebug>>
+<<endif>>
+===
+
+title: RuntimeDebug
+---
+<<set $mood to "investigative">>
+Pixel: If TypeScript compiled successfully, it's a runtime issue!
+Pixel: Let's add some console.log statements to track what's happening...
+<<addDebugLogs()>>
+-> Found it! 💡
+    <<jump IssueFixed>>
+-> Still confused...
+    <<jump ManualDebug>>
 ===
 
 title: IssueFixed
@@ -327,9 +421,9 @@ title: FeaturesComplete
 ---
 <<set $mood to "proud">>
 Pixel: Your game is looking INCREDIBLE, {$playerName}! 🌟
-Pixel: You've successfully added {$featureCount} features!
+Pixel: You've successfully added {$featureCount} TypeScript-powered features!
 <<if $skillLevel == "beginner">>
-    Pixel: And you did it all yourself! You're learning so fast!
+    Pixel: And you did it all yourself! You're learning TypeScript so fast!
 <<endif>>
 -> Polish and finalize! ✨
     <<jump ../export-share/ExportOptions>>
@@ -373,7 +467,7 @@ title: IssueAnalysis
 ---
 <<set $mood to "solving">>
 Pixel: Based on your description, I think the problem is: {$analyzedIssue}
-Pixel: Here's the fix:
+Pixel: Here's the TypeScript fix:
 <<showFix($analyzedIssue)>>
 -> That worked! ✅
     <<jump FeaturesComplete>>
@@ -385,8 +479,9 @@ title: ManualDebug
 ---
 <<set $mood to "determined">>
 Pixel: Let's debug this together step by step!
-Pixel: I'll add some debug output to help us find the issue...
+Pixel: I'll add some console.log output to help us find the issue...
 <<addDebugMode()>>
+Pixel: Check the browser console (F12) to see what's happening!
 -> Found it! 💡
     <<jump FeaturesComplete>>
 ===

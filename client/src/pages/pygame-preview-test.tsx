@@ -1,27 +1,27 @@
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  FlaskConical, 
-  Gamepad2, 
-  Code, 
-  Play, 
+/**
+ * PyGame Preview Test Page
+ * Note: This is legacy code - the platform is transitioning to TypeScript/Strata
+ */
+
+import {
   AlertCircle,
   CheckCircle,
-  Sparkles
+  Code,
+  FlaskConical,
+  Gamepad2,
+  Play,
+  Sparkles,
 } from 'lucide-react';
-import WizardWithPreview from '@/components/wizard-with-preview';
-import PygameLivePreview, { GameChoice } from '@/components/pygame-live-preview';
+import { useEffect, useState } from 'react';
 import { generateTestCode } from '@/components/pygame-code-generator';
-
-declare global {
-  interface Window {
-    loadPyodide?: () => Promise<any>;
-  }
-}
+import PygameLivePreview, { type GameChoice } from '@/components/pygame-live-preview';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import WizardWithPreview from '@/components/wizard-with-preview';
+import '@/types/pyodide.d';
 
 export default function PygamePreviewTest() {
   const [pyodide, setPyodide] = useState<any>(null);
@@ -35,26 +35,26 @@ export default function PygamePreviewTest() {
       type: 'character',
       id: 'robot',
       name: 'Robot Hero',
-      properties: { speed: 5, jumpHeight: 12 }
+      properties: { speed: 5, jumpHeight: 12 },
     },
     {
       type: 'enemy',
       id: 'guard',
       name: 'Patrol Guard',
       behavior: 'patrol',
-      properties: { speed: 3 }
+      properties: { speed: 3 },
     },
     {
       type: 'collectible',
       id: 'coin',
       name: 'Gold Coin',
-      properties: { value: 10 }
+      properties: { value: 10 },
     },
     {
       type: 'background',
       id: 'sky',
-      name: 'Sky Kingdom'
-    }
+      name: 'Sky Kingdom',
+    },
   ];
 
   // Load Pyodide
@@ -64,10 +64,10 @@ export default function PygamePreviewTest() {
 
   const loadPyodide = async () => {
     if (pyodide) return;
-    
+
     setPyodideLoading(true);
     setPyodideError(null);
-    
+
     try {
       // Add Pyodide script if not already loaded
       if (!document.getElementById('pyodide-script')) {
@@ -76,7 +76,7 @@ export default function PygamePreviewTest() {
         script.src = 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js';
         script.async = true;
         document.head.appendChild(script);
-        
+
         await new Promise((resolve, reject) => {
           script.onload = resolve;
           script.onerror = reject;
@@ -87,12 +87,12 @@ export default function PygamePreviewTest() {
       if (window.loadPyodide) {
         console.log('Loading Pyodide...');
         const pyodideInstance = await window.loadPyodide({
-          indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/'
+          indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/',
         });
-        
+
         // Setup pygame environment
         await setupPygameEnvironment(pyodideInstance);
-        
+
         setPyodide(pyodideInstance);
         console.log('Pyodide loaded successfully!');
       } else {
@@ -196,7 +196,7 @@ for key in ['QUIT', 'KEYDOWN', 'KEYUP', 'K_LEFT', 'K_RIGHT', 'K_UP', 'K_DOWN', '
 
 print("Pygame environment setup complete")
 `;
-      
+
       await pyodideInstance.runPythonAsync(pygameCode);
       console.log('Pygame environment initialized in Pyodide');
     } catch (error) {
@@ -255,12 +255,7 @@ print("Pygame environment setup complete")
             <AlertCircle className="h-4 w-4" />
             <AlertDescription>
               {pyodideError}
-              <Button 
-                size="sm" 
-                variant="outline" 
-                onClick={loadPyodide}
-                className="ml-4"
-              >
+              <Button size="sm" variant="outline" onClick={loadPyodide} className="ml-4">
                 Retry
               </Button>
             </AlertDescription>
@@ -327,9 +322,9 @@ print("Pygame environment setup complete")
                       currentStep="test"
                       pyodide={pyodide}
                       pixelComments={[
-                        "This is a test preview!",
-                        "Try the controls below!",
-                        "Adjust the parameters!"
+                        'This is a test preview!',
+                        'Try the controls below!',
+                        'Adjust the parameters!',
                       ]}
                       onInteraction={(action, details) => {
                         console.log('Test interaction:', action, details);
@@ -339,7 +334,8 @@ print("Pygame environment setup complete")
                     <Alert>
                       <AlertCircle className="h-4 w-4" />
                       <AlertDescription>
-                        Pyodide is required for the preview. {pyodideLoading ? 'Loading...' : 'Please wait or refresh.'}
+                        Pyodide is required for the preview.{' '}
+                        {pyodideLoading ? 'Loading...' : 'Please wait or refresh.'}
                       </AlertDescription>
                     </Alert>
                   )}
@@ -394,7 +390,7 @@ print("Pygame environment setup complete")
                       'Live pixel comments',
                       'Error handling with fallbacks',
                       'Code generation from choices',
-                      'Before/after comparisons'
+                      'Before/after comparisons',
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <CheckCircle className="h-4 w-4 text-green-600" />

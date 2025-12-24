@@ -1,69 +1,73 @@
 [
   {
     "id": "lesson-1",
-    "title": "Python Basics",
-    "description": "Variables, data types, print, and input",
+    "title": "TypeScript Basics",
+    "description": "Variables, types, and your first game object",
     "order": 1,
-    "intro": "🐍 Welcome to Python programming! In this lesson, you'll learn the fundamental building blocks: variables, data types, and how to interact with users. These are the core concepts that every programmer needs to master.",
+    "intro": "🎮 Welcome to TypeScript! In this lesson, you'll learn the fundamental building blocks: variables, types, and how to create game objects. TypeScript adds superpowers to JavaScript with type safety!",
     "learningObjectives": [
-      "Create and use variables to store different types of data",
+      "Understand what TypeScript is and why it's awesome for games",
+      "Create and use variables with type annotations",
       "Work with strings, numbers, and booleans",
-      "Use print() to display messages and information",
-      "Get user input with input() function",
-      "Convert between different data types"
+      "Use console.log() to debug and display information",
+      "Create your first game object"
     ],
-    "goalDescription": "Master the basics of Python by creating an interactive program that collects and displays user information!",
-    "previewCode": "name = input('Enter your name: ')\\nage = int(input('Enter your age: '))\\nprint(f'Hello {name}, you are {age} years old!')",
+    "goalDescription": "Master the basics of TypeScript by creating a simple game character with stats!",
+    "previewCode": "interface Character {\n  name: string;\n  health: number;\n  level: number;\n}\n\nconst hero: Character = {\n  name: 'Adventurer',\n  health: 100,\n  level: 1\n};\n\nconsole.log(`${hero.name} - Level ${hero.level}`);",
     "content": {
-      "introduction": "Python is a powerful and beginner-friendly programming language. Let's start with the fundamentals that every Python programmer needs to know!",
+      "introduction": "TypeScript is JavaScript with superpowers! It adds types to your code, which means fewer bugs and better autocomplete. Let's start building games!",
       "steps": [
         {
           "id": "step-1",
-          "title": "Your First Python Message",
-          "description": "Let's start by displaying messages on screen. The print() function is used to show text output. Write any friendly greeting messages!",
-          "initialCode": "# Use the print() function to display at least 2 messages\\n# You can write any greeting or welcome messages you like!\\n",
-          "solution": "print('Hello, World!')\\nprint('Welcome to Python programming!')",
-          "hints": ["Use print() function to display text", "Put text inside quotes", "You can write any messages you want", "Try using at least 2 print statements"],
+          "title": "Your First TypeScript Variables",
+          "description": "Let's create some variables with types. In TypeScript, we can tell the compiler exactly what kind of data each variable holds. Create a player name (string), health (number), and isAlive (boolean).",
+          "initialCode": "// Create a variable called playerName that holds your hero's name\n// Create a variable called health that holds a number\n// Create a variable called isAlive that's true or false\n\n// Then log them all to see the output!\n",
+          "solution": "const playerName: string = 'Hero';\nconst health: number = 100;\nconst isAlive: boolean = true;\n\nconsole.log(`Player: ${playerName}`);\nconsole.log(`Health: ${health}`);\nconsole.log(`Alive: ${isAlive}`);",
+          "hints": [
+            "Use const to create variables that won't change",
+            "Add : string, : number, or : boolean after the variable name",
+            "Strings use quotes like 'text' or \"text\"",
+            "Numbers don't need quotes: 100, 42.5",
+            "Booleans are just true or false (no quotes!)"
+          ],
           "tests": [
             {
               "mode": "rules",
-              "expectedOutput": "Any greeting messages (this is just for reference)",
-              "description": "Should use print() function to display messages",
+              "expectedOutput": "Any player information (reference only)",
+              "description": "Should create typed variables and log them",
               "astRules": {
-                "requiredFunctions": ["print"],
                 "requiredConstructs": [
-                  { "type": "function_call", "name": "print", "minCount": 2 },
-                  { "type": "string_literal", "minCount": 2 }
+                  { "type": "variable_declaration", "minCount": 3 },
+                  { "type": "type_annotation", "minCount": 1 },
+                  { "type": "function_call", "name": "console.log", "minCount": 1 }
                 ]
-              },
-              "runtimeRules": {
-                "outputContains": []
               }
             }
           ]
         },
         {
-          "id": "step-2", 
-          "title": "Creating Variables",
-          "description": "Variables store data that your program can use later. Create variables to store different types of information, then display them!",
-          "initialCode": "# Create at least 3 variables with different data types:\\n# - A string (text in quotes)\\n# - A number (integer or decimal)\\n# - A boolean (True or False)\\n# Then print each variable to see their values\\n",
-          "solution": "name = 'Python'\\nversion = 3.12\\nis_fun = True\\n\\nprint(name)\\nprint(version)\\nprint(is_fun)",
-          "hints": ["Variables store values using =", "Strings use quotes like 'text' or \"text\"", "Numbers don't need quotes", "Boolean values are True or False", "Use print() to display variables"],
+          "id": "step-2",
+          "title": "Creating a Game Object",
+          "description": "Now let's combine our variables into a game object using an interface. Interfaces define the 'shape' of an object - what properties it has and their types.",
+          "initialCode": "// Define an interface for a Player\n// It should have: name (string), health (number), level (number)\n\n// Then create a player object that matches your interface\n\n// Finally, log the player's stats!\n",
+          "solution": "interface Player {\n  name: string;\n  health: number;\n  level: number;\n}\n\nconst player: Player = {\n  name: 'Adventurer',\n  health: 100,\n  level: 1\n};\n\nconsole.log(`${player.name} - Level ${player.level}, HP: ${player.health}`);",
+          "hints": [
+            "Interfaces use the 'interface' keyword",
+            "Define properties inside curly braces: { name: string; }",
+            "Create an object with const player: Player = { ... }",
+            "Access properties with dot notation: player.name"
+          ],
           "tests": [
             {
               "mode": "rules",
-              "expectedOutput": "Any variable values (this is just for reference)",
-              "description": "Should create variables of different types and print them",
+              "expectedOutput": "Player stats (reference only)",
+              "description": "Should define an interface and create an object",
               "astRules": {
-                "requiredFunctions": ["print"],
                 "requiredConstructs": [
-                  { "type": "variable_assignment", "minCount": 3 },
-                  { "type": "function_call", "name": "print", "minCount": 3 },
-                  { "type": "string_literal", "minCount": 1 }
+                  { "type": "interface_declaration", "minCount": 1 },
+                  { "type": "object_literal", "minCount": 1 },
+                  { "type": "function_call", "name": "console.log", "minCount": 1 }
                 ]
-              },
-              "runtimeRules": {
-                "outputContains": []
               }
             }
           ]
@@ -72,48 +76,75 @@
     },
     "prerequisites": [],
     "difficulty": "Beginner",
-    "estimatedTime": 25
+    "estimatedTime": 20
   },
   {
     "id": "lesson-2",
-    "title": "Control Flow",
-    "description": "if/else statements and comparison operators",
+    "title": "Functions & Game Logic",
+    "description": "Create reusable game functions with typed parameters",
     "order": 2,
-    "intro": "🔀 Time to make your programs smart! Control flow lets your code make decisions and respond differently based on conditions. You'll learn if/else statements and comparison operators.",
+    "intro": "🎯 Functions are the building blocks of game logic! In this lesson, you'll learn to create typed functions that power your game mechanics. From damage calculations to movement - it all starts here!",
     "learningObjectives": [
-      "Use if statements to make decisions in code",
-      "Compare values with ==, !=, <, >, <=, >=",
-      "Combine conditions with and, or, not",
-      "Handle multiple conditions with elif",
-      "Create programs that respond to user input"
+      "Create functions with typed parameters and return types",
+      "Understand void vs returning functions",
+      "Build reusable game mechanics",
+      "Use arrow functions for concise code",
+      "Handle optional parameters"
     ],
-    "goalDescription": "Build intelligent programs that can make decisions and respond differently based on user input and conditions!",
-    "previewCode": "age = int(input('Enter age: '))\\nif age >= 18:\\n    print('You can vote!')\\nelse:\\n    print('Not old enough to vote yet')",
+    "goalDescription": "Build a damage calculator and healing system for your game!",
+    "previewCode": "function calculateDamage(baseDamage: number, critMultiplier: number = 1): number {\n  return Math.floor(baseDamage * critMultiplier);\n}\n\nconst damage = calculateDamage(25, 2);\nconsole.log(`Critical hit! ${damage} damage!`);",
     "content": {
-      "introduction": "Control flow allows your programs to make decisions. Instead of running the same code every time, you can create programs that respond intelligently to different situations!",
+      "introduction": "Functions let you write code once and use it anywhere. TypeScript makes functions even better by ensuring you pass the right types of arguments!",
       "steps": [
         {
           "id": "step-1",
-          "title": "Your First if Statement",
-          "description": "Use an if statement to check a condition and only run code when the condition is true.",
-          "initialCode": "# Create a variable called score and set it to 85\\n# Use an if statement to check if score is greater than 80\\n# If true, print 'Great job!'\\n",
-          "solution": "score = 85\\nif score > 80:\\n    print('Great job!')",
-          "hints": ["Use if followed by a condition and colon :", "Indent the code inside the if block", "Use > to check if one number is greater than another"],
+          "title": "Your First Typed Function",
+          "description": "Create a function that calculates damage. It should take a base damage number and return the final damage. Add a critical hit multiplier as an optional parameter!",
+          "initialCode": "// Create a function called calculateDamage\n// Parameters: baseDamage (number), critMultiplier (number, optional, default 1)\n// Return type: number\n// It should multiply baseDamage by critMultiplier\n\n// Test it with a normal hit and a critical hit!\n",
+          "solution": "function calculateDamage(baseDamage: number, critMultiplier: number = 1): number {\n  return Math.floor(baseDamage * critMultiplier);\n}\n\n// Normal hit\nconsole.log(`Normal hit: ${calculateDamage(25)} damage`);\n\n// Critical hit!\nconsole.log(`Critical hit: ${calculateDamage(25, 2)} damage`);",
+          "hints": [
+            "Function syntax: function name(param: type): returnType { }",
+            "Optional params with defaults: param: type = defaultValue",
+            "Use Math.floor() to round down to whole numbers",
+            "The return type comes after the parentheses: ): number"
+          ],
           "tests": [
             {
               "mode": "rules",
-              "expectedOutput": "Great job!",
-              "description": "Should print congratulations for high score",
+              "expectedOutput": "Damage values",
+              "description": "Should create a damage calculation function",
               "astRules": {
-                "requiredFunctions": ["print"],
                 "requiredConstructs": [
-                  { "type": "variable_assignment", "minCount": 1 },
-                  { "type": "function_call", "name": "print", "minCount": 1 },
-                  { "type": "string_literal", "minCount": 1 }
+                  { "type": "function_declaration", "minCount": 1 },
+                  { "type": "parameter", "minCount": 1 },
+                  { "type": "return_statement", "minCount": 1 }
                 ]
-              },
-              "runtimeRules": {
-                "outputContains": ["Great job!"]
+              }
+            }
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "Arrow Functions & Game Events",
+          "description": "Arrow functions are a concise way to write functions. They're perfect for game callbacks like 'onCollision' or 'onClick'. Create an arrow function for handling player attacks!",
+          "initialCode": "// Create an interface for a Player with name, health, and attack properties\n\n// Create an arrow function called attack that:\n// - Takes an attacker (Player) and defender (Player)\n// - Reduces defender's health by attacker's attack\n// - Logs the attack action\n\n// Test with two characters!\n",
+          "solution": "interface Player {\n  name: string;\n  health: number;\n  attack: number;\n}\n\nconst performAttack = (attacker: Player, defender: Player): void => {\n  defender.health -= attacker.attack;\n  console.log(`${attacker.name} attacks ${defender.name} for ${attacker.attack} damage!`);\n  console.log(`${defender.name} has ${defender.health} HP remaining`);\n};\n\nconst hero: Player = { name: 'Hero', health: 100, attack: 15 };\nconst goblin: Player = { name: 'Goblin', health: 50, attack: 8 };\n\nperformAttack(hero, goblin);",
+          "hints": [
+            "Arrow function syntax: const name = (params): returnType => { }",
+            "void means the function doesn't return anything",
+            "Use -= to subtract from a value: health -= damage",
+            "Template literals use backticks: `${variable}`"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Attack action",
+              "description": "Should create an arrow function for attacks",
+              "astRules": {
+                "requiredConstructs": [
+                  { "type": "arrow_function", "minCount": 1 },
+                  { "type": "interface_declaration", "minCount": 1 }
+                ]
               }
             }
           ]
@@ -122,6 +153,232 @@
     },
     "prerequisites": ["lesson-1"],
     "difficulty": "Beginner",
+    "estimatedTime": 25
+  },
+  {
+    "id": "lesson-3",
+    "title": "Arrays & Game Collections",
+    "description": "Manage inventories, enemies, and more with typed arrays",
+    "order": 3,
+    "intro": "📦 Games need collections! Inventory items, enemy lists, high scores - arrays make it all possible. Learn to create and manipulate typed arrays for powerful game features!",
+    "learningObjectives": [
+      "Create typed arrays with different data types",
+      "Add, remove, and find items in arrays",
+      "Use array methods like map, filter, and find",
+      "Build an inventory system",
+      "Iterate through arrays with forEach and for...of"
+    ],
+    "goalDescription": "Create a complete inventory system with items and searching!",
+    "previewCode": "interface Item {\n  name: string;\n  type: 'weapon' | 'potion' | 'armor';\n  value: number;\n}\n\nconst inventory: Item[] = [\n  { name: 'Iron Sword', type: 'weapon', value: 50 },\n  { name: 'Health Potion', type: 'potion', value: 25 }\n];\n\nconst weapons = inventory.filter(item => item.type === 'weapon');",
+    "content": {
+      "introduction": "Arrays in TypeScript are typed collections. This means TypeScript knows exactly what's inside your array and can help you avoid bugs!",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "Creating a Typed Inventory",
+          "description": "Create an Item interface and an inventory array. Add at least 3 items of different types!",
+          "initialCode": "// Create an Item interface with: name (string), type (string), value (number)\n\n// Create an inventory array of Item[]\n// Add at least 3 different items\n\n// Log the inventory count\n",
+          "solution": "interface Item {\n  name: string;\n  type: 'weapon' | 'potion' | 'armor' | 'key';\n  value: number;\n}\n\nconst inventory: Item[] = [\n  { name: 'Iron Sword', type: 'weapon', value: 50 },\n  { name: 'Health Potion', type: 'potion', value: 25 },\n  { name: 'Steel Armor', type: 'armor', value: 100 },\n  { name: 'Dungeon Key', type: 'key', value: 10 }\n];\n\nconsole.log(`Inventory has ${inventory.length} items`);\ninventory.forEach(item => console.log(`- ${item.name} (${item.value} gold)`));",
+          "hints": [
+            "Array type syntax: Item[] or Array<Item>",
+            "Union types for specific values: type: 'a' | 'b' | 'c'",
+            "Use .length to get array size",
+            "forEach loops through every item"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Inventory listing",
+              "description": "Should create a typed inventory array",
+              "astRules": {
+                "requiredConstructs": [
+                  { "type": "interface_declaration", "minCount": 1 },
+                  { "type": "array_expression", "minCount": 1 }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "Searching and Filtering",
+          "description": "Use array methods to find and filter items. Find all potions, get the most valuable item, and check if a specific item exists!",
+          "initialCode": "interface Item {\n  name: string;\n  type: 'weapon' | 'potion' | 'armor';\n  value: number;\n}\n\nconst inventory: Item[] = [\n  { name: 'Iron Sword', type: 'weapon', value: 50 },\n  { name: 'Health Potion', type: 'potion', value: 25 },\n  { name: 'Mana Potion', type: 'potion', value: 30 },\n  { name: 'Diamond Armor', type: 'armor', value: 200 }\n];\n\n// Find all potions using filter()\n\n// Find the most valuable item using reduce() or sort()\n\n// Check if we have any armor using some()\n",
+          "solution": "interface Item {\n  name: string;\n  type: 'weapon' | 'potion' | 'armor';\n  value: number;\n}\n\nconst inventory: Item[] = [\n  { name: 'Iron Sword', type: 'weapon', value: 50 },\n  { name: 'Health Potion', type: 'potion', value: 25 },\n  { name: 'Mana Potion', type: 'potion', value: 30 },\n  { name: 'Diamond Armor', type: 'armor', value: 200 }\n];\n\n// Find all potions\nconst potions = inventory.filter(item => item.type === 'potion');\nconsole.log('Potions:', potions.map(p => p.name).join(', '));\n\n// Find most valuable item\nconst mostValuable = inventory.reduce((best, item) => \n  item.value > best.value ? item : best\n);\nconsole.log(`Most valuable: ${mostValuable.name} (${mostValuable.value} gold)`);\n\n// Check for armor\nconst hasArmor = inventory.some(item => item.type === 'armor');\nconsole.log(`Has armor: ${hasArmor}`);",
+          "hints": [
+            "filter() returns items that match a condition",
+            "reduce() combines array into single value",
+            "some() returns true if ANY item matches",
+            "map() transforms each item"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Filtered and searched items",
+              "description": "Should use array methods effectively",
+              "astRules": {
+                "requiredConstructs": [{ "type": "method_call", "name": "filter", "minCount": 1 }]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prerequisites": ["lesson-1", "lesson-2"],
+    "difficulty": "Beginner",
     "estimatedTime": 30
+  },
+  {
+    "id": "lesson-4",
+    "title": "Classes & Game Entities",
+    "description": "Build reusable game objects with TypeScript classes",
+    "order": 4,
+    "intro": "🏗️ Classes are blueprints for game objects! Create players, enemies, and items that know how to behave. Object-oriented programming makes game development organized and powerful!",
+    "learningObjectives": [
+      "Create classes with typed properties and methods",
+      "Use constructors to initialize objects",
+      "Understand public, private, and readonly modifiers",
+      "Implement inheritance with extends",
+      "Build a complete game entity system"
+    ],
+    "goalDescription": "Create a Player class and Enemy class with combat abilities!",
+    "previewCode": "class Player {\n  constructor(\n    public name: string,\n    public health: number = 100,\n    private _level: number = 1\n  ) {}\n\n  get level() { return this._level; }\n  \n  attack(target: Enemy): void {\n    const damage = this._level * 10;\n    target.takeDamage(damage);\n  }\n}",
+    "content": {
+      "introduction": "Classes combine data and behavior into reusable blueprints. Every player, enemy, and item in your game can be a class instance!",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "Your First Game Class",
+          "description": "Create a Character class with name, health, and methods for taking damage and healing. Use access modifiers to protect important data!",
+          "initialCode": "// Create a Character class with:\n// - name (public string)\n// - health (public number, default 100)\n// - maxHealth (readonly number)\n// - takeDamage(amount: number) method\n// - heal(amount: number) method\n// - isAlive getter that returns health > 0\n\n// Create a character and test the methods!\n",
+          "solution": "class Character {\n  public name: string;\n  public health: number;\n  public readonly maxHealth: number;\n\n  constructor(name: string, maxHealth: number = 100) {\n    this.name = name;\n    this.maxHealth = maxHealth;\n    this.health = maxHealth;\n  }\n\n  takeDamage(amount: number): void {\n    this.health = Math.max(0, this.health - amount);\n    console.log(`${this.name} takes ${amount} damage! HP: ${this.health}/${this.maxHealth}`);\n  }\n\n  heal(amount: number): void {\n    this.health = Math.min(this.maxHealth, this.health + amount);\n    console.log(`${this.name} heals ${amount}! HP: ${this.health}/${this.maxHealth}`);\n  }\n\n  get isAlive(): boolean {\n    return this.health > 0;\n  }\n}\n\nconst hero = new Character('Adventurer', 100);\nhero.takeDamage(30);\nhero.heal(15);\nconsole.log(`Is alive: ${hero.isAlive}`);",
+          "hints": [
+            "Use 'public' for accessible properties",
+            "Use 'readonly' for values that can't change",
+            "Math.max(0, value) prevents going below 0",
+            "Getters use 'get' keyword: get propName() { }"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Character actions",
+              "description": "Should create a Character class with methods",
+              "astRules": {
+                "requiredConstructs": [
+                  { "type": "class_declaration", "minCount": 1 },
+                  { "type": "constructor", "minCount": 1 },
+                  { "type": "method_definition", "minCount": 2 }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "Inheritance & Specialized Classes",
+          "description": "Create Player and Enemy classes that extend Character. Add unique abilities to each!",
+          "initialCode": "// First, the base Character class is provided:\nclass Character {\n  constructor(\n    public name: string,\n    public health: number = 100,\n    public attack: number = 10\n  ) {}\n\n  takeDamage(amount: number): void {\n    this.health = Math.max(0, this.health - amount);\n  }\n}\n\n// Create a Player class that extends Character\n// Add: level property, levelUp() method, specialAttack() method\n\n// Create an Enemy class that extends Character  \n// Add: loot property, dropLoot() method\n\n// Test combat between player and enemy!\n",
+          "solution": "class Character {\n  constructor(\n    public name: string,\n    public health: number = 100,\n    public attack: number = 10\n  ) {}\n\n  takeDamage(amount: number): void {\n    this.health = Math.max(0, this.health - amount);\n    console.log(`${this.name} takes ${amount} damage! HP: ${this.health}`);\n  }\n}\n\nclass Player extends Character {\n  public level: number = 1;\n  public experience: number = 0;\n\n  levelUp(): void {\n    this.level++;\n    this.attack += 5;\n    this.health += 20;\n    console.log(`${this.name} leveled up to ${this.level}!`);\n  }\n\n  specialAttack(target: Character): void {\n    const damage = this.attack * 2;\n    console.log(`${this.name} uses SPECIAL ATTACK!`);\n    target.takeDamage(damage);\n  }\n}\n\nclass Enemy extends Character {\n  constructor(\n    name: string,\n    health: number,\n    attack: number,\n    public loot: string\n  ) {\n    super(name, health, attack);\n  }\n\n  dropLoot(): string {\n    console.log(`${this.name} dropped: ${this.loot}`);\n    return this.loot;\n  }\n}\n\nconst hero = new Player('Adventurer');\nconst goblin = new Enemy('Goblin', 50, 8, 'Gold Coin');\n\nhero.specialAttack(goblin);\nif (goblin.health <= 0) {\n  goblin.dropLoot();\n  hero.levelUp();\n}",
+          "hints": [
+            "Use 'extends' to inherit from a class",
+            "Call super() in constructor to run parent constructor",
+            "Override methods to change behavior",
+            "Child classes can access parent's public/protected members"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Combat and leveling",
+              "description": "Should create inherited classes",
+              "astRules": {
+                "requiredConstructs": [
+                  { "type": "class_declaration", "minCount": 2 },
+                  { "type": "extends_clause", "minCount": 1 }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prerequisites": ["lesson-1", "lesson-2"],
+    "difficulty": "Intermediate",
+    "estimatedTime": 35
+  },
+  {
+    "id": "lesson-5",
+    "title": "Building Your First Game",
+    "description": "Put it all together with Strata to make a playable game!",
+    "order": 5,
+    "intro": "🚀 Time to build a real game! Using everything you've learned plus the Strata engine, you'll create a complete, playable game. Let's make something awesome!",
+    "learningObjectives": [
+      "Set up a Strata game with proper configuration",
+      "Create and manage game sprites",
+      "Implement player input handling",
+      "Add collision detection",
+      "Build a complete game loop"
+    ],
+    "goalDescription": "Create a complete collecting game where you gather gems while avoiding obstacles!",
+    "previewCode": "import { Game, Sprite, Vector2 } from '@strata/engine';\n\nconst game = new Game({ width: 800, height: 600 });\nconst player = new Sprite({ x: 400, y: 300, color: '#4CAF50' });\n\ngame.onUpdate(() => {\n  if (game.isKeyDown('ArrowRight')) player.x += 5;\n  if (game.isKeyDown('ArrowLeft')) player.x -= 5;\n});\n\ngame.start();",
+    "content": {
+      "introduction": "This is where everything comes together! You'll use TypeScript classes, interfaces, and functions to build a complete game with the Strata engine.",
+      "steps": [
+        {
+          "id": "step-1",
+          "title": "Game Setup & Player Movement",
+          "description": "Set up a Strata game and create a player that moves with arrow keys or WASD!",
+          "initialCode": "// Import from Strata (this is handled for you in the editor)\n// import { Game, Sprite } from '@strata/engine';\n\n// Create a game with 800x600 resolution\n\n// Create a player sprite at the center\n\n// In the update loop, check for arrow key inputs\n// Move the player based on input\n\n// Start the game!\n",
+          "solution": "// Strata imports are available globally in the editor\nconst game = new Game({\n  width: 800,\n  height: 600,\n  title: 'My First Strata Game',\n  backgroundColor: '#1a1a2e'\n});\n\nconst player = new Sprite({\n  x: 400,\n  y: 300,\n  width: 32,\n  height: 32,\n  color: '#4CAF50'\n});\n\nconst SPEED = 5;\n\ngame.onUpdate(() => {\n  // Arrow keys OR WASD movement\n  if (game.isKeyDown('ArrowRight') || game.isKeyDown('d')) {\n    player.x += SPEED;\n  }\n  if (game.isKeyDown('ArrowLeft') || game.isKeyDown('a')) {\n    player.x -= SPEED;\n  }\n  if (game.isKeyDown('ArrowUp') || game.isKeyDown('w')) {\n    player.y -= SPEED;\n  }\n  if (game.isKeyDown('ArrowDown') || game.isKeyDown('s')) {\n    player.y += SPEED;\n  }\n  \n  // Keep player on screen\n  player.x = Math.max(16, Math.min(784, player.x));\n  player.y = Math.max(16, Math.min(584, player.y));\n});\n\ngame.addSprite(player);\ngame.start();\n\nconsole.log('Game started! Use arrow keys or WASD to move.');",
+          "hints": [
+            "Create game with: new Game({ width, height })",
+            "Create sprite with: new Sprite({ x, y, color })",
+            "Check keys with: game.isKeyDown('ArrowRight')",
+            "Don't forget to call game.start()!"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Working game with movement",
+              "description": "Should create a game with player movement",
+              "astRules": {
+                "requiredConstructs": [
+                  { "type": "new_expression", "minCount": 2 },
+                  { "type": "method_call", "name": "onUpdate", "minCount": 1 }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "step-2",
+          "title": "Collectibles & Score",
+          "description": "Add gems to collect and keep score! Use arrays to manage multiple game objects.",
+          "initialCode": "// Game setup (provided)\nconst game = new Game({ width: 800, height: 600 });\nconst player = new Sprite({ x: 400, y: 300, width: 32, height: 32, color: '#4CAF50' });\n\n// Create an array of gem sprites\n// Place them randomly on screen\n\n// Add a score variable\n\n// In the update loop:\n// 1. Move the player\n// 2. Check for collisions with gems\n// 3. Remove collected gems and increase score\n// 4. Display the score\n",
+          "solution": "const game = new Game({\n  width: 800,\n  height: 600,\n  title: 'Gem Collector',\n  backgroundColor: '#1a1a2e'\n});\n\nconst player = new Sprite({\n  x: 400, y: 300, width: 32, height: 32, color: '#4CAF50'\n});\n\n// Create gems\nconst gems: Sprite[] = [];\nfor (let i = 0; i < 10; i++) {\n  const gem = new Sprite({\n    x: Math.random() * 700 + 50,\n    y: Math.random() * 500 + 50,\n    width: 20,\n    height: 20,\n    color: '#FFD700'\n  });\n  gems.push(gem);\n  game.addSprite(gem);\n}\n\nlet score = 0;\nconst SPEED = 5;\n\ngame.onUpdate(() => {\n  // Movement\n  if (game.isKeyDown('ArrowRight') || game.isKeyDown('d')) player.x += SPEED;\n  if (game.isKeyDown('ArrowLeft') || game.isKeyDown('a')) player.x -= SPEED;\n  if (game.isKeyDown('ArrowUp') || game.isKeyDown('w')) player.y -= SPEED;\n  if (game.isKeyDown('ArrowDown') || game.isKeyDown('s')) player.y += SPEED;\n  \n  // Screen bounds\n  player.x = Math.max(16, Math.min(784, player.x));\n  player.y = Math.max(16, Math.min(584, player.y));\n  \n  // Check gem collisions\n  for (let i = gems.length - 1; i >= 0; i--) {\n    if (player.collidesWith(gems[i])) {\n      game.removeSprite(gems[i]);\n      gems.splice(i, 1);\n      score += 10;\n      console.log(`Score: ${score}`);\n    }\n  }\n  \n  // Win condition\n  if (gems.length === 0) {\n    console.log(`YOU WIN! Final score: ${score}`);\n  }\n});\n\ngame.addSprite(player);\ngame.start();\nconsole.log('Collect all the gems! Score: 0');",
+          "hints": [
+            "Use a for loop to create multiple gems",
+            "Store gems in an array: const gems: Sprite[] = []",
+            "Check collisions with: player.collidesWith(gem)",
+            "Remove from array with splice(), iterate backwards"
+          ],
+          "tests": [
+            {
+              "mode": "rules",
+              "expectedOutput": "Game with collectibles",
+              "description": "Should create collectible gems with scoring",
+              "astRules": {
+                "requiredConstructs": [
+                  { "type": "array_expression", "minCount": 1 },
+                  { "type": "for_statement", "minCount": 1 }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prerequisites": ["lesson-1", "lesson-2", "lesson-3", "lesson-4"],
+    "difficulty": "Intermediate",
+    "estimatedTime": 45
   }
 ]

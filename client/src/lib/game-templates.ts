@@ -1,7 +1,11 @@
 // Game templates for the Project Builder
 // These provide starter code for different types of games
 
-import { generateGameTemplate, getUserComponentChoices, ComponentChoice } from './game-building-blocks';
+import {
+  ComponentChoice,
+  generateGameTemplate,
+  getUserComponentChoices,
+} from './game-building-blocks';
 
 export interface GameTemplate {
   id: string;
@@ -25,9 +29,9 @@ export const gameTemplates: GameTemplate[] = [
     files: [
       {
         path: 'main.py',
-        content: ''
-      }
-    ]
+        content: '',
+      },
+    ],
   },
   {
     id: '3d-demo',
@@ -136,9 +140,9 @@ while running:
     pygame.display.flip()
     clock.tick(60)
 
-pygame.quit()`
-      }
-    ]
+pygame.quit()`,
+      },
+    ],
   },
   {
     id: 'asset-rich',
@@ -326,9 +330,9 @@ class Game:
 # Run the game
 if __name__ == "__main__":
     game = Game()
-    game.run()`
-      }
-    ]
+    game.run()`,
+      },
+    ],
   },
   {
     id: 'asset-test',
@@ -513,9 +517,9 @@ class AssetTester:
 if __name__ == "__main__":
     tester = AssetTester()
     tester.run()
-`
-      }
-    ]
+`,
+      },
+    ],
   },
   {
     id: 'blank',
@@ -597,11 +601,11 @@ class Game:
 if __name__ == "__main__":
     game = Game()
     game.run()
-`
-      }
-    ]
+`,
+      },
+    ],
   },
-  
+
   {
     id: 'platformer',
     name: 'Platformer Adventure',
@@ -787,11 +791,11 @@ class Game:
 if __name__ == "__main__":
     game = Game()
     game.run()
-`
-      }
-    ]
+`,
+      },
+    ],
   },
-  
+
   {
     id: 'shooter',
     name: 'Space Shooter',
@@ -1106,11 +1110,11 @@ class Game:
 if __name__ == "__main__":
     game = Game()
     game.run()
-`
-      }
-    ]
+`,
+      },
+    ],
   },
-  
+
   {
     id: 'puzzle',
     name: 'Match-3 Puzzle',
@@ -1474,23 +1478,23 @@ class Game:
 if __name__ == "__main__":
     game = Game()
     game.run()
-`
-      }
-    ]
-  }
+`,
+      },
+    ],
+  },
 ];
 
 // Helper function to get template by ID
 export function getTemplateById(id: string): GameTemplate | undefined {
-  return gameTemplates.find(template => template.id === id);
+  return gameTemplates.find((template) => template.id === id);
 }
 
 // Helper function to get template names for selection
 export function getTemplateOptions() {
-  return gameTemplates.map(template => ({
+  return gameTemplates.map((template) => ({
     id: template.id,
     name: template.name,
     description: template.description,
-    difficulty: template.difficulty
+    difficulty: template.difficulty,
   }));
 }

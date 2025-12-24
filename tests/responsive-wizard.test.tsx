@@ -1,7 +1,7 @@
-import React from 'react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import React from 'react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import UniversalWizard from '../client/src/components/universal-wizard';
 import '@testing-library/jest-dom';
 
@@ -9,7 +9,7 @@ import '@testing-library/jest-dom';
 const mockMatchMedia = (width: number) => {
   Object.defineProperty(window, 'matchMedia', {
     writable: true,
-    value: vi.fn().mockImplementation(query => ({
+    value: vi.fn().mockImplementation((query) => ({
       matches: query.includes(`${width}px`),
       media: query,
       onchange: null,
@@ -28,36 +28,36 @@ const mockWizardData = {
     {
       id: 'start',
       type: 'greeting',
-      dialogue: 'Welcome to Pixel\'s PyGame Palace!',
+      dialogue: "Welcome to Pixel's PyGame Palace!",
       options: [
         { text: 'Hello Pixel!', next: 'intro' },
-        { text: 'What can we build?', next: 'intro' }
+        { text: 'What can we build?', next: 'intro' },
       ],
-      avatar: 'neutral'
+      avatar: 'neutral',
     },
     {
       id: 'intro',
       type: 'lesson',
-      dialogue: 'Let\'s create your first game!',
+      dialogue: "Let's create your first game!",
       options: [
         { text: 'Start with a simple shape', next: 'shapes' },
-        { text: 'Jump to animations', next: 'animations' }
+        { text: 'Jump to animations', next: 'animations' },
       ],
-      avatar: 'excited'
+      avatar: 'excited',
     },
     {
       id: 'shapes',
       type: 'interactive',
-      dialogue: 'Let\'s draw a circle on the screen.',
+      dialogue: "Let's draw a circle on the screen.",
       code: 'import pygame\npygame.draw.circle(screen, (255, 0, 0), (100, 100), 50)',
       options: [
         { text: 'Try it!', next: 'success' },
-        { text: 'Show me more', next: 'animations' }
+        { text: 'Show me more', next: 'animations' },
       ],
-      avatar: 'neutral'
-    }
+      avatar: 'neutral',
+    },
   ],
-  initialNode: 'start'
+  initialNode: 'start',
 };
 
 describe('Responsive Wizard Layout Tests', () => {
@@ -67,10 +67,10 @@ describe('Responsive Wizard Layout Tests', () => {
     queryClient = new QueryClient({
       defaultOptions: {
         queries: { retry: false },
-        mutations: { retry: false }
-      }
+        mutations: { retry: false },
+      },
     });
-    
+
     // Reset window dimensions
     window.innerWidth = 1024;
     window.innerHeight = 768;
@@ -262,12 +262,12 @@ describe('Responsive Wizard Layout Tests', () => {
       const stages = [
         { text: /Welcome to Pixel's PyGame Palace!/i, optionIndex: 0 },
         { text: /Let's create your first game!/i, optionIndex: 0 },
-        { text: /Let's draw a circle/i, optionIndex: 0 }
+        { text: /Let's draw a circle/i, optionIndex: 0 },
       ];
 
       for (const stage of stages) {
         expect(screen.getByText(stage.text)).toBeInTheDocument();
-        
+
         const option = screen.queryByTestId(`option-${stage.optionIndex}`);
         if (option) {
           fireEvent.click(option);
@@ -290,25 +290,28 @@ describe('Responsive Wizard Layout Tests', () => {
       );
 
       const container = screen.getByTestId('wizard-container');
-      
+
       // Simulate touch swipe from left edge
       fireEvent.touchStart(container, {
-        touches: [{ clientX: 10, clientY: 400 }]
+        touches: [{ clientX: 10, clientY: 400 }],
       });
-      
+
       fireEvent.touchMove(container, {
-        touches: [{ clientX: 150, clientY: 400 }]
+        touches: [{ clientX: 150, clientY: 400 }],
       });
-      
+
       fireEvent.touchEnd(container, {
-        changedTouches: [{ clientX: 150, clientY: 400 }]
+        changedTouches: [{ clientX: 150, clientY: 400 }],
       });
 
       // Menu should open after swipe
-      await waitFor(() => {
-        const menu = screen.queryByTestId('pixel-menu');
-        expect(menu).toBeInTheDocument();
-      }, { timeout: 1000 });
+      await waitFor(
+        () => {
+          const menu = screen.queryByTestId('pixel-menu');
+          expect(menu).toBeInTheDocument();
+        },
+        { timeout: 1000 }
+      );
     });
   });
 
@@ -332,10 +335,10 @@ describe('Responsive Wizard Layout Tests', () => {
       window.innerWidth = 390;
       window.innerHeight = 844;
       mockMatchMedia(390);
-      
+
       // Trigger resize event
       fireEvent(window, new Event('resize'));
-      
+
       rerender(
         <QueryClientProvider client={queryClient}>
           <UniversalWizard />

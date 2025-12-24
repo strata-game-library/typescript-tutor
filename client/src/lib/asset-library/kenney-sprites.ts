@@ -1,5 +1,5 @@
 // Auto-generated Kenney asset manifests
-import { SpriteAsset } from './asset-types';
+import type { SpriteAsset } from './asset-types';
 
 export const kenneySprites: SpriteAsset[] = [
   {
@@ -10,10 +10,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_enemyFloating_1.png',
     thumbnail: '/assets/misc/abstract_platformer_enemyFloating_1.png',
-    tags: ["misc", "abstract_platformer"],
+    tags: ['misc', 'abstract_platformer'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Abstract Platformer pack',
-    size: { width: 42, height: 40 }
+    size: { width: 42, height: 40 },
   },
   {
     id: 'abstract_platformer_enemyFloating_2',
@@ -23,10 +23,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_enemyFloating_2.png',
     thumbnail: '/assets/misc/abstract_platformer_enemyFloating_2.png',
-    tags: ["misc", "abstract_platformer"],
+    tags: ['misc', 'abstract_platformer'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Abstract Platformer pack',
-    size: { width: 55, height: 55 }
+    size: { width: 55, height: 55 },
   },
   {
     id: 'abstract_platformer_enemyFloating_3',
@@ -36,10 +36,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_enemyFloating_3.png',
     thumbnail: '/assets/misc/abstract_platformer_enemyFloating_3.png',
-    tags: ["misc", "abstract_platformer"],
+    tags: ['misc', 'abstract_platformer'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Abstract Platformer pack',
-    size: { width: 40, height: 40 }
+    size: { width: 40, height: 40 },
   },
   {
     id: 'abstract_platformer_enemyFloating_4',
@@ -49,10 +49,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_enemyFloating_4.png',
     thumbnail: '/assets/misc/abstract_platformer_enemyFloating_4.png',
-    tags: ["misc", "abstract_platformer"],
+    tags: ['misc', 'abstract_platformer'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Abstract Platformer pack',
-    size: { width: 42, height: 40 }
+    size: { width: 42, height: 40 },
   },
   {
     id: 'abstract_platformer_enemyFlyingAlt_1',
@@ -62,10 +62,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_enemyFlyingAlt_1.png',
     thumbnail: '/assets/misc/abstract_platformer_enemyFlyingAlt_1.png',
-    tags: ["misc", "abstract_platformer"],
+    tags: ['misc', 'abstract_platformer'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Abstract Platformer pack',
-    size: { width: 52, height: 36 }
+    size: { width: 52, height: 36 },
   },
   {
     id: 'abstract_platformer_enemyFlyingAlt_2',
@@ -75,10 +75,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'misc',
     path: '/assets/misc/abstract_platformer_enemyFlyingAlt_2.png',
     thumbnail: '/assets/misc/abstract_platformer_enemyFlyingAlt_2.png',
-    tags: ["misc", "abstract_platformer"],
+    tags: ['misc', 'abstract_platformer'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Abstract Platformer pack',
-    size: { width: 63, height: 24 }
+    size: { width: 63, height: 24 },
   },
   {
     id: 'alien_ufo_pack_dome',
@@ -88,10 +88,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_dome.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_dome.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 83, height: 98 }
+    size: { width: 83, height: 98 },
   },
   {
     id: 'alien_ufo_pack_laserBeige1',
@@ -101,10 +101,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBeige1.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBeige1.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 38, height: 100 }
+    size: { width: 38, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserBeige2',
@@ -114,10 +114,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBeige2.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBeige2.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 68, height: 100 }
+    size: { width: 68, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserBeige3',
@@ -127,10 +127,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBeige3.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBeige3.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 93, height: 35 }
+    size: { width: 93, height: 35 },
   },
   {
     id: 'alien_ufo_pack_laserBeige_burst',
@@ -140,10 +140,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBeige_burst.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBeige_burst.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 188, height: 188 }
+    size: { width: 188, height: 188 },
   },
   {
     id: 'alien_ufo_pack_laserBeige_groundBurst',
@@ -153,10 +153,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBeige_groundBurst.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBeige_groundBurst.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 172, height: 78 }
+    size: { width: 172, height: 78 },
   },
   {
     id: 'alien_ufo_pack_laserBlue1',
@@ -166,10 +166,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBlue1.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBlue1.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 38, height: 100 }
+    size: { width: 38, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserBlue2',
@@ -179,10 +179,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBlue2.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBlue2.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 68, height: 100 }
+    size: { width: 68, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserBlue3',
@@ -192,10 +192,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBlue3.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBlue3.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 93, height: 35 }
+    size: { width: 93, height: 35 },
   },
   {
     id: 'alien_ufo_pack_laserBlue_burst',
@@ -205,10 +205,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBlue_burst.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBlue_burst.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 188, height: 188 }
+    size: { width: 188, height: 188 },
   },
   {
     id: 'alien_ufo_pack_laserBlue_groundBurst',
@@ -218,10 +218,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserBlue_groundBurst.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserBlue_groundBurst.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 172, height: 78 }
+    size: { width: 172, height: 78 },
   },
   {
     id: 'alien_ufo_pack_laserGreen1',
@@ -231,10 +231,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserGreen1.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserGreen1.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 38, height: 100 }
+    size: { width: 38, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserGreen2',
@@ -244,10 +244,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserGreen2.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserGreen2.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 68, height: 100 }
+    size: { width: 68, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserGreen3',
@@ -257,10 +257,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserGreen3.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserGreen3.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 93, height: 35 }
+    size: { width: 93, height: 35 },
   },
   {
     id: 'alien_ufo_pack_laserGreen_burst',
@@ -270,10 +270,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserGreen_burst.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserGreen_burst.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 188, height: 188 }
+    size: { width: 188, height: 188 },
   },
   {
     id: 'alien_ufo_pack_laserGreen_groundBurst',
@@ -283,10 +283,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserGreen_groundBurst.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserGreen_groundBurst.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 172, height: 78 }
+    size: { width: 172, height: 78 },
   },
   {
     id: 'alien_ufo_pack_laserPink1',
@@ -296,10 +296,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserPink1.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserPink1.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 38, height: 100 }
+    size: { width: 38, height: 100 },
   },
   {
     id: 'alien_ufo_pack_laserPink2',
@@ -309,10 +309,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/alien_ufo_pack_laserPink2.png',
     thumbnail: '/assets/enemies/alien_ufo_pack_laserPink2.png',
-    tags: ["enemies", "alien_ufo_pack"],
+    tags: ['enemies', 'alien_ufo_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Alien UFO Pack pack',
-    size: { width: 68, height: 100 }
+    size: { width: 68, height: 100 },
   },
   {
     id: 'animal_pack_elephant',
@@ -322,10 +322,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_elephant.png',
     thumbnail: '/assets/enemies/animal_pack_elephant.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 348, height: 282 }
+    size: { width: 348, height: 282 },
   },
   {
     id: 'animal_pack_giraffe',
@@ -335,10 +335,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_giraffe.png',
     thumbnail: '/assets/enemies/animal_pack_giraffe.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 306, height: 322 }
+    size: { width: 306, height: 322 },
   },
   {
     id: 'animal_pack_hippo',
@@ -348,10 +348,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_hippo.png',
     thumbnail: '/assets/enemies/animal_pack_hippo.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 264, height: 264 }
+    size: { width: 264, height: 264 },
   },
   {
     id: 'animal_pack_monkey',
@@ -361,10 +361,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_monkey.png',
     thumbnail: '/assets/enemies/animal_pack_monkey.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 308, height: 257 }
+    size: { width: 308, height: 257 },
   },
   {
     id: 'animal_pack_panda',
@@ -374,10 +374,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_panda.png',
     thumbnail: '/assets/enemies/animal_pack_panda.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 304, height: 257 }
+    size: { width: 304, height: 257 },
   },
   {
     id: 'animal_pack_parrot',
@@ -387,10 +387,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_parrot.png',
     thumbnail: '/assets/enemies/animal_pack_parrot.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 256, height: 257 }
+    size: { width: 256, height: 257 },
   },
   {
     id: 'animal_pack_penguin',
@@ -400,10 +400,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_penguin.png',
     thumbnail: '/assets/enemies/animal_pack_penguin.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 256, height: 257 }
+    size: { width: 256, height: 257 },
   },
   {
     id: 'animal_pack_pig',
@@ -413,10 +413,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_pig.png',
     thumbnail: '/assets/enemies/animal_pack_pig.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 288, height: 257 }
+    size: { width: 288, height: 257 },
   },
   {
     id: 'animal_pack_rabbit',
@@ -426,10 +426,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_rabbit.png',
     thumbnail: '/assets/enemies/animal_pack_rabbit.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 256, height: 341 }
+    size: { width: 256, height: 341 },
   },
   {
     id: 'animal_pack_snake',
@@ -439,10 +439,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_snake.png',
     thumbnail: '/assets/enemies/animal_pack_snake.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 256, height: 291 }
+    size: { width: 256, height: 291 },
   },
   {
     id: 'animal_pack_elephant',
@@ -452,10 +452,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_elephant.png',
     thumbnail: '/assets/enemies/animal_pack_elephant.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 376, height: 310 }
+    size: { width: 376, height: 310 },
   },
   {
     id: 'animal_pack_giraffe',
@@ -465,10 +465,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_giraffe.png',
     thumbnail: '/assets/enemies/animal_pack_giraffe.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 334, height: 350 }
+    size: { width: 334, height: 350 },
   },
   {
     id: 'animal_pack_hippo',
@@ -478,10 +478,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_hippo.png',
     thumbnail: '/assets/enemies/animal_pack_hippo.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 294, height: 293 }
+    size: { width: 294, height: 293 },
   },
   {
     id: 'animal_pack_monkey',
@@ -491,10 +491,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_monkey.png',
     thumbnail: '/assets/enemies/animal_pack_monkey.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 336, height: 285 }
+    size: { width: 336, height: 285 },
   },
   {
     id: 'animal_pack_panda',
@@ -504,10 +504,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_panda.png',
     thumbnail: '/assets/enemies/animal_pack_panda.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 332, height: 285 }
+    size: { width: 332, height: 285 },
   },
   {
     id: 'animal_pack_parrot',
@@ -517,10 +517,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_parrot.png',
     thumbnail: '/assets/enemies/animal_pack_parrot.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 284, height: 285 }
+    size: { width: 284, height: 285 },
   },
   {
     id: 'animal_pack_penguin',
@@ -530,10 +530,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_penguin.png',
     thumbnail: '/assets/enemies/animal_pack_penguin.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 284, height: 285 }
+    size: { width: 284, height: 285 },
   },
   {
     id: 'animal_pack_pig',
@@ -543,10 +543,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_pig.png',
     thumbnail: '/assets/enemies/animal_pack_pig.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 316, height: 285 }
+    size: { width: 316, height: 285 },
   },
   {
     id: 'animal_pack_rabbit',
@@ -556,10 +556,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_rabbit.png',
     thumbnail: '/assets/enemies/animal_pack_rabbit.png',
-    tags: ["enemies", "animal_pack"],
+    tags: ['enemies', 'animal_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack pack',
-    size: { width: 284, height: 370 }
+    size: { width: 284, height: 370 },
   },
   {
     id: 'animal_pack_redux_bear',
@@ -569,10 +569,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_bear.png',
     thumbnail: '/assets/enemies/animal_pack_redux_bear.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 154, height: 132 }
+    size: { width: 154, height: 132 },
   },
   {
     id: 'animal_pack_redux_buffalo',
@@ -582,10 +582,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_buffalo.png',
     thumbnail: '/assets/enemies/animal_pack_redux_buffalo.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 183, height: 152 }
+    size: { width: 183, height: 152 },
   },
   {
     id: 'animal_pack_redux_chick',
@@ -595,10 +595,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_chick.png',
     thumbnail: '/assets/enemies/animal_pack_redux_chick.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 129, height: 128 }
+    size: { width: 129, height: 128 },
   },
   {
     id: 'animal_pack_redux_chicken',
@@ -608,10 +608,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_chicken.png',
     thumbnail: '/assets/enemies/animal_pack_redux_chicken.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 128, height: 145 }
+    size: { width: 128, height: 145 },
   },
   {
     id: 'animal_pack_redux_cow',
@@ -621,10 +621,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_cow.png',
     thumbnail: '/assets/enemies/animal_pack_redux_cow.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 145, height: 128 }
+    size: { width: 145, height: 128 },
   },
   {
     id: 'animal_pack_redux_crocodile',
@@ -634,10 +634,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_crocodile.png',
     thumbnail: '/assets/enemies/animal_pack_redux_crocodile.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 129, height: 128 }
+    size: { width: 129, height: 128 },
   },
   {
     id: 'animal_pack_redux_dog',
@@ -647,10 +647,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_dog.png',
     thumbnail: '/assets/enemies/animal_pack_redux_dog.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 129, height: 157 }
+    size: { width: 129, height: 157 },
   },
   {
     id: 'animal_pack_redux_duck',
@@ -660,10 +660,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_duck.png',
     thumbnail: '/assets/enemies/animal_pack_redux_duck.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 129, height: 128 }
+    size: { width: 129, height: 128 },
   },
   {
     id: 'animal_pack_redux_elephant',
@@ -673,10 +673,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_elephant.png',
     thumbnail: '/assets/enemies/animal_pack_redux_elephant.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 183, height: 154 }
+    size: { width: 183, height: 154 },
   },
   {
     id: 'animal_pack_redux_frog',
@@ -686,10 +686,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_frog.png',
     thumbnail: '/assets/enemies/animal_pack_redux_frog.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 130, height: 144 }
+    size: { width: 130, height: 144 },
   },
   {
     id: 'animal_pack_redux_giraffe',
@@ -699,10 +699,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_giraffe.png',
     thumbnail: '/assets/enemies/animal_pack_redux_giraffe.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 154, height: 162 }
+    size: { width: 154, height: 162 },
   },
   {
     id: 'animal_pack_redux_goat',
@@ -712,10 +712,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_goat.png',
     thumbnail: '/assets/enemies/animal_pack_redux_goat.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 184, height: 171 }
+    size: { width: 184, height: 171 },
   },
   {
     id: 'animal_pack_redux_gorilla',
@@ -725,10 +725,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_gorilla.png',
     thumbnail: '/assets/enemies/animal_pack_redux_gorilla.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 129, height: 128 }
+    size: { width: 129, height: 128 },
   },
   {
     id: 'animal_pack_redux_hippo',
@@ -738,10 +738,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_hippo.png',
     thumbnail: '/assets/enemies/animal_pack_redux_hippo.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 154, height: 128 }
+    size: { width: 154, height: 128 },
   },
   {
     id: 'animal_pack_redux_horse',
@@ -751,10 +751,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_horse.png',
     thumbnail: '/assets/enemies/animal_pack_redux_horse.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 129, height: 141 }
+    size: { width: 129, height: 141 },
   },
   {
     id: 'animal_pack_redux_monkey',
@@ -764,10 +764,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_monkey.png',
     thumbnail: '/assets/enemies/animal_pack_redux_monkey.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 174, height: 128 }
+    size: { width: 174, height: 128 },
   },
   {
     id: 'animal_pack_redux_moose',
@@ -777,10 +777,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_moose.png',
     thumbnail: '/assets/enemies/animal_pack_redux_moose.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 269, height: 162 }
+    size: { width: 269, height: 162 },
   },
   {
     id: 'animal_pack_redux_narwhal',
@@ -790,10 +790,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_narwhal.png',
     thumbnail: '/assets/enemies/animal_pack_redux_narwhal.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 138, height: 155 }
+    size: { width: 138, height: 155 },
   },
   {
     id: 'animal_pack_redux_owl',
@@ -803,10 +803,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'enemies',
     path: '/assets/enemies/animal_pack_redux_owl.png',
     thumbnail: '/assets/enemies/animal_pack_redux_owl.png',
-    tags: ["enemies", "animal_pack_redux"],
+    tags: ['enemies', 'animal_pack_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Animal Pack Redux pack',
-    size: { width: 128, height: 128 }
+    size: { width: 128, height: 128 },
   },
   {
     id: 'background_elements_castle_beige',
@@ -816,10 +816,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_castle_beige.png',
     thumbnail: '/assets/backgrounds/background_elements_castle_beige.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 204, height: 182 }
+    size: { width: 204, height: 182 },
   },
   {
     id: 'background_elements_castle_grey',
@@ -829,10 +829,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_castle_grey.png',
     thumbnail: '/assets/backgrounds/background_elements_castle_grey.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 204, height: 182 }
+    size: { width: 204, height: 182 },
   },
   {
     id: 'background_elements_castle_wall',
@@ -842,10 +842,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_castle_wall.png',
     thumbnail: '/assets/backgrounds/background_elements_castle_wall.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 295, height: 138 }
+    size: { width: 295, height: 138 },
   },
   {
     id: 'background_elements_cloud1',
@@ -855,10 +855,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud1.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud1.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 190, height: 127 }
+    size: { width: 190, height: 127 },
   },
   {
     id: 'background_elements_cloud2',
@@ -868,10 +868,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud2.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud2.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 200, height: 125 }
+    size: { width: 200, height: 125 },
   },
   {
     id: 'background_elements_cloud3',
@@ -881,10 +881,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud3.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud3.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 177, height: 121 }
+    size: { width: 177, height: 121 },
   },
   {
     id: 'background_elements_cloud4',
@@ -894,10 +894,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud4.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud4.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 228, height: 124 }
+    size: { width: 228, height: 124 },
   },
   {
     id: 'background_elements_cloud5',
@@ -907,10 +907,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud5.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud5.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 238, height: 135 }
+    size: { width: 238, height: 135 },
   },
   {
     id: 'background_elements_cloud6',
@@ -920,10 +920,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud6.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud6.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 266, height: 138 }
+    size: { width: 266, height: 138 },
   },
   {
     id: 'background_elements_cloud7',
@@ -933,10 +933,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud7.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud7.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 234, height: 118 }
+    size: { width: 234, height: 118 },
   },
   {
     id: 'background_elements_cloud8',
@@ -946,10 +946,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud8.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud8.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 210, height: 119 }
+    size: { width: 210, height: 119 },
   },
   {
     id: 'background_elements_cloud9',
@@ -959,10 +959,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_cloud9.png',
     thumbnail: '/assets/backgrounds/background_elements_cloud9.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 213, height: 119 }
+    size: { width: 213, height: 119 },
   },
   {
     id: 'background_elements_fence',
@@ -972,10 +972,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_fence.png',
     thumbnail: '/assets/backgrounds/background_elements_fence.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 128, height: 88 }
+    size: { width: 128, height: 88 },
   },
   {
     id: 'background_elements_fence_piece',
@@ -985,10 +985,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_fence_piece.png',
     thumbnail: '/assets/backgrounds/background_elements_fence_piece.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 110, height: 86 }
+    size: { width: 110, height: 86 },
   },
   {
     id: 'background_elements_grass1',
@@ -998,10 +998,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_grass1.png',
     thumbnail: '/assets/backgrounds/background_elements_grass1.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 26, height: 29 }
+    size: { width: 26, height: 29 },
   },
   {
     id: 'background_elements_grass2',
@@ -1011,10 +1011,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_grass2.png',
     thumbnail: '/assets/backgrounds/background_elements_grass2.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 26, height: 29 }
+    size: { width: 26, height: 29 },
   },
   {
     id: 'background_elements_grass3',
@@ -1024,10 +1024,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_grass3.png',
     thumbnail: '/assets/backgrounds/background_elements_grass3.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 38, height: 35 }
+    size: { width: 38, height: 35 },
   },
   {
     id: 'background_elements_grass4',
@@ -1037,10 +1037,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_grass4.png',
     thumbnail: '/assets/backgrounds/background_elements_grass4.png',
-    tags: ["backgrounds", "background_elements"],
+    tags: ['backgrounds', 'background_elements'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements pack',
-    size: { width: 38, height: 35 }
+    size: { width: 38, height: 35 },
   },
   {
     id: 'background_elements_redux_mountainA',
@@ -1050,10 +1050,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_mountainA.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_mountainA.png',
-    tags: ["backgrounds", "background_elements_redux"],
+    tags: ['backgrounds', 'background_elements_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements Redux pack',
-    size: { width: 356, height: 352 }
+    size: { width: 356, height: 352 },
   },
   {
     id: 'background_elements_redux_mountainB',
@@ -1063,10 +1063,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'backgrounds',
     path: '/assets/backgrounds/background_elements_redux_mountainB.png',
     thumbnail: '/assets/backgrounds/background_elements_redux_mountainB.png',
-    tags: ["backgrounds", "background_elements_redux"],
+    tags: ['backgrounds', 'background_elements_redux'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Background Elements Redux pack',
-    size: { width: 340, height: 278 }
+    size: { width: 340, height: 278 },
   },
   {
     id: 'block_pack_box',
@@ -1076,10 +1076,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_box.png',
     thumbnail: '/assets/tiles/block_pack_box.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_box_treasure',
@@ -1089,10 +1089,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_box_treasure.png',
     thumbnail: '/assets/tiles/block_pack_box_treasure.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_box_wide',
@@ -1102,10 +1102,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_box_wide.png',
     thumbnail: '/assets/tiles/block_pack_box_wide.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_cart',
@@ -1115,10 +1115,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_cart.png',
     thumbnail: '/assets/tiles/block_pack_cart.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_cart_horse',
@@ -1128,10 +1128,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_cart_horse.png',
     thumbnail: '/assets/tiles/block_pack_cart_horse.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_cart_top',
@@ -1141,10 +1141,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_cart_top.png',
     thumbnail: '/assets/tiles/block_pack_cart_top.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_character_horse',
@@ -1154,10 +1154,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_character_horse.png',
     thumbnail: '/assets/tiles/block_pack_character_horse.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_character_man',
@@ -1167,10 +1167,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_character_man.png',
     thumbnail: '/assets/tiles/block_pack_character_man.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_character_wizard',
@@ -1180,10 +1180,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_character_wizard.png',
     thumbnail: '/assets/tiles/block_pack_character_wizard.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_character_woman',
@@ -1193,10 +1193,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_character_woman.png',
     thumbnail: '/assets/tiles/block_pack_character_woman.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_mud',
@@ -1206,10 +1206,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_mud.png',
     thumbnail: '/assets/tiles/block_pack_detail_mud.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_snow',
@@ -1219,10 +1219,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_snow.png',
     thumbnail: '/assets/tiles/block_pack_detail_snow.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_window',
@@ -1232,10 +1232,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_window.png',
     thumbnail: '/assets/tiles/block_pack_detail_window.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_windowBlue',
@@ -1245,10 +1245,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_windowBlue.png',
     thumbnail: '/assets/tiles/block_pack_detail_windowBlue.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_windowCastle',
@@ -1258,10 +1258,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_windowCastle.png',
     thumbnail: '/assets/tiles/block_pack_detail_windowCastle.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_windowRed',
@@ -1271,10 +1271,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_windowRed.png',
     thumbnail: '/assets/tiles/block_pack_detail_windowRed.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_detail_windowSlit',
@@ -1284,10 +1284,10 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_detail_windowSlit.png',
     thumbnail: '/assets/tiles/block_pack_detail_windowSlit.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
   {
     id: 'block_pack_door',
@@ -1297,9 +1297,9 @@ export const kenneySprites: SpriteAsset[] = [
     category: 'tiles',
     path: '/assets/tiles/block_pack_door.png',
     thumbnail: '/assets/tiles/block_pack_door.png',
-    tags: ["tiles", "block_pack"],
+    tags: ['tiles', 'block_pack'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'From Block Pack pack',
-    size: { width: 64, height: 100 }
+    size: { width: 64, height: 100 },
   },
 ];

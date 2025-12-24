@@ -1,25 +1,24 @@
-// PyGame Runner Component - Executes compiled Python games using Pyodide
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { Play, Pause, RefreshCw, Download, Maximize, Minimize, X } from 'lucide-react';
+/**
+ * PyGame Runner Component - Executes compiled Python games using Pyodide
+ * Note: This is legacy code - the platform is transitioning to TypeScript/Strata
+ */
+
+import { Download, Maximize, Minimize, Pause, Play, RefreshCw, X } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { compilePythonGame } from '@/lib/pygame-game-compiler';
+import '@/types/pyodide.d';
+
+import type { GameAsset } from '@/lib/asset-library/asset-types';
 
 interface PygameRunnerProps {
   selectedComponents?: Record<string, string>;
-  selectedAssets?: any[];
+  selectedAssets?: GameAsset[];
   previewMode?: string;
   className?: string;
   onError?: (error: string) => void;
   onClose?: () => void;
-}
-
-// Declare Pyodide types
-declare global {
-  interface Window {
-    loadPyodide: any;
-    pyodide: any;
-  }
 }
 
 export default function PygameRunner({
@@ -28,7 +27,7 @@ export default function PygameRunner({
   previewMode = 'full',
   className = '',
   onError,
-  onClose
+  onClose,
 }: PygameRunnerProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const pyodideRef = useRef<any>(null);
@@ -42,22 +41,22 @@ export default function PygameRunner({
   const initPyodide = useCallback(async () => {
     setIsLoading(true);
     setError(null);
-    
+
     try {
       // Load Pyodide if not already loaded
       if (!window.pyodide) {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js';
         script.async = true;
-        
+
         await new Promise((resolve, reject) => {
           script.onload = resolve;
           script.onerror = reject;
           document.body.appendChild(script);
         });
-        
+
         // Wait for Pyodide to be available
-        await new Promise(resolve => {
+        await new Promise((resolve) => {
           const checkInterval = setInterval(() => {
             if (window.loadPyodide) {
               clearInterval(checkInterval);
@@ -65,21 +64,24 @@ export default function PygameRunner({
             }
           }, 100);
         });
-        
+
         // Initialize Pyodide
+        if (!window.loadPyodide) {
+          throw new Error('Pyodide failed to load');
+        }
         window.pyodide = await window.loadPyodide({
-          indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/'
+          indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.24.1/full/',
         });
-        
+
         // Skip pygame installation - we'll use our mock implementation
         // pygame-ce cannot be installed in browser due to binary dependencies
       }
-      
+
       pyodideRef.current = window.pyodide;
-      
+
       // Setup canvas bridge for pygame
       await setupCanvasBridge();
-      
+
       setIsLoading(false);
     } catch (err) {
       const errorMsg = `Failed to initialize Pyodide: ${err}`;
@@ -92,10 +94,10 @@ export default function PygameRunner({
   // Setup bridge between Pyodide and canvas
   const setupCanvasBridge = async () => {
     if (!pyodideRef.current || !canvasRef.current) return;
-    
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    
+
     // Inject canvas functions into Python environment
     pyodideRef.current.runPython(`
 import sys
@@ -328,24 +330,23 @@ MockPygame.key.get_pressed = lambda: global_key_state
     if (!pyodideRef.current) {
       await initPyodide();
     }
-    
+
     if (!pyodideRef.current) {
       setError('Pyodide not initialized');
       return;
     }
-    
+
     setIsRunning(true);
     setError(null);
-    
+
     try {
       // Compile the game
       const pythonCode = compilePythonGame(selectedComponents, selectedAssets);
-      
+
       // Prepare the game code for browser execution
       // We don't modify the code directly - let the mock pygame handle it
-      const browserCode = pythonCode
-        .replace(/if __name__ == "__main__":/g, 'if True:');  // Always run in browser
-      
+      const browserCode = pythonCode.replace(/if __name__ == "__main__":/g, 'if True:'); // Always run in browser
+
       // Set up a simple auto-progression for demo (press SPACE after 3 seconds)
       setTimeout(() => {
         if (pyodideRef.current) {
@@ -360,10 +361,9 @@ if 'global_key_state' in globals():
           `);
         }
       }, 3000);
-      
+
       // Run the game with our pygame mock
       await pyodideRef.current.runPythonAsync(browserCode);
-      
     } catch (err) {
       const errorMsg = `Game execution error: ${err}`;
       setError(errorMsg);
@@ -379,7 +379,7 @@ if 'global_key_state' in globals():
     if (animationFrameRef.current) {
       cancelAnimationFrame(animationFrameRef.current);
     }
-    
+
     // Clear canvas
     const canvas = canvasRef.current;
     if (canvas) {
@@ -449,7 +449,7 @@ if 'global_key_state' in globals():
                 </>
               )}
             </Button>
-            
+
             <Button
               onClick={resetGame}
               disabled={isLoading || !isRunning}
@@ -460,41 +460,25 @@ if 'global_key_state' in globals():
               Reset
             </Button>
           </div>
-          
+
           <div className="flex items-center gap-2">
-            <Button
-              onClick={downloadGame}
-              variant="outline"
-              size="sm"
-            >
+            <Button onClick={downloadGame} variant="outline" size="sm">
               <Download className="w-4 h-4 mr-2" />
               Export
             </Button>
-            
-            <Button
-              onClick={toggleFullscreen}
-              variant="outline"
-              size="sm"
-            >
-              {isFullscreen ? (
-                <Minimize className="w-4 h-4" />
-              ) : (
-                <Maximize className="w-4 h-4" />
-              )}
+
+            <Button onClick={toggleFullscreen} variant="outline" size="sm">
+              {isFullscreen ? <Minimize className="w-4 h-4" /> : <Maximize className="w-4 h-4" />}
             </Button>
-            
+
             {onClose && (
-              <Button
-                onClick={onClose}
-                variant="ghost"
-                size="sm"
-              >
+              <Button onClick={onClose} variant="ghost" size="sm">
                 <X className="w-4 h-4" />
               </Button>
             )}
           </div>
         </div>
-        
+
         {/* Game Canvas */}
         <div className="flex-1 flex items-center justify-center bg-black p-4">
           {isLoading ? (
@@ -518,7 +502,7 @@ if 'global_key_state' in globals():
             />
           )}
         </div>
-        
+
         {/* Status */}
         {previewMode && (
           <div className="p-2 bg-gray-100 dark:bg-gray-900 text-center text-sm">

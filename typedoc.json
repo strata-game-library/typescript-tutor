@@ -1,0 +1,22 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./client/src", "./shared", "./server"],
+  "entryPointStrategy": "expand",
+  "out": "./docs/api",
+  "name": "Strata TypeScript Tutor API",
+  "readme": "./docs/index.md",
+  "exclude": ["**/node_modules/**", "**/*.test.ts", "**/*.test.tsx", "**/__tests__/**"],
+  "excludeExternals": true,
+  "excludePrivate": true,
+  "excludeProtected": false,
+  "includeVersion": true,
+  "categorizeByGroup": true,
+  "categoryOrder": ["Components", "Hooks", "Utilities", "Types", "*"],
+  "navigation": {
+    "includeCategories": true,
+    "includeGroups": true
+  },
+  "plugin": [],
+  "theme": "default",
+  "cleanOutputDir": true
+}

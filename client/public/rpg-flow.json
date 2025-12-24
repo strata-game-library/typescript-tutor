@@ -13,8 +13,8 @@
       {
         "text": "A: Fantasy Realm - Swords, magic, dragons, and ancient kingdoms",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "worldSetting", 
+        "actionParams": {
+          "componentId": "worldSetting",
           "variant": "A",
           "bundle": ["fantasy_bg", "medieval_tiles", "orchestral_music", "sword_combat"]
         },
@@ -23,8 +23,8 @@
       {
         "text": "B: Sci-Fi Universe - Lasers, tech, aliens, and space colonies",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "worldSetting", 
+        "actionParams": {
+          "componentId": "worldSetting",
           "variant": "B",
           "bundle": ["scifi_bg", "tech_tiles", "synth_music", "laser_combat"]
         },
@@ -63,8 +63,8 @@
       {
         "text": "A: Epic Cinematic - Sweeping camera, particle effects, dramatic reveal",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "titleStyle", 
+        "actionParams": {
+          "componentId": "titleStyle",
           "variant": "A",
           "bundle": ["cinematic_title", "particles", "camera_sweep"]
         },
@@ -73,8 +73,8 @@
       {
         "text": "B: Classic RPG - Static logo with glowing effects and ambient animations",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "titleStyle", 
+        "actionParams": {
+          "componentId": "titleStyle",
           "variant": "B",
           "bundle": ["static_title", "glow_effects", "ambient_anim"]
         },
@@ -119,8 +119,8 @@
       {
         "text": "A: Classic Trinity - Warrior (tank), Mage (damage), Healer (support)",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "classSystem", 
+        "actionParams": {
+          "componentId": "classSystem",
           "variant": "A",
           "bundle": ["warrior_sprite", "mage_sprite", "healer_sprite"]
         },
@@ -129,8 +129,8 @@
       {
         "text": "B: Hybrid System - Multi-class with skill trees and specializations",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "classSystem", 
+        "actionParams": {
+          "componentId": "classSystem",
           "variant": "B",
           "bundle": ["hybrid_classes", "skill_trees", "specializations"]
         },
@@ -175,8 +175,8 @@
       {
         "text": "A: Top-Down View - Classic Zelda-style exploration",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "movement", 
+        "actionParams": {
+          "componentId": "movement",
           "variant": "A",
           "bundle": ["topdown_camera", "8dir_movement"]
         },
@@ -185,8 +185,8 @@
       {
         "text": "B: Isometric View - Diablo-style perspective",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "movement", 
+        "actionParams": {
+          "componentId": "movement",
           "variant": "B",
           "bundle": ["iso_camera", "point_click_movement"]
         },
@@ -207,8 +207,8 @@
       {
         "text": "A: Turn-Based Strategy - Classic JRPG with menus and tactics",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "combat", 
+        "actionParams": {
+          "componentId": "combat",
           "variant": "A",
           "bundle": ["turn_based", "battle_menu", "atb_gauge"]
         },
@@ -217,8 +217,8 @@
       {
         "text": "B: Action Combat - Real-time hack and slash battles",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "combat", 
+        "actionParams": {
+          "componentId": "combat",
           "variant": "B",
           "bundle": ["realtime_combat", "combo_system", "dodge_roll"]
         },
@@ -239,8 +239,8 @@
       {
         "text": "A: Text Boxes - Full dialogue windows with portraits",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dialogue", 
+        "actionParams": {
+          "componentId": "dialogue",
           "variant": "A",
           "bundle": ["dialogue_box", "character_portraits", "text_speed"]
         },
@@ -249,8 +249,8 @@
       {
         "text": "B: Speech Bubbles - Comic-style bubbles above characters",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dialogue", 
+        "actionParams": {
+          "componentId": "dialogue",
           "variant": "B",
           "bundle": ["speech_bubbles", "emotes", "floating_text"]
         },
@@ -271,8 +271,8 @@
       {
         "text": "A: Grid System - Tetris-style inventory management",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "inventory", 
+        "actionParams": {
+          "componentId": "inventory",
           "variant": "A",
           "bundle": ["grid_inventory", "item_stacking", "weight_system"]
         },
@@ -281,8 +281,8 @@
       {
         "text": "B: List System - Categorized tabs with unlimited slots",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "inventory", 
+        "actionParams": {
+          "componentId": "inventory",
           "variant": "B",
           "bundle": ["list_inventory", "auto_sort", "categories"]
         },
@@ -303,8 +303,8 @@
       {
         "text": "A: Quest Journal - Detailed log with story and objectives",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "quests", 
+        "actionParams": {
+          "componentId": "quests",
           "variant": "A",
           "bundle": ["quest_log", "objective_tracker", "story_entries"]
         },
@@ -313,8 +313,8 @@
       {
         "text": "B: Map Markers - Visual indicators on world map",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "quests", 
+        "actionParams": {
+          "componentId": "quests",
           "variant": "B",
           "bundle": ["map_markers", "compass", "waypoints"]
         },
@@ -335,8 +335,8 @@
       {
         "text": "A: Open World - Free exploration with level scaling",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "worldDesign", 
+        "actionParams": {
+          "componentId": "worldDesign",
           "variant": "A",
           "bundle": ["open_world", "fast_travel", "level_scaling"]
         },
@@ -345,8 +345,8 @@
       {
         "text": "B: Linear Progression - Story-driven chapter system",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "worldDesign", 
+        "actionParams": {
+          "componentId": "worldDesign",
           "variant": "B",
           "bundle": ["linear_chapters", "story_gates", "progression_locks"]
         },
@@ -367,8 +367,8 @@
       {
         "text": "A: Procedural Generation - Roguelike random dungeons",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dungeons", 
+        "actionParams": {
+          "componentId": "dungeons",
           "variant": "A",
           "bundle": ["proc_gen", "random_loot", "permadeath_option"]
         },
@@ -377,8 +377,8 @@
       {
         "text": "B: Hand-Crafted - Designed puzzles and encounters",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dungeons", 
+        "actionParams": {
+          "componentId": "dungeons",
           "variant": "B",
           "bundle": ["designed_dungeons", "puzzle_rooms", "secret_areas"]
         },
@@ -399,8 +399,8 @@
       {
         "text": "A: Random Drops - Diablo-style with rarity tiers",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "loot", 
+        "actionParams": {
+          "componentId": "loot",
           "variant": "A",
           "bundle": ["rarity_tiers", "random_stats", "loot_explosions"]
         },
@@ -409,8 +409,8 @@
       {
         "text": "B: Fixed Rewards - Curated items in specific locations",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "loot", 
+        "actionParams": {
+          "componentId": "loot",
           "variant": "B",
           "bundle": ["unique_items", "quest_rewards", "treasure_maps"]
         },
@@ -431,8 +431,8 @@
       {
         "text": "A: Phase System - Multiple forms with increasing difficulty",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "bossFight", 
+        "actionParams": {
+          "componentId": "bossFight",
           "variant": "A",
           "bundle": ["boss_phases", "form_changes", "desperation_attacks"]
         },
@@ -441,8 +441,8 @@
       {
         "text": "B: Pattern Learning - Predictable attacks to memorize",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "bossFight", 
+        "actionParams": {
+          "componentId": "bossFight",
           "variant": "B",
           "bundle": ["attack_patterns", "telegraphs", "weak_points"]
         },
@@ -463,8 +463,8 @@
       {
         "text": "A: Dynamic Arena - Environment changes during battle",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "arena", 
+        "actionParams": {
+          "componentId": "arena",
           "variant": "A",
           "bundle": ["destructible_env", "arena_hazards", "changing_terrain"]
         },
@@ -473,8 +473,8 @@
       {
         "text": "B: Static Arena - Focus on boss mechanics only",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "arena", 
+        "actionParams": {
+          "componentId": "arena",
           "variant": "B",
           "bundle": ["simple_arena", "clear_space", "boss_focus"]
         },
@@ -495,8 +495,8 @@
       {
         "text": "A: Cinematic Cutscenes - Story sequences with dialogue",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "victory", 
+        "actionParams": {
+          "componentId": "victory",
           "variant": "A",
           "bundle": ["cutscenes", "story_resolution", "character_epilogues"]
         },
@@ -505,8 +505,8 @@
       {
         "text": "B: Quick Results - Stats screen with rewards",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "victory", 
+        "actionParams": {
+          "componentId": "victory",
           "variant": "B",
           "bundle": ["results_screen", "exp_gain", "loot_summary"]
         },
@@ -527,8 +527,8 @@
       {
         "text": "A: Scrolling Credits - Classic movie-style with music",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "credits", 
+        "actionParams": {
+          "componentId": "credits",
           "variant": "A",
           "bundle": ["scroll_credits", "epic_music", "concept_art"]
         },
@@ -537,8 +537,8 @@
       {
         "text": "B: Interactive Credits - Playable mini-game during credits",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "credits", 
+        "actionParams": {
+          "componentId": "credits",
           "variant": "B",
           "bundle": ["playable_credits", "bonus_content", "easter_eggs"]
         },
@@ -559,8 +559,8 @@
       {
         "text": "A: New Game+ - Restart with bonuses and harder enemies",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "postgame", 
+        "actionParams": {
+          "componentId": "postgame",
           "variant": "A",
           "bundle": ["ng_plus", "carry_over", "difficulty_boost"]
         },
@@ -569,8 +569,8 @@
       {
         "text": "B: Endgame Content - Secret dungeons and superbosses",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "postgame", 
+        "actionParams": {
+          "componentId": "postgame",
           "variant": "B",
           "bundle": ["secret_dungeons", "superbosses", "ultimate_gear"]
         },
@@ -590,7 +590,7 @@
         "action": "launchPyodideGame"
       },
       {
-        "text": "Export as Python file",
+        "text": "Export as TypeScript",
         "action": "exportPyodideGame"
       },
       {

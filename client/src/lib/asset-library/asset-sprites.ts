@@ -1,7 +1,7 @@
 // Sprite Asset Definitions
 // CC0 sprites from Kenney.nl game assets
 
-import { SpriteAsset } from './asset-types';
+import type { SpriteAsset } from './asset-types';
 
 // Character sprites
 export const characterSprites: SpriteAsset[] = [
@@ -16,7 +16,7 @@ export const characterSprites: SpriteAsset[] = [
     tags: ['robot', 'blue', 'player', 'hero', 'sci-fi'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Great for sci-fi themed platformers or space adventures',
-    size: { width: 128, height: 256 }
+    size: { width: 128, height: 256 },
   },
   {
     id: 'robot-red',
@@ -29,7 +29,7 @@ export const characterSprites: SpriteAsset[] = [
     tags: ['robot', 'red', 'player', 'hero', 'sci-fi'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Perfect for action games or as a powerful character',
-    size: { width: 128, height: 256 }
+    size: { width: 128, height: 256 },
   },
   {
     id: 'robot-green',
@@ -42,7 +42,7 @@ export const characterSprites: SpriteAsset[] = [
     tags: ['robot', 'green', 'player', 'hero', 'sci-fi'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Ideal for environmental or exploration games',
-    size: { width: 128, height: 256 }
+    size: { width: 128, height: 256 },
   },
   {
     id: 'robot-grey',
@@ -55,8 +55,8 @@ export const characterSprites: SpriteAsset[] = [
     tags: ['robot', 'grey', 'player', 'hero', 'sci-fi', 'stealth'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Great for stealth missions or puzzle games',
-    size: { width: 128, height: 256 }
-  }
+    size: { width: 128, height: 256 },
+  },
 ];
 
 // Enemy sprites
@@ -72,7 +72,7 @@ export const enemySprites: SpriteAsset[] = [
     tags: ['ghost', 'enemy', 'floating', 'spooky', 'undead'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Perfect for haunted levels or spooky sections',
-    size: { width: 128, height: 128 }
+    size: { width: 128, height: 128 },
   },
   {
     id: 'alien-flying',
@@ -85,7 +85,7 @@ export const enemySprites: SpriteAsset[] = [
     tags: ['alien', 'enemy', 'flying', 'space', 'ufo'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Great for space levels or alien invasions',
-    size: { width: 128, height: 128 }
+    size: { width: 128, height: 128 },
   },
   {
     id: 'spikey-hazard',
@@ -98,7 +98,7 @@ export const enemySprites: SpriteAsset[] = [
     tags: ['spike', 'enemy', 'hazard', 'dangerous'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Use as a stationary hazard or moving obstacle',
-    size: { width: 128, height: 128 }
+    size: { width: 128, height: 128 },
   },
   {
     id: 'walker-enemy',
@@ -111,8 +111,8 @@ export const enemySprites: SpriteAsset[] = [
     tags: ['walker', 'enemy', 'ground', 'patrol'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Perfect for patrolling platforms or ground areas',
-    size: { width: 128, height: 128 }
-  }
+    size: { width: 128, height: 128 },
+  },
 ];
 
 // Item sprites
@@ -128,7 +128,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['gem', 'blue', 'collectible', 'treasure', 'points'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Use as a high-value collectible worth 10 points',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'gem-green',
@@ -141,7 +141,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['gem', 'green', 'collectible', 'treasure', 'points'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Special collectible for bonus levels',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'gem-red',
@@ -154,7 +154,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['gem', 'red', 'collectible', 'treasure', 'points'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Rare gem worth 25 points',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'gem-yellow',
@@ -167,7 +167,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['gem', 'yellow', 'collectible', 'treasure', 'points'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Common collectible worth 5 points',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'crystal-blue',
@@ -180,7 +180,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['crystal', 'blue', 'powerup', 'magic', 'special'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Use as a power-up or special ability item',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'crystal-green',
@@ -193,7 +193,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['crystal', 'green', 'powerup', 'health', 'special'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Perfect for health restoration power-ups',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'key-green',
@@ -206,7 +206,7 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['key', 'green', 'unlock', 'door', 'puzzle'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Use in puzzle platformers to unlock areas',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'key-red',
@@ -219,8 +219,8 @@ export const itemSprites: SpriteAsset[] = [
     tags: ['key', 'red', 'unlock', 'door', 'puzzle'],
     license: 'CC0 - Kenney.nl',
     suggestedUse: 'Use for locked doors and secret areas',
-    size: { width: 64, height: 64 }
-  }
+    size: { width: 64, height: 64 },
+  },
 ];
 
 // Placeholder/fallback sprites
@@ -232,11 +232,12 @@ export const placeholderSprites: SpriteAsset[] = [
     type: 'sprite',
     category: 'misc',
     path: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
-    thumbnail: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+    thumbnail:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
     tags: ['placeholder', 'test', 'debug'],
     license: 'Public Domain',
     suggestedUse: 'Use when specific sprite is not yet available',
-    size: { width: 64, height: 64 }
+    size: { width: 64, height: 64 },
   },
   {
     id: 'placeholder-circle',
@@ -245,12 +246,13 @@ export const placeholderSprites: SpriteAsset[] = [
     type: 'sprite',
     category: 'misc',
     path: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiIGZpbGw9IiM0MDQwZmYiLz48L3N2Zz4=',
-    thumbnail: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiIGZpbGw9IiM0MDQwZmYiLz48L3N2Zz4=',
+    thumbnail:
+      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiIGZpbGw9IiM0MDQwZmYiLz48L3N2Zz4=',
     tags: ['placeholder', 'test', 'debug', 'circle'],
     license: 'Public Domain',
     suggestedUse: 'Use for ball or circular objects',
-    size: { width: 64, height: 64 }
-  }
+    size: { width: 64, height: 64 },
+  },
 ];
 
 // Export all sprites
@@ -258,20 +260,18 @@ export const allSprites: SpriteAsset[] = [
   ...characterSprites,
   ...enemySprites,
   ...itemSprites,
-  ...placeholderSprites
+  ...placeholderSprites,
 ];
 
 // Helper functions
 export function getSpriteById(id: string): SpriteAsset | undefined {
-  return allSprites.find(sprite => sprite.id === id);
+  return allSprites.find((sprite) => sprite.id === id);
 }
 
 export function getSpritesByCategory(category: string): SpriteAsset[] {
-  return allSprites.filter(sprite => sprite.category === category);
+  return allSprites.filter((sprite) => sprite.category === category);
 }
 
 export function getSpritesByTags(tags: string[]): SpriteAsset[] {
-  return allSprites.filter(sprite => 
-    tags.some(tag => sprite.tags.includes(tag))
-  );
+  return allSprites.filter((sprite) => tags.some((tag) => sprite.tags.includes(tag)));
 }

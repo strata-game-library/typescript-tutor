@@ -431,7 +431,7 @@
         "action": "launchPyodideGame"
       },
       {
-        "text": "Export as Python file",
+        "text": "Export as TypeScript",
         "action": "exportPyodideGame"
       },
       {

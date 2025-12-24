@@ -13,8 +13,8 @@
       {
         "text": "A: Dark Atmospheric - Gothic horror, torch-lit corridors, ominous shadows",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dungeonAtmosphere", 
+        "actionParams": {
+          "componentId": "dungeonAtmosphere",
           "variant": "A",
           "bundle": ["dark_bg", "stone_tiles", "horror_music", "torch_system"]
         },
@@ -23,8 +23,8 @@
       {
         "text": "B: Bright Adventure - Colorful ruins, magical crystals, heroic exploration",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dungeonAtmosphere", 
+        "actionParams": {
+          "componentId": "dungeonAtmosphere",
           "variant": "B",
           "bundle": ["bright_bg", "crystal_tiles", "adventure_music", "crystal_light"]
         },
@@ -65,8 +65,8 @@
       {
         "text": "A: Ancient Ruins - Stone temples, mystical traps, forgotten treasures",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dungeonType", 
+        "actionParams": {
+          "componentId": "dungeonType",
           "variant": "A",
           "bundle": ["ancient_walls", "rune_doors", "temple_props", "mystical_fx"]
         },
@@ -75,8 +75,8 @@
       {
         "text": "B: Modern Facility - Metal corridors, high-tech security, experimental horrors",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "dungeonType", 
+        "actionParams": {
+          "componentId": "dungeonType",
           "variant": "B",
           "bundle": ["metal_walls", "keycard_doors", "tech_props", "electric_fx"]
         },
@@ -98,8 +98,8 @@
       {
         "text": "A: Animated Entrance - Camera descends into dungeon depths",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "titlePresentation", 
+        "actionParams": {
+          "componentId": "titlePresentation",
           "variant": "A",
           "bundle": ["camera_descent", "depth_fog", "entrance_anim"]
         },
@@ -108,8 +108,8 @@
       {
         "text": "B: Static Gate - Imposing dungeon door with ambient effects",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "titlePresentation", 
+        "actionParams": {
+          "componentId": "titlePresentation",
           "variant": "B",
           "bundle": ["gate_image", "torch_flicker", "ambient_particles"]
         },
@@ -156,8 +156,8 @@
       {
         "text": "A: Top-Down View - Classic dungeon crawler perspective",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "cameraView", 
+        "actionParams": {
+          "componentId": "cameraView",
           "variant": "A",
           "bundle": ["topdown_camera", "room_reveal", "minimap"]
         },
@@ -166,8 +166,8 @@
       {
         "text": "B: First-Person View - Immersive corridor exploration",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "cameraView", 
+        "actionParams": {
+          "componentId": "cameraView",
           "variant": "B",
           "bundle": ["fps_camera", "wall_textures", "compass"]
         },
@@ -189,8 +189,8 @@
       {
         "text": "A: Grid-Based - Strategic tile-by-tile movement",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "movement", 
+        "actionParams": {
+          "componentId": "movement",
           "variant": "A",
           "bundle": ["grid_movement", "turn_based", "tile_highlight"]
         },
@@ -199,8 +199,8 @@
       {
         "text": "B: Free Movement - Smooth real-time exploration",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "movement", 
+        "actionParams": {
+          "componentId": "movement",
           "variant": "B",
           "bundle": ["free_movement", "collision", "sprint_system"]
         },
@@ -222,8 +222,8 @@
       {
         "text": "A: Real-Time Combat - Hack and slash action",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "combat", 
+        "actionParams": {
+          "componentId": "combat",
           "variant": "A",
           "bundle": ["melee_combat", "dodge_roll", "combo_system"]
         },
@@ -232,8 +232,8 @@
       {
         "text": "B: Turn-Based Combat - Strategic tactical battles",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "combat", 
+        "actionParams": {
+          "componentId": "combat",
           "variant": "B",
           "bundle": ["turn_combat", "action_points", "skill_menu"]
         },
@@ -255,8 +255,8 @@
       {
         "text": "A: Living Monsters - Skeletons, slimes, goblins, and beasts",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "enemies", 
+        "actionParams": {
+          "componentId": "enemies",
           "variant": "A",
           "bundle": ["monster_sprites", "creature_ai", "growl_sounds"]
         },
@@ -265,8 +265,8 @@
       {
         "text": "B: Deadly Traps - Spikes, arrows, crushing walls, and puzzles",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "enemies", 
+        "actionParams": {
+          "componentId": "enemies",
           "variant": "B",
           "bundle": ["trap_sprites", "trigger_system", "mechanism_sounds"]
         },
@@ -288,8 +288,8 @@
       {
         "text": "A: Random Drops - Procedural loot with rarity tiers",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "loot", 
+        "actionParams": {
+          "componentId": "loot",
           "variant": "A",
           "bundle": ["loot_tables", "rarity_colors", "drop_particles"]
         },
@@ -298,8 +298,8 @@
       {
         "text": "B: Fixed Treasures - Handcrafted rewards in specific locations",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "loot", 
+        "actionParams": {
+          "componentId": "loot",
           "variant": "B",
           "bundle": ["treasure_chests", "key_items", "unique_weapons"]
         },
@@ -346,8 +346,8 @@
       {
         "text": "A: Procedural Generation - Unique dungeon every playthrough",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "mapGen", 
+        "actionParams": {
+          "componentId": "mapGen",
           "variant": "A",
           "bundle": ["room_generator", "corridor_logic", "random_spawns"]
         },
@@ -356,8 +356,8 @@
       {
         "text": "B: Handcrafted Levels - Designed challenges and secrets",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "mapGen", 
+        "actionParams": {
+          "componentId": "mapGen",
           "variant": "B",
           "bundle": ["level_templates", "secret_rooms", "puzzle_layouts"]
         },
@@ -379,8 +379,8 @@
       {
         "text": "A: Torch Mechanics - Limited light radius, manage torches",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "lighting", 
+        "actionParams": {
+          "componentId": "lighting",
           "variant": "A",
           "bundle": ["torch_system", "light_radius", "darkness_fog"]
         },
@@ -389,8 +389,8 @@
       {
         "text": "B: Always Visible - Full room visibility for strategic play",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "lighting", 
+        "actionParams": {
+          "componentId": "lighting",
           "variant": "B",
           "bundle": ["full_visibility", "room_lighting", "ambient_glow"]
         },
@@ -412,8 +412,8 @@
       {
         "text": "A: Puzzle Boss - Defeat through wit and environment",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "bossType", 
+        "actionParams": {
+          "componentId": "bossType",
           "variant": "A",
           "bundle": ["puzzle_boss", "mechanism_phases", "environmental_damage"]
         },
@@ -422,8 +422,8 @@
       {
         "text": "B: Combat Boss - Epic battle with attack patterns",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "bossType", 
+        "actionParams": {
+          "componentId": "bossType",
           "variant": "B",
           "bundle": ["combat_boss", "phase_system", "attack_patterns"]
         },
@@ -470,8 +470,8 @@
       {
         "text": "A: Permadeath - One life, high stakes, roguelike tension",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "deathSystem", 
+        "actionParams": {
+          "componentId": "deathSystem",
           "variant": "A",
           "bundle": ["permadeath", "meta_progression", "death_stats"]
         },
@@ -480,8 +480,8 @@
       {
         "text": "B: Checkpoints - Respawn at campfires and save points",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "deathSystem", 
+        "actionParams": {
+          "componentId": "deathSystem",
           "variant": "B",
           "bundle": ["checkpoint_system", "campfire_saves", "respawn_fx"]
         },
@@ -503,8 +503,8 @@
       {
         "text": "A: Escape Sequence - Timer countdown, collapsing dungeon",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "ending", 
+        "actionParams": {
+          "componentId": "ending",
           "variant": "A",
           "bundle": ["escape_timer", "falling_debris", "urgent_music"]
         },
@@ -513,8 +513,8 @@
       {
         "text": "B: Treasure Chamber - Claim the ultimate prize peacefully",
         "action": "selectComponentVariant",
-        "actionParams": { 
-          "componentId": "ending", 
+        "actionParams": {
+          "componentId": "ending",
           "variant": "B",
           "bundle": ["treasure_room", "gold_piles", "victory_fanfare"]
         },
@@ -560,7 +560,7 @@
         "action": "launchPyodideGame"
       },
       {
-        "text": "Export as Python file",
+        "text": "Export as TypeScript",
         "action": "exportPyodideGame"
       },
       {

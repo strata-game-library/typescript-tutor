@@ -1,5 +1,5 @@
+import path from 'node:path';
 import { defineConfig } from 'vitest/config';
-import path from 'path';
 
 export default defineConfig({
   test: {
@@ -19,23 +19,20 @@ export default defineConfig({
         '**/*.d.ts',
         'server/vite.ts', // Exclude vite setup from coverage
       ],
-      include: [
-        'server/**/*.ts',
-        'shared/**/*.ts'
-      ],
+      include: ['server/**/*.ts', 'shared/**/*.ts'],
       thresholds: {
         lines: 90,
         functions: 90,
         branches: 85,
-        statements: 90
-      }
+        statements: 90,
+      },
     },
-    testTimeout: 10000
+    testTimeout: 10000,
   },
   resolve: {
     alias: {
-      '@shared': path.resolve(__dirname, './shared'),
-      '@server': path.resolve(__dirname, './server')
-    }
-  }
+      '@shared': path.resolve(import.meta.dirname, './shared'),
+      '@server': path.resolve(import.meta.dirname, './server'),
+    },
+  },
 });

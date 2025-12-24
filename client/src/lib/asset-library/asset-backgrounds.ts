@@ -1,7 +1,7 @@
 // Background Asset Definitions
 // CC0 backgrounds and environments for games
 
-import { BackgroundAsset } from './asset-types';
+import type { BackgroundAsset } from './asset-types';
 
 // Background assets
 export const backgrounds: BackgroundAsset[] = [
@@ -20,7 +20,7 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: true,
     parallax: true,
-    scrollSpeed: { x: 0.5, y: 0 }
+    scrollSpeed: { x: 0.5, y: 0 },
   },
   {
     id: 'bg-forest-detailed',
@@ -36,9 +36,9 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: true,
     parallax: true,
-    scrollSpeed: { x: 0.3, y: 0 }
+    scrollSpeed: { x: 0.3, y: 0 },
   },
-  
+
   // City backgrounds
   {
     id: 'bg-city',
@@ -54,9 +54,9 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: true,
     parallax: true,
-    scrollSpeed: { x: 0.4, y: 0 }
+    scrollSpeed: { x: 0.4, y: 0 },
   },
-  
+
   // Desert backgrounds
   {
     id: 'bg-desert',
@@ -72,9 +72,9 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: true,
     parallax: true,
-    scrollSpeed: { x: 0.2, y: 0 }
+    scrollSpeed: { x: 0.2, y: 0 },
   },
-  
+
   // Space backgrounds
   {
     id: 'bg-space-stars',
@@ -90,7 +90,7 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: true,
     parallax: false,
-    scrollSpeed: { x: 0.1, y: 0.1 }
+    scrollSpeed: { x: 0.1, y: 0.1 },
   },
   {
     id: 'bg-space-nebula',
@@ -106,9 +106,9 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: false,
     parallax: true,
-    scrollSpeed: { x: 0.15, y: 0.05 }
+    scrollSpeed: { x: 0.15, y: 0.05 },
   },
-  
+
   // Underwater backgrounds
   {
     id: 'bg-underwater',
@@ -124,9 +124,9 @@ export const backgrounds: BackgroundAsset[] = [
     size: { width: 1920, height: 1080 },
     tiling: true,
     parallax: true,
-    scrollSpeed: { x: 0.3, y: 0.1 }
+    scrollSpeed: { x: 0.3, y: 0.1 },
   },
-  
+
   // Dungeon backgrounds
   {
     id: 'bg-dungeon-stone',
@@ -141,7 +141,7 @@ export const backgrounds: BackgroundAsset[] = [
     suggestedUse: 'Dungeon crawlers, RPGs, or underground adventures',
     size: { width: 1920, height: 1080 },
     tiling: true,
-    parallax: false
+    parallax: false,
   },
   {
     id: 'bg-dungeon-brick',
@@ -156,9 +156,9 @@ export const backgrounds: BackgroundAsset[] = [
     suggestedUse: 'Castle dungeons or medieval settings',
     size: { width: 1920, height: 1080 },
     tiling: true,
-    parallax: false
+    parallax: false,
   },
-  
+
   // Abstract backgrounds
   {
     id: 'bg-abstract-gradient',
@@ -173,7 +173,7 @@ export const backgrounds: BackgroundAsset[] = [
     suggestedUse: 'Puzzle games, minimalist designs, or menu backgrounds',
     size: { width: 1920, height: 1080 },
     tiling: false,
-    parallax: false
+    parallax: false,
   },
   {
     id: 'bg-abstract-pattern',
@@ -188,9 +188,9 @@ export const backgrounds: BackgroundAsset[] = [
     suggestedUse: 'Puzzle games or stylized environments',
     size: { width: 512, height: 512 },
     tiling: true,
-    parallax: false
+    parallax: false,
   },
-  
+
   // Solid color backgrounds (placeholders)
   {
     id: 'bg-solid-blue',
@@ -199,13 +199,14 @@ export const backgrounds: BackgroundAsset[] = [
     type: 'background',
     category: 'solid',
     path: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
-    thumbnail: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
+    thumbnail:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==',
     tags: ['solid', 'blue', 'simple', 'placeholder'],
     license: 'Public Domain',
     suggestedUse: 'Simple background or testing',
     size: { width: 1, height: 1 },
     tiling: true,
-    parallax: false
+    parallax: false,
   },
   {
     id: 'bg-solid-green',
@@ -214,13 +215,14 @@ export const backgrounds: BackgroundAsset[] = [
     type: 'background',
     category: 'solid',
     path: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M8wHwADfgGBTqJJPAAAAABJRU5ErkJggg==',
-    thumbnail: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M8wHwADfgGBTqJJPAAAAABJRU5ErkJggg==',
+    thumbnail:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M8wHwADfgGBTqJJPAAAAABJRU5ErkJggg==',
     tags: ['solid', 'green', 'simple', 'placeholder'],
     license: 'Public Domain',
     suggestedUse: 'Simple background or testing',
     size: { width: 1, height: 1 },
     tiling: true,
-    parallax: false
+    parallax: false,
   },
   {
     id: 'bg-solid-black',
@@ -229,13 +231,14 @@ export const backgrounds: BackgroundAsset[] = [
     type: 'background',
     category: 'solid',
     path: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
-    thumbnail: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
+    thumbnail:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
     tags: ['solid', 'black', 'dark', 'simple', 'placeholder'],
     license: 'Public Domain',
     suggestedUse: 'Dark scenes or space backgrounds',
     size: { width: 1, height: 1 },
     tiling: true,
-    parallax: false
+    parallax: false,
   },
   {
     id: 'bg-solid-sky',
@@ -244,14 +247,15 @@ export const backgrounds: BackgroundAsset[] = [
     type: 'background',
     category: 'solid',
     path: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==',
-    thumbnail: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==',
+    thumbnail:
+      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==',
     tags: ['solid', 'sky', 'blue', 'light', 'simple'],
     license: 'Public Domain',
     suggestedUse: 'Daytime sky or cheerful backgrounds',
     size: { width: 1, height: 1 },
     tiling: true,
-    parallax: false
-  }
+    parallax: false,
+  },
 ];
 
 // Export all backgrounds
@@ -259,23 +263,21 @@ export const allBackgrounds = backgrounds;
 
 // Helper functions
 export function getBackgroundById(id: string): BackgroundAsset | undefined {
-  return backgrounds.find(bg => bg.id === id);
+  return backgrounds.find((bg) => bg.id === id);
 }
 
 export function getBackgroundsByCategory(category: string): BackgroundAsset[] {
-  return backgrounds.filter(bg => bg.category === category);
+  return backgrounds.filter((bg) => bg.category === category);
 }
 
 export function getBackgroundsByTags(tags: string[]): BackgroundAsset[] {
-  return backgrounds.filter(bg => 
-    tags.some(tag => bg.tags.includes(tag))
-  );
+  return backgrounds.filter((bg) => tags.some((tag) => bg.tags.includes(tag)));
 }
 
 export function getTilingBackgrounds(): BackgroundAsset[] {
-  return backgrounds.filter(bg => bg.tiling === true);
+  return backgrounds.filter((bg) => bg.tiling === true);
 }
 
 export function getParallaxBackgrounds(): BackgroundAsset[] {
-  return backgrounds.filter(bg => bg.parallax === true);
+  return backgrounds.filter((bg) => bg.parallax === true);
 }
