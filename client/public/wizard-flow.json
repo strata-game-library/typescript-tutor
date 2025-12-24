@@ -10,7 +10,7 @@
           "next": "gamePath"
         },
         {
-          "text": "Teach me Python first 📚",
+          "text": "Teach me TypeScript first 📚",
           "next": "learnPath"
         }
       ]
@@ -35,7 +35,7 @@
       "speaker": "Pixel",
       "text": "Smart move! Let me give you the quick tour - it'll save you time, trust me!",
       "followUp": "Think of it like this: left side is your toy box, middle is your playground, right side is where you tweak stuff.",
-      "additionalText": "Pro tip: Start with a character sprite, then add some platforms. Everything you drop becomes instant Python code. It's honestly kind of mesmerizing to watch!",
+      "additionalText": "Pro tip: Start with a character sprite, then add some platforms. Everything you drop becomes instant TypeScript code. It's honestly kind of mesmerizing to watch!",
       "action": "openWYSIWYGEditor",
       "options": [
         {
@@ -412,7 +412,7 @@
           "action": "launchPyodideGame"
         },
         {
-          "text": "Export as Python file",
+          "text": "Export as TypeScript",
           "action": "exportPyodideGame"
         },
         {
@@ -424,7 +424,7 @@
     "learnPath": {
       "id": "learnPath",
       "speaker": "Pixel",
-      "text": "Smart choice! Python's like the secret language of games - once you know it, you can make anything!",
+      "text": "Smart choice! TypeScript's like the secret language of games - once you know it, you can make anything!",
       "followUp": "I've got 10 super fun lessons lined up. We'll start simple and before you know it, you'll be making actual games!",
       "options": [
         {
@@ -481,7 +481,7 @@
     "lessonMenuPage2": {
       "id": "lessonMenuPage2",
       "speaker": "Pixel",
-      "text": "More Python powers await! These lessons get into the really fun stuff!",
+      "text": "More TypeScript powers await! These lessons get into the really fun stuff!",
       "options": [
         {
           "text": "Lesson 5: Lists & Collections",
@@ -516,11 +516,11 @@
     "lessonMenuPage3": {
       "id": "lessonMenuPage3",
       "speaker": "Pixel",
-      "text": "The final lessons - where Python becomes PyGame! 🚀",
+      "text": "The final lessons - where TypeScript becomes Strata! 🚀",
       "followUp": "These teach you actual game development!",
       "options": [
         {
-          "text": "Lesson 9: PyGame Introduction",
+          "text": "Lesson 9: Strata Introduction",
           "action": "loadLesson",
           "actionParams": { "lesson": 9 }
         },
@@ -543,7 +543,7 @@
       "id": "lessonSkillCheck",
       "speaker": "Pixel",
       "text": "No problem! Let's figure out where you're at so we don't waste your time!",
-      "followUp": "Quick check - what can you already do in Python?",
+      "followUp": "Quick check - what can you already do in TypeScript?",
       "options": [
         {
           "text": "I can make variables and do some math",
@@ -558,7 +558,7 @@
           "next": "suggestLesson7"
         },
         {
-          "text": "I'm basically a Python ninja already",
+          "text": "I'm basically a TypeScript ninja already",
           "next": "suggestLesson9"
         },
         {
@@ -621,11 +621,11 @@
     "suggestLesson9": {
       "id": "suggestLesson9",
       "speaker": "Pixel",
-      "text": "A Python ninja! You're totally ready for the real game development!",
-      "followUp": "Want to dive straight into PyGame? Or go all-in and build something right now?",
+      "text": "A TypeScript ninja! You're totally ready for the real game development!",
+      "followUp": "Want to dive straight into Strata? Or go all-in and build something right now?",
       "options": [
         {
-          "text": "Show me PyGame's secrets!",
+          "text": "Show me Strata's secrets!",
           "action": "loadLesson",
           "actionParams": { "lesson": 9 }
         },
@@ -754,7 +754,7 @@
           ],
           "8": [
             {
-              "text": "Continue to Lesson 9 - PyGame Intro",
+              "text": "Continue to Lesson 9 - Strata Intro",
               "action": "loadLesson",
               "actionParams": { "lesson": 9 }
             },

@@ -13,7 +13,7 @@ importers:
         version: 3.10.0(react-hook-form@7.69.0(react@18.3.1))
       '@jbcom/strata':
         specifier: ^1.4.10
-        version: 1.4.10(@react-three/drei@10.7.7(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react@18.3.27)(@types/three@0.182.0)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(@types/three@0.182.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)(zustand@4.5.7(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1))
+        version: 1.4.10(@react-three/drei@10.7.7(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react@18.3.27)(@types/three@0.182.0)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(@types/three@0.182.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)(zustand@5.0.9(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1)))
       '@jridgewell/trace-mapping':
         specifier: ^0.3.25
         version: 0.3.31
@@ -246,6 +246,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.1
         version: 18.3.7(@types/react@18.3.27)
+      '@types/selenium-webdriver':
+        specifier: ^4.35.4
+        version: 4.35.4
       '@types/ws':
         specifier: ^8.5.13
         version: 8.18.1
@@ -273,6 +276,9 @@ importers:
       postcss:
         specifier: ^8.4.47
         version: 8.5.6
+      selenium-webdriver:
+        specifier: ^4.39.0
+        version: 4.39.0(bufferutil@4.1.0)
       supertest:
         specifier: ^7.1.4
         version: 7.1.4
@@ -410,6 +416,9 @@ packages:
   '@babel/types@7.28.5':
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
+
+  '@bazel/runfiles@6.5.0':
+    resolution: {integrity: sha512-RzahvqTkfpY2jsDxo8YItPX+/iZ6hbiikw1YhE0bA9EKBR5Og8Pa6FHn9PO9M0zaXRVsr0GFQLKbB/0rzy9SzA==}
 
   '@bcoe/v8-coverage@1.0.2':
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
@@ -2233,6 +2242,9 @@ packages:
   '@types/react@18.3.27':
     resolution: {integrity: sha512-cisd7gxkzjBKU2GgdYrTdtQx1SORymWyaAFhaxQPK9bYO9ot3Y5OikQRvY0VYQtvwjeQnizCINJAenh/V7MK2w==}
 
+  '@types/selenium-webdriver@4.35.4':
+    resolution: {integrity: sha512-hZFsK0dt/2PA5eLrFOJwkoTBpPXtaKnln7NCtg3pMAPwg7DXG6kTilHoAw8KzsQeDFLJ0mYcL6dPSMt1Qk7eSw==}
+
   '@types/send@1.2.1':
     resolution: {integrity: sha512-arsCikDvlU99zl1g69TcAB3mzZPpxgw0UQnaHeC1Nwb015xp8bknZv5rIfri9xTOcMuaVgvabfIRA7PSZVuZIQ==}
 
@@ -3920,6 +3932,10 @@ packages:
   scheduler@0.25.0:
     resolution: {integrity: sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA==}
 
+  selenium-webdriver@4.39.0:
+    resolution: {integrity: sha512-NAs9jCU+UeZ/ZmRb8R6zOp7N8eMklefdBYASnaRmCNXdgFE8w3OCxxZmLixkwqnGDHY5VF7hCulfw1Mls43N/A==}
+    engines: {node: '>= 20.0.0'}
+
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
@@ -4149,6 +4165,10 @@ packages:
   tldts@7.0.19:
     resolution: {integrity: sha512-8PWx8tvC4jDB39BQw1m4x8y5MH1BcQ5xHeL2n7UVFulMPH/3Q0uiamahFJ3lXA0zO2SUyRXuVVbWSDmstlt9YA==}
     hasBin: true
+
+  tmp@0.2.5:
+    resolution: {integrity: sha512-voyz6MApa1rQGUxT3E+BK7/ROe8itEx7vD8/HEvt4xwXucvQ5G5oeEiHkmHZJuBO21RpOf+YYm9MOivj709jow==}
+    engines: {node: '>=14.14'}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -4674,6 +4694,8 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
+  '@bazel/runfiles@6.5.0': {}
+
   '@bcoe/v8-coverage@1.0.2': {}
 
   '@biomejs/biome@2.3.10':
@@ -5043,7 +5065,7 @@ snapshots:
 
   '@istanbuljs/schema@0.1.3': {}
 
-  '@jbcom/strata@1.4.10(@react-three/drei@10.7.7(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react@18.3.27)(@types/three@0.182.0)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(@types/three@0.182.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)(zustand@4.5.7(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1))':
+  '@jbcom/strata@1.4.10(@react-three/drei@10.7.7(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react@18.3.27)(@types/three@0.182.0)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react-dom@18.3.7(@types/react@18.3.27))(@types/react@18.3.27)(@types/three@0.182.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)(zustand@5.0.9(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1)))':
     dependencies:
       '@react-three/drei': 10.7.7(@react-three/fiber@9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0))(@types/react@18.3.27)(@types/three@0.182.0)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)
       '@react-three/fiber': 9.4.2(@types/react@18.3.27)(immer@11.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(three@0.182.0)
@@ -5063,9 +5085,9 @@ snapshots:
       three: 0.182.0
       tunnel-rat: 0.1.2(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)
       xstate: 5.25.0
-      zundo: 2.3.0(zustand@4.5.7(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1))
+      zundo: 2.3.0(zustand@5.0.9(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1)))
     optionalDependencies:
-      zustand: 4.5.7(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)
+      zustand: 5.0.9(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -6252,6 +6274,11 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.15
       csstype: 3.2.3
+
+  '@types/selenium-webdriver@4.35.4':
+    dependencies:
+      '@types/node': 20.16.11
+      '@types/ws': 8.18.1
 
   '@types/send@1.2.1':
     dependencies:
@@ -7983,6 +8010,16 @@ snapshots:
 
   scheduler@0.25.0: {}
 
+  selenium-webdriver@4.39.0(bufferutil@4.1.0):
+    dependencies:
+      '@bazel/runfiles': 6.5.0
+      jszip: 3.10.1
+      tmp: 0.2.5
+      ws: 8.18.3(bufferutil@4.1.0)
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   semver@6.3.1: {}
 
   semver@7.7.3: {}
@@ -8259,6 +8296,8 @@ snapshots:
   tldts@7.0.19:
     dependencies:
       tldts-core: 7.0.19
+
+  tmp@0.2.5: {}
 
   to-regex-range@5.0.1:
     dependencies:
@@ -8573,9 +8612,9 @@ snapshots:
 
   zod@3.25.76: {}
 
-  zundo@2.3.0(zustand@4.5.7(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)):
+  zundo@2.3.0(zustand@5.0.9(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))):
     dependencies:
-      zustand: 4.5.7(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)
+      zustand: 5.0.9(@types/react@18.3.27)(immer@11.1.0)(react@18.3.1)(use-sync-external-store@1.6.0(react@18.3.1))
 
   zustand@3.7.2(react@18.3.1):
     optionalDependencies:
