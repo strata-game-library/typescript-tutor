@@ -79,8 +79,8 @@ export function useWizardDialogue({
     return {
       choices: [],
       createdAssets: [],
-      gameType: null,
-      currentProject: null,
+      gameType: undefined,
+      currentProject: undefined,
       completedSteps: [],
       unlockedEditor: false
     };
@@ -108,7 +108,7 @@ export function useWizardDialogue({
     // Save state to localStorage (debounced)
     saveWizardStateDebounced({
       version: '1.0.0',
-      activeFlowPath: loadedFlowPath,
+      activeFlowPath: loadedFlowPath || undefined,
       currentNodeId: dialogueState.currentNodeId,
       gameType: sessionActions.gameType,
       selectedGameType: sessionActions.selectedGameType,
@@ -160,12 +160,13 @@ export function useWizardDialogue({
       if (persistedState && persistedState.currentNodeId && 
           wizardData[persistedState.currentNodeId]) {
         // Always sync with persisted state if the node exists
-        if (persistedState.currentNodeId !== dialogueState.currentNodeId) {
-          console.log('📍 Restoring persisted node in already-loaded flow:', persistedState.currentNodeId);
+        const restoredNodeId = persistedState.currentNodeId;
+        if (restoredNodeId !== dialogueState.currentNodeId) {
+          console.log('📍 Restoring persisted node in already-loaded flow:', restoredNodeId);
           setDialogueState(prev => ({
             ...prev,
-            currentNodeId: persistedState.currentNodeId,
-            currentNode: wizardData[persistedState.currentNodeId],
+            currentNodeId: restoredNodeId,
+            currentNode: wizardData[restoredNodeId],
             dialogueStep: 0,
             carouselIndex: 0,
             showAllChoices: false

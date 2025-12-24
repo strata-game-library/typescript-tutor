@@ -1187,13 +1187,13 @@ export class MemStorage implements IStorage {
           validation: step.validation
         }))
       },
-      intro: lessonData.intro || null,
-      learningObjectives: lessonData.learningObjectives ? [...lessonData.learningObjectives] : null,
-      goalDescription: lessonData.goalDescription || null,
-      previewCode: lessonData.previewCode || null,
-      prerequisites: lessonData.prerequisites ? [...lessonData.prerequisites] : null,
-      difficulty: lessonData.difficulty || null,
-      estimatedTime: lessonData.estimatedTime || null,
+      intro: lessonData.intro || undefined,
+      learningObjectives: lessonData.learningObjectives ? [...lessonData.learningObjectives] : undefined,
+      goalDescription: lessonData.goalDescription || undefined,
+      previewCode: lessonData.previewCode || undefined,
+      prerequisites: lessonData.prerequisites ? [...lessonData.prerequisites] : undefined,
+      difficulty: lessonData.difficulty || undefined,
+      estimatedTime: lessonData.estimatedTime || undefined,
     };
     this.lessons.set(id, lesson);
     return lesson;
@@ -1240,7 +1240,7 @@ export class MemStorage implements IStorage {
         lessonId,
         currentStep: 0,
         completed: false,
-        code: null,
+        code: undefined,
         ...progressUpdate,
       };
       this.userProgress.set(id, newProgress);
@@ -1270,11 +1270,11 @@ export class MemStorage implements IStorage {
       userId: projectData.userId,
       name: projectData.name,
       template: projectData.template,
-      description: projectData.description || null,
+      description: projectData.description || undefined,
       published: projectData.published || false,
       createdAt: now,
-      publishedAt: (projectData.published || false) ? now : null,
-      thumbnailDataUrl: projectData.thumbnailDataUrl || null,
+      publishedAt: (projectData.published || false) ? now : undefined,
+      thumbnailDataUrl: projectData.thumbnailDataUrl || undefined,
       files: projectData.files ? [...projectData.files] : [],
       assets: projectData.assets ? projectData.assets.map((asset: any) => ({
         id: asset.id,
@@ -1309,7 +1309,7 @@ export class MemStorage implements IStorage {
         updated.publishedAt = new Date();
       } else {
         // Unpublishing: clear publishedAt
-        updated.publishedAt = null;
+        updated.publishedAt = undefined;
       }
     }
     
@@ -1365,7 +1365,7 @@ export class MemStorage implements IStorage {
     const updated: Project = {
       ...existing,
       published: false,
-      publishedAt: null,
+      publishedAt: undefined,
     };
     this.projects.set(id, updated);
     return updated;

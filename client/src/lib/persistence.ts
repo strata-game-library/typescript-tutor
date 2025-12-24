@@ -4,16 +4,17 @@
 // Type definitions for persisted data
 export interface PersistedWizardState {
   version: string;
-  activeFlowPath: string | null;
-  currentNodeId: string;
-  gameType: string | null;
-  selectedGameType: string | null;
-  sessionActions: {
+  activeFlowPath?: string;
+  currentNodeId?: string;
+  gameType?: string;
+  selectedGameType?: string;
+  sessionActions?: {
     choices: string[];
     createdAssets: string[];
-    gameType: string | null;
-    selectedGameType?: string | null;
-    currentProject: any | null;
+    gameName?: string;
+    gameType?: string;
+    selectedGameType?: string;
+    currentProject?: any;
     completedSteps: string[];
     unlockedEditor: boolean;
     selectedComponents?: Record<string, string>;
@@ -28,15 +29,16 @@ export interface PersistedWizardState {
 
 export interface PersistedSessionState {
   version: string;
-  uiState: {
+  gameName?: string;
+  uiState?: {
     pixelMenuOpen: boolean;
     embeddedComponent: string;
     pixelState: string;
-    wysiwygEditorOpen: boolean;
-    assetBrowserOpen: boolean;
-    assetBrowserType: string;
+    wysiwygEditorOpen?: boolean;
+    assetBrowserOpen?: boolean;
+    assetBrowserType?: string;
     selectedGameType?: string;
-    isMinimizing: boolean;
+    isMinimizing?: boolean;
     minimizeMessage?: string;
     previewMode?: string;
     viewMode?: string;

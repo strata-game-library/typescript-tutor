@@ -104,7 +104,7 @@ export class CookieMock {
 export const createMockWizardNode = (overrides?: Partial<WizardNode>): WizardNode => ({
   id: 'test-node',
   text: 'Test node text',
-  character: 'pixel',
+  speaker: 'pixel',
   options: [
     { text: 'Option 1', next: 'next-node-1' },
     { text: 'Option 2', next: 'next-node-2' }
@@ -124,8 +124,8 @@ export const createMockDialogueState = (overrides?: Partial<DialogueState>): Dia
 export const createMockSessionActions = (overrides?: Partial<SessionActions>): SessionActions => ({
   choices: [],
   createdAssets: [],
-  gameType: null,
-  currentProject: null,
+  gameType: undefined,
+  currentProject: undefined,
   completedSteps: [],
   unlockedEditor: false,
   ...overrides
@@ -143,9 +143,9 @@ export const createMockFlowData = (): Record<string, WizardNode> => ({
     id: 'choose-game',
     text: 'Choose your game type',
     options: [
-      { text: 'Platformer', next: 'platformer-intro', params: { gameType: 'platformer' } },
-      { text: 'RPG', next: 'rpg-intro', params: { gameType: 'rpg' } },
-      { text: 'Racing', next: 'racing-intro', params: { gameType: 'racing' } }
+      { text: 'Platformer', next: 'platformer-intro', actionParams: { gameType: 'platformer' } },
+      { text: 'RPG', next: 'rpg-intro', actionParams: { gameType: 'rpg' } },
+      { text: 'Racing', next: 'racing-intro', actionParams: { gameType: 'racing' } }
     ]
   }),
   'platformer-intro': createMockWizardNode({

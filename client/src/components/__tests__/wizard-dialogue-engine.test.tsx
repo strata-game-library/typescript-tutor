@@ -9,7 +9,7 @@ import {
   createMockWizardNode,
   waitFor,
   simulatePageRefresh
-} from '../../../tests/test-utils';
+} from '../../../../tests/test-utils';
 import * as persistence from '@/lib/persistence';
 
 // Mock the persistence module

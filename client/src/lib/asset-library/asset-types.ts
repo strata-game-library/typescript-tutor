@@ -35,13 +35,17 @@ export type BackgroundCategory =
   | 'desert'
   | 'dungeon'
   | 'abstract'
-  | 'solid';
+  | 'solid'
+  | 'misc'
+  | 'tiles'
+  | 'enemies'
+  | 'backgrounds';
 
 // Base asset interface
 export interface BaseAsset {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   type: AssetType;
   path: string;
   thumbnail?: string;
@@ -57,7 +61,7 @@ export interface BaseAsset {
 // Sprite asset interface
 export interface SpriteAsset extends BaseAsset {
   type: 'sprite';
-  category: AssetCategory;
+  category?: AssetCategory;
   frameCount?: number;
   frameWidth?: number;
   frameHeight?: number;
@@ -73,7 +77,7 @@ export interface SpriteAsset extends BaseAsset {
 // Sound asset interface
 export interface SoundAsset extends BaseAsset {
   type: 'sound' | 'music';
-  category: SoundCategory;
+  category?: SoundCategory;
   duration?: number;
   loop?: boolean;
   volume?: number;
@@ -97,7 +101,7 @@ export type GameAsset = SpriteAsset | SoundAsset | BackgroundAsset;
 // Asset filter options
 export interface AssetFilter {
   type?: AssetType;
-  category?: AssetCategory | SoundCategory | BackgroundCategory;
+  category?: AssetCategory | SoundCategory | BackgroundCategory | string;
   tags?: string[];
   search?: string;
 }

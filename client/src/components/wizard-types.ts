@@ -68,8 +68,8 @@ export interface WizardOption {
 export interface SessionActions {
   choices: string[];
   createdAssets: string[];
-  gameType: string | null;
-  currentProject: string | null;
+  gameType?: string;
+  currentProject?: string;
   completedSteps: string[];
   unlockedEditor: boolean;
   livePreviewChoices?: GameChoice[];

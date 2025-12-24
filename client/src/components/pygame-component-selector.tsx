@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import type { PygameComponent } from '@/lib/pygame-components/types';
-import { allComponents } from '@/lib/pygame-components';
+import { allComponents } from '@/lib/pygame-components/index';
 
 interface ComponentSelectorProps {
   componentId?: string;

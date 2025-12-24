@@ -131,7 +131,7 @@ export class AssetManager {
       const searchLower = filter.search.toLowerCase();
       results = results.filter(asset =>
         asset.name.toLowerCase().includes(searchLower) ||
-        asset.description.toLowerCase().includes(searchLower) ||
+        (asset.description?.toLowerCase().includes(searchLower) ?? false) ||
         asset.tags.some(tag => tag.toLowerCase().includes(searchLower))
       );
     }
