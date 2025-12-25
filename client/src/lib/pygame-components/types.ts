@@ -19,12 +19,12 @@ export interface PygameComponent {
     A: {
       name: string;
       description: string;
-      pythonCode: string; // Pre-written pygame code
+      code: string; // Pre-written strata code
     };
     B: {
       name: string;
       description: string;
-      pythonCode: string;
+      code: string;
     };
   };
 

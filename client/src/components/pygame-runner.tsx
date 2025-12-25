@@ -7,7 +7,7 @@ import { Download, Maximize, Minimize, Pause, Play, RefreshCw, X } from 'lucide-
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { compilePythonGame } from '@/lib/pygame-game-compiler';
+import { compileStrataGame as compilePythonGame } from '@/lib/pygame-game-compiler';
 import '@/types/pyodide.d';
 
 import type { GameAsset } from '@/lib/asset-library/asset-types';

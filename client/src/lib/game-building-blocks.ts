@@ -10,7 +10,7 @@ export interface ComponentOption {
   title: string;
   description: string;
   features: string[];
-  pythonCode: string;
+  code: string;
   preview?: string;
 }
 
@@ -32,99 +32,109 @@ export const gameComponents: GameComponent[] = [
       title: 'Real-time Combat',
       description: 'Fast-paced action with instant reactions',
       features: ['Health bars', 'Collision damage', 'Cooldown timers', 'Dodge mechanics'],
-      pythonCode: `# Real-time Combat System
-class CombatSystem:
-    def __init__(self):
-        self.enemies = []
-        self.projectiles = []
-        self.damage_cooldown = 0
+      code: `// Real-time Combat System
+class CombatSystem {
+    constructor() {
+        this.enemies = [];
+        this.projectiles = [];
+        this.damageCooldown = 0;
+    }
         
-    def add_enemy(self, x, y, health=100):
-        enemy = {
-            'x': x, 'y': y,
-            'health': health,
-            'max_health': health,
-            'damage': 10,
-            'rect': pygame.Rect(x, y, 40, 40)
+    addEnemy(x, y, health = 100) {
+        let enemy = {
+            x: x, y: y,
+            health: health,
+            maxHealth: health,
+            damage: 10,
+            rect: new strata.Rect(x, y, 40, 40)
+        };
+        this.enemies.push(enemy);
+    }
+        
+    checkCollisionDamage(playerRect) {
+        /* Check if player touches enemy and return damage amount */
+        if (this.damageCooldown <= 0) {
+            for (let enemy of this.enemies) {
+                if (playerRect.colliderect(enemy.rect)) {
+                    this.damageCooldown = 60;  // 1 second at 60 FPS
+                    return enemy.damage;  // Return damage to be applied
+                }
+            }
+        } else {
+            this.damageCooldown--;
         }
-        self.enemies.append(enemy)
-        
-    def check_collision_damage(self, player_rect):
-        """Check if player touches enemy and return damage amount"""
-        if self.damage_cooldown <= 0:
-            for enemy in self.enemies:
-                if player_rect.colliderect(enemy['rect']):
-                    self.damage_cooldown = 60  # 1 second at 60 FPS
-                    return enemy['damage']  # Return damage to be applied
-        else:
-            self.damage_cooldown -= 1
-        return 0  # No damage this frame
+        return 0;  // No damage this frame
+    }
     
-    def fire_projectile(self, x, y, direction):
-        """Create a projectile for ranged attacks"""
-        projectile = {
-            'x': x, 'y': y,
-            'vel_x': direction[0] * 10,
-            'vel_y': direction[1] * 10,
-            'damage': 25,
-            'rect': pygame.Rect(x, y, 10, 10)
+    fireProjectile(x, y, direction) {
+        /* Create a projectile for ranged attacks */
+        let projectile = {
+            x: x, y: y,
+            velX: direction[0] * 10,
+            velY: direction[1] * 10,
+            damage: 25,
+            rect: new strata.Rect(x, y, 10, 10)
+        };
+        this.projectiles.push(projectile);
+    }
+    
+    updateCombat(playerRect) {
+        // Update projectiles
+        for (let i = this.projectiles.length - 1; i >= 0; i--) {
+            let p = this.projectiles[i];
+            p.x += p.velX;
+            p.y += p.velY;
+            p.rect.x = p.x;
+            p.rect.y = p.y;
+            
+            // Check projectile hits
+            for (let enemy of this.enemies) {
+                if (p.rect.colliderect(enemy.rect)) {
+                    enemy.health -= p.damage;
+                    this.projectiles.splice(i, 1);
+                    break;
+                }
+            }
+            
+            // Remove off-screen projectiles
+            if (p.x < 0 || p.x > 800 || p.y < 0 || p.y > 600) {
+                if (this.projectiles[i] === p) this.projectiles.splice(i, 1);
+            }
         }
-        self.projectiles.append(projectile)
+        
+        // Remove defeated enemies
+        this.enemies = this.enemies.filter(e => e.health > 0);
+    }
     
-    def update_combat(self, player_rect):
-        # Update projectiles
-        for projectile in self.projectiles[:]:
-            projectile['x'] += projectile['vel_x']
-            projectile['y'] += projectile['vel_y']
-            projectile['rect'].x = projectile['x']
-            projectile['rect'].y = projectile['y']
+    drawCombat(screen) {
+        // Draw enemies with health bars
+        for (let enemy of this.enemies) {
+            // Enemy body
+            strata.draw.rect(screen, [200, 50, 50], enemy.rect);
             
-            # Check projectile hits
-            for enemy in self.enemies:
-                if projectile['rect'].colliderect(enemy['rect']):
-                    enemy['health'] -= projectile['damage']
-                    if projectile in self.projectiles:
-                        self.projectiles.remove(projectile)
-                    break
-            
-            # Remove off-screen projectiles
-            if (projectile['x'] < 0 or projectile['x'] > 800 or
-                projectile['y'] < 0 or projectile['y'] > 600):
-                if projectile in self.projectiles:
-                    self.projectiles.remove(projectile)
+            // Health bar
+            let barWidth = 40;
+            let barHeight = 5;
+            let healthPercent = enemy.health / enemy.maxHealth;
+            strata.draw.rect(screen, [100, 0, 0], 
+                           [enemy.x, enemy.y - 10, barWidth, barHeight]);
+            strata.draw.rect(screen, [0, 255, 0],
+                           [enemy.x, enemy.y - 10, 
+                            barWidth * healthPercent, barHeight]);
+        }
         
-        # Remove defeated enemies
-        self.enemies = [e for e in self.enemies if e['health'] > 0]
-        
-        # Check collision damage (damage is handled elsewhere)
-        # Note: Collision detection only, damage applied in main game loop
-    
-    def draw_combat(self, screen):
-        # Draw enemies with health bars
-        for enemy in self.enemies:
-            # Enemy body
-            pygame.draw.rect(screen, (200, 50, 50), enemy['rect'])
-            
-            # Health bar
-            bar_width = 40
-            bar_height = 5
-            health_percent = enemy['health'] / enemy['max_health']
-            pygame.draw.rect(screen, (100, 0, 0), 
-                           (enemy['x'], enemy['y'] - 10, bar_width, bar_height))
-            pygame.draw.rect(screen, (0, 255, 0),
-                           (enemy['x'], enemy['y'] - 10, 
-                            bar_width * health_percent, bar_height))
-        
-        # Draw projectiles
-        for projectile in self.projectiles:
-            pygame.draw.circle(screen, (255, 255, 0),
-                             (int(projectile['x']), int(projectile['y'])), 5)`,
+        // Draw projectiles
+        for (let p of this.projectiles) {
+            strata.draw.circle(screen, [255, 255, 0],
+                             [Math.floor(p.x), Math.floor(p.y)], 5);
+        }
+    }`
     },
     optionB: {
       title: 'Turn-based Combat',
       description: 'Strategic battles with planned moves',
       features: ['Action points', 'Turn order', 'Move selection', 'Strategy planning'],
-      pythonCode: `# Turn-based Combat System
+      code: `# Turn-based Combat System
 class CombatSystem:
     def __init__(self):
         self.enemies = []
@@ -272,10 +282,10 @@ class CombatSystem:
             for i, action in enumerate(actions):
                 color = (255, 255, 255) if i < 3 and self.action_points > 0 else (100, 100, 100)
                 action_text = font.render(f"{i+1}. {action}", True, color)
-                screen.blit(action_text, (20, 530 + i * 25))`,
-    },
+                screen.blit(action_text, (20, 530 + i * 25))`
+    }
   },
-
+  
   {
     id: 'inventory',
     title: 'Inventory System',
@@ -284,7 +294,7 @@ class CombatSystem:
       title: 'Grid-based Inventory',
       description: 'Visual grid with drag-and-drop functionality',
       features: ['Limited slots', 'Item stacking', 'Visual organization', 'Quick slots'],
-      pythonCode: `# Grid-based Inventory System
+      code: `# Grid-based Inventory System
 class InventorySystem:
     def __init__(self, rows=5, cols=8):
         self.rows = rows
@@ -422,13 +432,13 @@ class InventorySystem:
                     icon_text = icon_font.render(item['icon'], True, (255, 255, 255))
                     icon_rect = icon_text.get_rect(center=(slot_x + cell_size//2,
                                                           quick_y + cell_size//2))
-                    screen.blit(icon_text, icon_rect)`,
+                    screen.blit(icon_text, icon_rect)`
     },
     optionB: {
       title: 'List-based Inventory',
       description: 'Organized categories with unlimited storage',
       features: ['Item categories', 'Unlimited items', 'Search & filter', 'Auto-sorting'],
-      pythonCode: `# List-based Inventory System  
+      code: `# List-based Inventory System  
 class InventorySystem:
     def __init__(self):
         self.items = []
@@ -605,10 +615,10 @@ class InventorySystem:
                 item = self.quick_bar[i]
                 icon_text = item_font.render(item['icon'], True, (255, 255, 255))
                 icon_rect = icon_text.get_rect(center=(slot_x + 16, quick_y + 16))
-                screen.blit(icon_text, icon_rect)`,
-    },
+                screen.blit(icon_text, icon_rect)`
+    }
   },
-
+  
   {
     id: 'movement',
     title: 'Movement System',
@@ -617,7 +627,7 @@ class InventorySystem:
       title: 'Smooth Movement',
       description: 'Physics-based movement with acceleration',
       features: ['Velocity & acceleration', 'Smooth animations', 'Momentum', 'Air control'],
-      pythonCode: `# Smooth Movement System
+      code: `# Smooth Movement System
 class MovementSystem:
     def __init__(self, entity):
         self.entity = entity
@@ -784,13 +794,13 @@ class MovementSystem:
         for info in debug_info:
             text = font.render(info, True, (255, 255, 255))
             screen.blit(text, (10, y_offset))
-            y_offset += 20`,
+            y_offset += 20`
     },
     optionB: {
       title: 'Grid Movement',
       description: 'Tile-based movement like classic RPGs',
       features: ['Tile snapping', 'Cardinal directions', 'Instant movement', 'Grid pathfinding'],
-      pythonCode: `# Grid Movement System
+      code: `# Grid Movement System
 class MovementSystem:
     def __init__(self, entity, tile_size=32):
         self.entity = entity
@@ -1003,10 +1013,10 @@ class MovementSystem:
             rect = pygame.Rect(ix * self.tile_size - camera_x,
                               iy * self.tile_size - camera_y,
                               self.tile_size, self.tile_size)
-            pygame.draw.rect(screen, (0, 100, 200), rect, 2)`,
-    },
+            pygame.draw.rect(screen, (0, 100, 200), rect, 2)`
+    }
   },
-
+  
   {
     id: 'progression',
     title: 'Character Progression',
@@ -1015,7 +1025,7 @@ class MovementSystem:
       title: 'Level-based System',
       description: 'Traditional XP and level ups with skill trees',
       features: ['Experience points', 'Level ups', 'Skill trees', 'Stat growth'],
-      pythonCode: `# Level-based Progression System
+      code: `# Level-based Progression System
 class ProgressionSystem:
     def __init__(self, player):
         self.player = player
@@ -1228,13 +1238,13 @@ class ProgressionSystem:
         if self.skill_points > 0:
             sp_text = font.render(f"Skill Points: {self.skill_points}",
                                 True, (255, 255, 0))
-            screen.blit(sp_text, (x, bar_y + bar_height + 5))`,
+            screen.blit(sp_text, (x, bar_y + bar_height + 5))`
     },
     optionB: {
       title: 'Item-based Progression',
       description: 'Power through equipment and collectibles',
       features: ['Equipment tiers', 'Power-ups', 'Collectible upgrades', 'No level cap'],
-      pythonCode: `# Item-based Progression System
+      code: `# Item-based Progression System
 class ProgressionSystem:
     def __init__(self, player):
         self.player = player
@@ -1527,10 +1537,10 @@ class ProgressionSystem:
                 buff_info = font.render(f"  {buff['name']} ({remaining}s)",
                                        True, (100, 255, 100))
                 screen.blit(buff_info, (x, y_offset))
-                y_offset += 20`,
-    },
+                y_offset += 20`
+    }
   },
-
+  
   {
     id: 'mapgen',
     title: 'Map Generation',
@@ -1539,7 +1549,7 @@ class ProgressionSystem:
       title: 'Procedural Generation',
       description: 'Random worlds that are different every time',
       features: ['Infinite worlds', 'Random dungeons', 'Roguelike elements', 'Seed-based'],
-      pythonCode: `# Procedural Map Generation System
+      code: `# Procedural Map Generation System
 import random
 import noise
 
@@ -1855,13 +1865,13 @@ class MapGenerationSystem:
                 color = colors.get(tile, (0, 0, 0))
                 
                 rect = pygame.Rect(x + tx * scale, y + ty * scale, scale, scale)
-                pygame.draw.rect(screen, color, rect)`,
+                pygame.draw.rect(screen, color, rect)`
     },
     optionB: {
       title: 'Designed Levels',
       description: 'Handcrafted stages with intentional design',
       features: ['Consistent layout', 'Puzzle placement', 'Narrative flow', 'Secret areas'],
-      pythonCode: `# Designed Level System
+      code: `# Designed Level System
 class MapGenerationSystem:
     def __init__(self):
         self.current_level = 0
@@ -2169,10 +2179,10 @@ class MapGenerationSystem:
             '^': (150, 150, 150), # Spikes
             'B': (128, 0, 128),   # Boss
         }
-        return colors.get(tile_char, (100, 100, 100))`,
-    },
+        return colors.get(tile_char, (100, 100, 100))`
+    }
   },
-
+  
   {
     id: 'jump_mechanics',
     title: 'Jump Mechanics',
@@ -2181,7 +2191,7 @@ class MapGenerationSystem:
       title: 'Floaty Jump',
       description: 'Mario-style jumping with air control and variable height',
       features: ['Hold to jump higher', 'Air control', 'Coyote time', 'Jump buffering'],
-      pythonCode: `# Floaty Jump Mechanics (Mario-style)
+      code: `# Floaty Jump Mechanics (Mario-style)
 class JumpMechanics:
     def __init__(self, player):
         self.player = player
@@ -2367,13 +2377,13 @@ class JumpMechanics:
             'Air Control': self.air_control_strength,
             'Coyote Time': self.coyote_time,
             'Buffer Time': self.jump_buffer_time
-        }`,
+        }`
     },
     optionB: {
       title: 'Realistic Jump',
       description: 'Fixed arc jumping with no air control',
       features: ['Fixed jump height', 'No air control', 'Predictable arc', 'Landing prediction'],
-      pythonCode: `# Realistic Jump Mechanics (Fixed arc)
+      code: `# Realistic Jump Mechanics (Fixed arc)
 class JumpMechanics:
     def __init__(self, player):
         self.player = player
@@ -2568,10 +2578,10 @@ class JumpMechanics:
             'Jump Cooldown': self.jump_cooldown_time,
             'Current Cooldown': self.jump_cooldown,
             'Can Jump': self.can_jump
-        }`,
-    },
+        }`
+    }
   },
-
+  
   {
     id: 'ground_movement',
     title: 'Ground Movement',
@@ -2580,7 +2590,7 @@ class JumpMechanics:
       title: 'Smooth Acceleration',
       description: 'Gradual speed changes with momentum',
       features: ['Acceleration curves', 'Deceleration', 'Turn momentum', 'Speed tiers'],
-      pythonCode: `# Smooth Acceleration Ground Movement
+      code: `# Smooth Acceleration Ground Movement
 class GroundMovement:
     def __init__(self, player):
         self.player = player
@@ -2777,13 +2787,13 @@ class GroundMovement:
             'Run Speed': self.max_run_speed,
             'Current Speed': round(self.current_speed, 2),
             'Speed Tier': ['Idle', 'Walking', 'Running'][self.speed_tier]
-        }`,
+        }`
     },
     optionB: {
       title: 'Instant Movement',
       description: 'Immediate response with no momentum',
       features: ['Instant start/stop', 'Precise control', 'Fixed speeds', 'No sliding'],
-      pythonCode: `# Instant Movement (Responsive)
+      code: `# Instant Movement (Responsive)
 class GroundMovement:
     def __init__(self, player):
         self.player = player
@@ -2956,10 +2966,10 @@ class GroundMovement:
             'Is Running': self.is_running,
             'Direction': 'Right' if self.facing_direction > 0 else 'Left',
             'Current Speed': abs(self.player.velocity_x)
-        }`,
-    },
+        }`
+    }
   },
-
+  
   {
     id: 'gravity_system',
     title: 'Gravity System',
@@ -2968,7 +2978,7 @@ class GroundMovement:
       title: 'Light Gravity',
       description: 'Moon-like gravity with slow, floaty falls',
       features: ['Slow falling', 'Extended air time', 'Gentle landings', 'Float mechanics'],
-      pythonCode: `# Light Gravity System (Moon-like)
+      code: `# Light Gravity System (Moon-like)
 class GravitySystem:
     def __init__(self):
         # Gravity parameters (tweakable!)
@@ -3176,13 +3186,13 @@ class GravitySystem:
             'Physics Objects': len(self.physics_objects),
             'Floating Objects': len(self.floating_objects),
             'Low Grav Zones': len(self.low_grav_zones)
-        }`,
+        }`
     },
     optionB: {
       title: 'Heavy Gravity',
       description: 'Realistic gravity with fast, heavy falls',
       features: ['Fast falling', 'Weight matters', 'Fall damage', 'No floating'],
-      pythonCode: `# Heavy Gravity System (Realistic)
+      code: `# Heavy Gravity System (Realistic)
 class GravitySystem:
     def __init__(self):
         # Gravity parameters (tweakable!)
@@ -3426,10 +3436,10 @@ class GravitySystem:
             'Physics Objects': len(self.physics_objects),
             'Heavy Objects': len(self.heavy_objects),
             'Screen Shake': self.screen_shake
-        }`,
-    },
+        }`
+    }
   },
-
+  
   {
     id: 'dash_move',
     title: 'Dash/Special Move',
@@ -3438,7 +3448,7 @@ class GravitySystem:
       title: 'Air Dash',
       description: 'Quick omnidirectional dash that works in mid-air',
       features: ['8-directional dash', 'Air mobility', 'Dash chaining', 'After-images'],
-      pythonCode: `# Air Dash System
+      code: `# Air Dash System
 class DashSystem:
     def __init__(self, player):
         self.player = player
@@ -3716,13 +3726,13 @@ class DashSystem:
             'Air Dashes Left': self.air_dashes_remaining,
             'Is Dashing': self.is_dashing,
             'Cooldown': self.dash_cooldown
-        }`,
+        }`
     },
     optionB: {
       title: 'Ground Slide',
       description: 'Fast sliding dash along the ground',
       features: ['Ground-only', 'Goes under obstacles', 'Momentum based', 'Slide combos'],
-      pythonCode: `# Ground Slide System
+      code: `# Ground Slide System
 class DashSystem:
     def __init__(self, player):
         self.player = player
@@ -4071,10 +4081,10 @@ class DashSystem:
             'Is Sliding': self.is_sliding,
             'Current Speed': round(self.slide_speed_current, 2),
             'Slide Combo': self.slide_combo
-        }`,
-    },
+        }`
+    }
   },
-
+  
   {
     id: 'water_physics',
     title: 'Swimming/Water Physics',
@@ -4083,7 +4093,7 @@ class DashSystem:
       title: 'Float and Paddle',
       description: 'Buoyant swimming with easy floating',
       features: ['Natural buoyancy', 'Treading water', 'Smooth swimming', 'Breath meter'],
-      pythonCode: `# Float and Paddle Swimming System
+      code: `# Float and Paddle Swimming System
 class WaterPhysics:
     def __init__(self, player):
         self.player = player
@@ -4448,18 +4458,13 @@ class WaterPhysics:
             'Breath Remaining': self.breath_remaining,
             'In Water': self.in_water,
             'Underwater': self.is_underwater
-        }`,
+        }`
     },
     optionB: {
       title: 'Sink and Swim',
       description: 'Must actively swim to stay afloat',
-      features: [
-        'Active swimming required',
-        'Sinking mechanics',
-        'Stroke timing',
-        'Diving ability',
-      ],
-      pythonCode: `# Sink and Swim System
+      features: ['Active swimming required', 'Sinking mechanics', 'Stroke timing', 'Diving ability'],
+      code: `# Sink and Swim System
 class WaterPhysics:
     def __init__(self, player):
         self.player = player
@@ -4902,8 +4907,8 @@ class WaterPhysics:
             'Is Sinking': self.is_sinking,
             'Stroke Count': self.stroke_count,
             'Rhythm': self.calculate_stroke_efficiency()
-        }`,
-    },
+        }`
+    }
   },
 
   // New Combat & Action Components
@@ -4915,7 +4920,7 @@ class WaterPhysics:
       title: 'Rapid Fire',
       description: 'Hold to shoot continuously - spray and pray!',
       features: ['Automatic firing', 'Fast bullets', 'Spread patterns', 'Overheating system'],
-      pythonCode: `# Rapid Fire Shooting System
+      code: `# Rapid Fire Shooting System
 class ShootingSystem:
     def __init__(self):
         self.bullets = []
@@ -5072,13 +5077,13 @@ class ShootingSystem:
             screen.blit(text, (x, y - 15))
         else:
             text = font.render("Heat", True, (255, 255, 255))
-            screen.blit(text, (x, y - 15))`,
+            screen.blit(text, (x, y - 15))`
     },
     optionB: {
-      title: 'Charged Shots',
+      title: 'Charged Shots', 
       description: 'Hold to power up devastating blasts!',
       features: ['Charge levels', 'Power indicators', 'Piercing shots', 'Area damage'],
-      pythonCode: `# Charged Shot Shooting System
+      code: `# Charged Shot Shooting System
 class ShootingSystem:
     def __init__(self):
         self.projectiles = []
@@ -5304,8 +5309,8 @@ class ShootingSystem:
         tier = self.get_charge_tier()
         charge_text = f"Charge: {int(self.charge_level)}%"
         text = font.render(charge_text, True, tier['color'])
-        screen.blit(text, (x, y - 15))`,
-    },
+        screen.blit(text, (x, y - 15))`
+    }
   },
 
   {
@@ -5316,7 +5321,7 @@ class ShootingSystem:
       title: 'Sword Swing',
       description: 'Wide arc attacks that hit multiple enemies',
       features: ['Sweeping attacks', 'Combo chains', 'Spin attacks', 'Weapon trails'],
-      pythonCode: `# Sword Swing Melee System
+      code: `# Sword Swing Melee System
 class MeleeCombat:
     def __init__(self):
         self.is_attacking = False
@@ -5552,13 +5557,13 @@ class MeleeCombat:
             combo_text = f"x{self.combo_count} COMBO!"
             color = (255, 255, 0) if self.combo_count < 3 else (255, 100, 0)
             text = font.render(combo_text, True, color)
-            screen.blit(text, (player_x - 30, player_y - 40))`,
+            screen.blit(text, (player_x - 30, player_y - 40))`
     },
     optionB: {
       title: 'Punch/Kick',
       description: 'Fast, precise strikes with martial arts flair',
       features: ['Quick jabs', 'Uppercuts', 'Roundhouse kicks', 'Counter attacks'],
-      pythonCode: `# Punch/Kick Melee System
+      code: `# Punch/Kick Melee System
 class MeleeCombat:
     def __init__(self):
         self.is_attacking = False
@@ -5866,8 +5871,8 @@ class MeleeCombat:
             font = pygame.font.Font(None, 20)
             combo_text = " > ".join(self.combo_sequence)
             text = font.render(combo_text, True, (255, 255, 0))
-            screen.blit(text, (player_x - 40, player_y + 30))`,
-    },
+            screen.blit(text, (player_x - 40, player_y + 30))`
+    }
   },
 
   {
@@ -5878,7 +5883,7 @@ class MeleeCombat:
       title: 'Hearts System',
       description: 'Discrete health units like classic games',
       features: ['Heart containers', 'Half hearts', 'Extra lives', 'Heart pickups'],
-      pythonCode: `# Hearts Health System
+      code: `# Hearts Health System
 class HealthSystem:
     def __init__(self, max_hearts=5):
         self.max_hearts = max_hearts
@@ -6143,13 +6148,13 @@ class HealthSystem:
                         pygame.draw.rect(screen, (100, 100, 100),
                                        (x + col_idx * pixel_size,
                                         y + row_idx * pixel_size,
-                                        pixel_size, pixel_size))`,
+                                        pixel_size, pixel_size))`
     },
     optionB: {
       title: 'Health Bar',
       description: 'Continuous HP bar with smooth damage',
       features: ['Smooth damage', 'Regeneration', 'Damage numbers', 'Status effects'],
-      pythonCode: `# Health Bar System
+      code: `# Health Bar System
 class HealthSystem:
     def __init__(self, max_health=100):
         self.max_health = max_health
@@ -6396,8 +6401,8 @@ class HealthSystem:
                 crit_font = pygame.font.Font(None, 16)
                 crit_text = crit_font.render("CRIT!", True, (255, 255, 0))
                 crit_text.set_alpha(alpha)
-                screen.blit(crit_text, (num['x'] - 10, num['y'] - 15))`,
-    },
+                screen.blit(crit_text, (num['x'] - 10, num['y'] - 15))`
+    }
   },
 
   {
@@ -6408,7 +6413,7 @@ class HealthSystem:
       title: 'Energy Shield',
       description: 'Regenerating barrier that absorbs damage',
       features: ['Auto-regeneration', 'Overcharge capacity', 'Shield breaks', 'Energy management'],
-      pythonCode: `# Energy Shield Defense System
+      code: `# Energy Shield Defense System
 class ShieldSystem:
     def __init__(self):
         self.max_shield = 50
@@ -6661,13 +6666,13 @@ class ShieldSystem:
             text = font.render("REBOOTING...", True, (255, 0, 0))
         else:
             text = font.render("Shield", True, (255, 255, 255))
-        screen.blit(text, (x, y - 15))`,
+        screen.blit(text, (x, y - 15))`
     },
     optionB: {
       title: 'Block/Parry',
       description: 'Timing-based defense with perfect blocks',
       features: ['Timed blocks', 'Perfect parries', 'Stamina usage', 'Counter opportunities'],
-      pythonCode: `# Block/Parry Defense System
+      code: `# Block/Parry Defense System
 class ShieldSystem:
     def __init__(self):
         # Block mechanics
@@ -6959,8 +6964,8 @@ class ShieldSystem:
         # Text
         font = pygame.font.Font(None, 16)
         text = font.render("Stamina", True, (255, 255, 255))
-        screen.blit(text, (x, y - 15))`,
-    },
+        screen.blit(text, (x, y - 15))`
+    }
   },
 
   {
@@ -6971,7 +6976,7 @@ class ShieldSystem:
       title: 'Button Mashing',
       description: 'Speed-based combos - the faster you attack, the higher the combo!',
       features: ['Speed multipliers', 'Combo meter', 'Chain bonuses', 'Fever mode'],
-      pythonCode: `# Button Mashing Combo System
+      code: `# Button Mashing Combo System
 class ComboSystem:
     def __init__(self):
         self.combo_count = 0
@@ -7341,13 +7346,13 @@ class ComboSystem:
         elif i == 5:
             r, g, b = v, p, q
         
-        return (int(r * 255), int(g * 255), int(b * 255))`,
+        return (int(r * 255), int(g * 255), int(b * 255))`
     },
     optionB: {
       title: 'Rhythm Combat',
       description: 'Time your hits to the beat for maximum damage!',
       features: ['Beat indicators', 'Perfect timing', 'Musical combos', 'Rhythm streaks'],
-      pythonCode: `# Rhythm Combat System
+      code: `# Rhythm Combat System
 class ComboSystem:
     def __init__(self):
         # Beat timing
@@ -7708,10 +7713,10 @@ class ComboSystem:
         elif i == 5:
             r, g, b = v, p, q
         
-        return (int(r * 255), int(g * 255), int(b * 255))`,
-    },
+        return (int(r * 255), int(g * 255), int(b * 255))`
+    }
   },
-
+  
   {
     id: 'scoredisplay',
     title: 'Score Display',
@@ -7719,13 +7724,8 @@ class ComboSystem:
     optionA: {
       title: 'Arcade Style Score',
       description: 'Big, bold numbers at the top center like classic arcade games',
-      features: [
-        'Large font display',
-        'Animated score changes',
-        'High score tracking',
-        'Combo multipliers',
-      ],
-      pythonCode: `# Arcade Style Score Display
+      features: ['Large font display', 'Animated score changes', 'High score tracking', 'Combo multipliers'],
+      code: `# Arcade Style Score Display
 class ScoreDisplay:
     def __init__(self):
         self.score = 0
@@ -7871,18 +7871,13 @@ class ScoreDisplay:
             
             popup_surface = popup_font.render(text, True, color)
             popup_surface.set_alpha(alpha)
-            screen.blit(popup_surface, (popup['x'], popup['y']))`,
+            screen.blit(popup_surface, (popup['x'], popup['y']))`
     },
     optionB: {
       title: 'Modern Style Score',
       description: 'Minimalist score display in the corner with smooth animations',
-      features: [
-        'Compact display',
-        'Smooth transitions',
-        'Statistics tracking',
-        'Achievement notifications',
-      ],
-      pythonCode: `# Modern Style Score Display
+      features: ['Compact display', 'Smooth transitions', 'Statistics tracking', 'Achievement notifications'],
+      code: `# Modern Style Score Display
 class ScoreDisplay:
     def __init__(self):
         self.score = 0
@@ -8041,10 +8036,10 @@ class ScoreDisplay:
             notif_surface.set_alpha(alpha)
             screen.blit(notif_surface, notif_rect)
             
-            notif_y += 40  # Stack multiple notifications`,
-    },
+            notif_y += 40  # Stack multiple notifications`
+    }
   },
-
+  
   {
     id: 'minimap',
     title: 'Minimap',
@@ -8053,7 +8048,7 @@ class ScoreDisplay:
       title: 'Radar Style Minimap',
       description: 'Rotating minimap that follows player orientation',
       features: ['Player-centered view', 'Rotation with player', 'Range indicators', 'Enemy blips'],
-      pythonCode: `# Radar Style Minimap
+      code: `# Radar Style Minimap
 class Minimap:
     def __init__(self, radius=80):
         self.radius = radius
@@ -8246,13 +8241,13 @@ class Minimap:
             self.radar_surface.blit(text, text_rect)
         
         # Blit radar to screen
-        screen.blit(self.radar_surface, (x - 10, y - 10))`,
+        screen.blit(self.radar_surface, (x - 10, y - 10))`
     },
     optionB: {
       title: 'Overview Map',
       description: 'Fixed minimap showing the entire level layout',
       features: ['Full level view', 'Fog of war', 'Discovered areas', 'Waypoint markers'],
-      pythonCode: `# Overview Map Minimap
+      code: `# Overview Map Minimap
 class Minimap:
     def __init__(self, map_width, map_height, display_size=150):
         self.map_width = map_width
@@ -8482,10 +8477,10 @@ class Minimap:
             self.minimap_surface.blit(text, (icon_x + 8, legend_y - 5))
         
         # Blit minimap to screen with border
-        screen.blit(self.minimap_surface, (x, y))`,
-    },
+        screen.blit(self.minimap_surface, (x, y))`
+    }
   },
-
+  
   {
     id: 'dialogsystem',
     title: 'Dialog System',
@@ -8493,13 +8488,8 @@ class Minimap:
     optionA: {
       title: 'Speech Bubbles',
       description: 'Text appears in bubbles above characters',
-      features: [
-        'Character-attached bubbles',
-        'Emotion indicators',
-        'Multiple speakers',
-        'Auto-positioning',
-      ],
-      pythonCode: `# Speech Bubble Dialog System
+      features: ['Character-attached bubbles', 'Emotion indicators', 'Multiple speakers', 'Auto-positioning'],
+      code: `# Speech Bubble Dialog System
 class DialogSystem:
     def __init__(self):
         self.active_bubbles = []
@@ -8679,18 +8669,13 @@ class DialogSystem:
     
     def is_active(self):
         """Check if any dialog is active"""
-        return len(self.active_bubbles) > 0 or len(self.queue) > 0`,
+        return len(self.active_bubbles) > 0 or len(self.queue) > 0`
     },
     optionB: {
       title: 'Dialog Box',
       description: 'Traditional RPG-style text box at bottom of screen',
-      features: [
-        'Typewriter effect',
-        'Character portraits',
-        'Choice selection',
-        'Auto-advance options',
-      ],
-      pythonCode: `# Dialog Box System
+      features: ['Typewriter effect', 'Character portraits', 'Choice selection', 'Auto-advance options'],
+      code: `# Dialog Box System
 class DialogSystem:
     def __init__(self, screen_width, screen_height):
         self.screen_width = screen_width
@@ -8963,10 +8948,10 @@ class DialogSystem:
                 pygame.draw.polygon(screen, (255, 255, 255),
                                   [(indicator_x, indicator_y),
                                    (indicator_x + 10, indicator_y + 5),
-                                   (indicator_x, indicator_y + 10)])`,
-    },
+                                   (indicator_x, indicator_y + 10)])`
+    }
   },
-
+  
   {
     id: 'questtracker',
     title: 'Quest/Objective Tracker',
@@ -8975,7 +8960,7 @@ class DialogSystem:
       title: 'Checklist Style',
       description: 'Task list with checkboxes that mark completion',
       features: ['Checkbox indicators', 'Task categories', 'Subtask support', 'Priority marking'],
-      pythonCode: `# Checklist Style Quest Tracker
+      code: `# Checklist Style Quest Tracker
 class QuestTracker:
     def __init__(self):
         self.quests = []
@@ -9245,18 +9230,13 @@ class QuestTracker:
         if len(self.quests) > self.max_visible:
             more_text = f"... and {len(self.quests) - self.max_visible} more"
             more_surface = task_font.render(more_text, True, (150, 150, 150))
-            screen.blit(more_surface, (x + 10, current_y))`,
+            screen.blit(more_surface, (x + 10, current_y))`
     },
     optionB: {
       title: 'Progress Bar Style',
       description: 'Visual progress bars showing completion percentage',
-      features: [
-        'Animated fill bars',
-        'Milestone markers',
-        'XP visualization',
-        'Multi-stage quests',
-      ],
-      pythonCode: `# Progress Bar Style Quest Tracker
+      features: ['Animated fill bars', 'Milestone markers', 'XP visualization', 'Multi-stage quests'],
+      code: `# Progress Bar Style Quest Tracker
 class QuestTracker:
     def __init__(self):
         self.quests = []
@@ -9552,9 +9532,9 @@ class QuestTracker:
         if len(self.quests) > self.max_visible:
             more_text = f"+{len(self.quests) - self.max_visible} more quests"
             more_surface = info_font.render(more_text, True, (150, 150, 150))
-            screen.blit(more_surface, (x, current_y + 5))`,
-    },
-  },
+            screen.blit(more_surface, (x, current_y + 5))`
+    }
+  }
 ];
 
 // LocalStorage management functions
@@ -9573,20 +9553,20 @@ export function getUserComponentChoices(): ComponentChoice[] {
 
 export function saveComponentChoice(componentId: string, choice: 'A' | 'B'): void {
   const choices = getUserComponentChoices();
-  const existingIndex = choices.findIndex((c) => c.component === componentId);
-
+  const existingIndex = choices.findIndex(c => c.component === componentId);
+  
   if (existingIndex >= 0) {
     choices[existingIndex].choice = choice;
   } else {
     choices.push({ component: componentId, choice });
   }
-
+  
   localStorage.setItem('gameComponentChoices', JSON.stringify(choices));
 }
 
 export function getComponentChoice(componentId: string): 'A' | 'B' | null {
   const choices = getUserComponentChoices();
-  const choice = choices.find((c) => c.component === componentId);
+  const choice = choices.find(c => c.component === componentId);
   return choice ? choice.choice : null;
 }
 
@@ -9596,10 +9576,10 @@ export function generateGameTemplate(
   componentChoices?: ComponentChoice[]
 ): string {
   const choices = componentChoices || getUserComponentChoices();
-
+  
   // Track which systems are selected
   const selectedSystems = new Set<string>();
-
+  
   // Start with base template
   let template = `# Pixel's PyGame Palace - ${gameType} Game
 # Generated with your custom component choices
@@ -9628,12 +9608,12 @@ GRAY = (128, 128, 128)
 
   // Add chosen components
   for (const choice of choices) {
-    const component = gameComponents.find((c) => c.id === choice.component);
+    const component = gameComponents.find(c => c.id === choice.component);
     if (component) {
       selectedSystems.add(component.id);
       const selectedOption = choice.choice === 'A' ? component.optionA : component.optionB;
       template += `\n# ${component.title} - ${selectedOption.title}\n`;
-      template += selectedOption.pythonCode + '\n';
+      template += selectedOption.code + '\n';
     }
   }
 
@@ -9688,30 +9668,30 @@ class Game:
         })()
         
         # Initialize only selected systems`;
-
+        
   // Add system initialization based on what was selected
   if (selectedSystems.has('combat')) {
     template += `\n        self.combat_system = CombatSystem()\n        # Add some initial enemies\n        self.combat_system.add_enemy(400, 300, 50)`;
   }
-
+  
   if (selectedSystems.has('inventory')) {
     template += `\n        self.inventory_system = InventorySystem()\n        # Add some starter items\n        self.inventory_system.add_item({'id': 'potion', 'name': 'Health Potion', 'icon': '♥', 'stackable': True})`;
   }
-
+  
   if (selectedSystems.has('movement')) {
     template += `\n        self.movement_system = MovementSystem(self.player)`;
   } else {
     template += `\n        self.movement_system = BasicMovement(self.player)  # Default movement`;
   }
-
+  
   if (selectedSystems.has('progression')) {
     template += `\n        self.progression_system = ProgressionSystem(self.player)`;
   }
-
+  
   if (selectedSystems.has('mapgen')) {
     template += `\n        self.map_system = MapGenerationSystem()\n        self.map_system.generate_dungeon()`;
   }
-
+  
   template += `
         
         # Game state
@@ -9719,7 +9699,7 @@ class Game:
         self.platforms = []  # For movement collision
         self.show_inventory = False  # Track inventory UI visibility
         `;
-
+  
   // Only add platform creation if no map system
   if (!selectedSystems.has('mapgen')) {
     template += `
@@ -9731,7 +9711,7 @@ class Game:
         self.platforms.append(pygame.Rect(450, 300, 150, 20))
         self.platforms.append(pygame.Rect(100, 200, 150, 20))`;
   }
-
+  
   template += `
     
     def handle_events(self):
@@ -9890,18 +9870,18 @@ if __name__ == "__main__":
 }
 
 // Get a summary of chosen components
-export function getComponentSummary(): { [key: string]: string } {
+export function getComponentSummary(): {[key: string]: string} {
   const choices = getUserComponentChoices();
-  const summary: { [key: string]: string } = {};
-
+  const summary: {[key: string]: string} = {};
+  
   for (const choice of choices) {
-    const component = gameComponents.find((c) => c.id === choice.component);
+    const component = gameComponents.find(c => c.id === choice.component);
     if (component) {
       const selectedOption = choice.choice === 'A' ? component.optionA : component.optionB;
       summary[component.title] = selectedOption.title;
     }
   }
-
+  
   return summary;
 }
 

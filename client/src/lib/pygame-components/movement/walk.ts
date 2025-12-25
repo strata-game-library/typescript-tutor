@@ -14,7 +14,7 @@ export const walkComponent: PygameComponent = {
     A: {
       name: 'Smooth Walking',
       description: 'Acceleration-based movement with momentum',
-      pythonCode: `
+      code: `
 # Smooth Walking System - Acceleration and momentum
 class WalkSystem:
     def __init__(self, player):
@@ -66,7 +66,7 @@ class WalkSystem:
     B: {
       name: 'Instant Walking',
       description: 'Direct control with immediate response',
-      pythonCode: `
+      code: `
 # Instant Walking System - Direct control
 class WalkSystem:
     def __init__(self, player):

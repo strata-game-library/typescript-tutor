@@ -14,7 +14,7 @@ export const scoreComponent: PygameComponent = {
     A: {
       name: 'Point Collector',
       description: 'Collect items for points with combos',
-      pythonCode: `
+      code: `
 # Point Collection System with Combos
 class ScoreSystem:
     def __init__(self):
@@ -151,7 +151,7 @@ class ScoreSystem:
     B: {
       name: 'Wave Survival',
       description: 'Score based on survival time and enemies defeated',
-      pythonCode: `
+      code: `
 # Wave Survival Scoring System
 class ScoreSystem:
     def __init__(self):

@@ -16,7 +16,7 @@ export const shootingComponent: PygameComponent = {
     A: {
       name: 'Rapid Fire',
       description: 'Fast shooting with cooldown',
-      pythonCode: `
+      code: `
 # Rapid Fire Shooting System
 class ShootingSystem:
     def __init__(self, player):
@@ -95,7 +95,7 @@ class ShootingSystem:
     B: {
       name: 'Charge Shot',
       description: 'Hold to charge powerful shots',
-      pythonCode: `
+      code: `
 # Charge Shot System
 class ShootingSystem:
     def __init__(self, player):

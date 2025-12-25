@@ -13,7 +13,7 @@ export const collisionComponent: PygameComponent = {
     A: {
       name: 'Box Collision',
       description: 'Simple AABB collision detection',
-      pythonCode: `
+      code: `
 # Box Collision System
 class CollisionSystem:
     def __init__(self):
@@ -101,7 +101,7 @@ class CollisionSystem:
     B: {
       name: 'Physics Collision',
       description: 'Advanced collision with bounce and friction',
-      pythonCode: `
+      code: `
 # Physics Collision System
 class CollisionSystem:
     def __init__(self):

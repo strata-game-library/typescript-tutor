@@ -3,8 +3,8 @@
     "start": {
       "id": "start",
       "speaker": "Pixel",
-      "text": "Welcome to Level 2! Time to turn Python into your personal calculator! 🔢",
-      "followUp": "Every game needs math - from calculating damage to keeping score. Let's master the numbers!",
+      "text": "Welcome to Level 2! Time to turn TypeScript into your personal calculator! 🔢",
+      "followUp": "Every game needs math - from calculating damage to keeping score. Let's master the numbers in Strata!",
       "options": [
         {
           "text": "I'm ready for math magic!",
@@ -20,7 +20,7 @@
       "id": "mathImportance",
       "speaker": "Pixel",
       "text": "Absolutely! Think about it - health points, damage calculations, physics, scoring... it's ALL math!",
-      "followUp": "Even moving a character on screen is just changing X and Y numbers. Math powers everything!",
+      "followUp": "Even moving a character on screen is just changing X and Y numbers. Math powers everything in game dev!",
       "options": [
         {
           "text": "That makes sense! Let's learn!",
@@ -31,8 +31,8 @@
     "basicMath": {
       "id": "basicMath",
       "speaker": "Pixel",
-      "text": "Python knows all the basic math operations! Let's start with the fab four!",
-      "codeExample": "# Addition\nhealth = 100 + 20  # Result: 120\n\n# Subtraction  \ndamage = 100 - 35  # Result: 65\n\n# Multiplication\nscore = 10 * 5    # Result: 50\n\n# Division\nshare = 100 / 4   # Result: 25.0",
+      "text": "TypeScript knows all the basic math operations! Let's start with the fab four!",
+      "codeExample": "// Addition\nlet health = 100 + 20;  // Result: 120\n\n// Subtraction  \nlet damage = 100 - 35;  // Result: 65\n\n// Multiplication\nlet score = 10 * 5;    // Result: 50\n\n// Division\nlet share = 100 / 4;   // Result: 25",
       "followUp": "See? It's just like regular math, but now the computer does the work!",
       "options": [
         {
@@ -49,7 +49,7 @@
       "id": "trySubtraction",
       "speaker": "Pixel",
       "text": "Perfect! You calculated 35 damage remaining! Great for combat systems!",
-      "codeExample": "enemy_health = 50\nplayer_damage = 15\nremaining_health = enemy_health - player_damage\nprint('Enemy health:', remaining_health)  # Result: 35",
+      "codeExample": "let enemyHealth = 50;\nlet playerDamage = 15;\nlet remainingHealth = enemyHealth - playerDamage;\nconsole.log('Enemy health:', remainingHealth);  // Result: 35",
       "followUp": "You can use variables in math too - super useful for dynamic calculations!",
       "options": [
         {
@@ -66,7 +66,7 @@
       "id": "tryMultiplication",
       "speaker": "Pixel",
       "text": "Excellent! 100 points scored! Multiplication is perfect for combos and bonuses!",
-      "codeExample": "base_points = 25\nmultiplier = 4\ntotal_score = base_points * multiplier\nprint('Score with 4x combo:', total_score)  # Result: 100",
+      "codeExample": "let basePoints = 25;\nlet multiplier = 4;\nlet totalScore = basePoints * multiplier;\nconsole.log('Score with 4x combo:', totalScore);  // Result: 100",
       "followUp": "Imagine using this for power-ups that double or triple your score!",
       "options": [
         {
@@ -82,9 +82,9 @@
     "divisionTypes": {
       "id": "divisionTypes",
       "speaker": "Pixel",
-      "text": "Division has two flavors in Python - regular and integer division!",
-      "codeExample": "# Regular division (gives decimals)\nloot = 10 / 3   # Result: 3.333...\n\n# Integer division (whole numbers only)\nloot = 10 // 3  # Result: 3\n\n# Modulo (remainder)\nleftover = 10 % 3  # Result: 1",
-      "followUp": "The // is great for 'how many whole items can each player get?' and % for 'what's left over?'",
+      "text": "Division in TypeScript can give you decimals, but sometimes we want whole numbers!",
+      "codeExample": "// Regular division (gives decimals)\nlet loot = 10 / 3;   // Result: 3.333...\n\n// Whole number division (using Math.floor)\nlet wholeLoot = Math.floor(10 / 3);  // Result: 3\n\n// Modulo (remainder)\nlet leftover = 10 % 3;  // Result: 1",
+      "followUp": "Math.floor() is great for 'how many whole items can each player get?' and % for 'what's left over?'",
       "options": [
         {
           "text": "When would I use modulo?",
@@ -100,7 +100,7 @@
       "id": "moduloExamples",
       "speaker": "Pixel",
       "text": "Modulo is SUPER useful in games! Check out these examples!",
-      "codeExample": "# Check if a number is even or odd\nlevel = 7\nif level % 2 == 0:\n    print('Even level - spawn bonus!')\nelse:\n    print('Odd level - normal enemies')\n\n# Cycling through options (0,1,2,0,1,2...)\nframe = 100\nanimation_frame = frame % 3  # Always 0, 1, or 2",
+      "codeExample": "// Check if a number is even or odd\nlet level = 7;\nif (level % 2 === 0) {\n    console.log('Even level - spawn bonus!');\n} else {\n    console.log('Odd level - normal enemies');\n}\n\n// Cycling through options (0,1,2,0,1,2...)\nlet frame = 100;\nlet animationFrame = frame % 3;  // Always 0, 1, or 2",
       "followUp": "It's perfect for creating patterns, animations, and checking divisibility!",
       "options": [
         {
@@ -113,7 +113,7 @@
       "id": "complexMath",
       "speaker": "Pixel",
       "text": "You can combine operations to create complex formulas - just like damage calculations in RPGs!",
-      "codeExample": "# Complex damage formula\nbase_attack = 50\nweapon_bonus = 20\ncritical_multiplier = 2\ndefense = 15\n\ndamage = (base_attack + weapon_bonus) * critical_multiplier - defense\nprint('Critical hit damage:', damage)  # Result: 125",
+      "codeExample": "// Complex damage formula\nlet baseAttack = 50;\nlet weaponBonus = 20;\nlet criticalMultiplier = 2;\nlet defense = 15;\n\nlet damage = (baseAttack + weaponBonus) * criticalMultiplier - defense;\nconsole.log('Critical hit damage:', damage);  // Result: 125",
       "followUp": "Use parentheses to control what happens first - just like in math class!",
       "options": [
         {
@@ -129,12 +129,12 @@
     "orderOperations": {
       "id": "orderOperations",
       "speaker": "Pixel",
-      "text": "Python follows PEMDAS - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction!",
-      "codeExample": "# Without parentheses\nresult = 10 + 5 * 2  # Result: 20 (5*2 first, then +10)\n\n# With parentheses\nresult = (10 + 5) * 2  # Result: 30 (10+5 first, then *2)\n\n# Complex example\nscore = 100 + 50 * 2 - 10  # Result: 190\nscore = (100 + 50) * 2 - 10  # Result: 290",
+      "text": "TypeScript follows PEMDAS - Parentheses, Exponents, Multiplication/Division, Addition/Subtraction!",
+      "codeExample": "// Without parentheses\nlet result1 = 10 + 5 * 2;  // Result: 20 (5*2 first, then +10)\n\n// With parentheses\nlet result2 = (10 + 5) * 2;  // Result: 30 (10+5 first, then *2)\n\n// Complex example\nlet score1 = 100 + 50 * 2 - 10;  // Result: 190\nlet score2 = (100 + 50) * 2 - 10;  // Result: 290",
       "followUp": "Parentheses are your friends - use them to make your intentions clear!",
       "options": [
         {
-          "text": "Got it! What else can Python calculate?",
+          "text": "Got it! What else can TypeScript calculate?",
           "next": "moreOperators"
         }
       ]
@@ -142,8 +142,8 @@
     "moreOperators": {
       "id": "moreOperators",
       "speaker": "Pixel",
-      "text": "Python has some special power-up operators too! Check these out!",
-      "codeExample": "# Power (exponents)\npower_level = 2 ** 10  # Result: 1024\n\n# Compound operators (shortcuts!)\nscore = 100\nscore += 50  # Same as: score = score + 50\nscore *= 2   # Same as: score = score * 2\nscore -= 25  # Same as: score = score - 25\nprint(score)  # Result: 275",
+      "text": "TypeScript has some special power-up operators too! Check these out!",
+      "codeExample": "// Power (exponents)\nlet powerLevel = 2 ** 10;  // Result: 1024\n\n// Compound operators (shortcuts!)\nlet score = 100;\nscore += 50;  // Same as: score = score + 50\nscore *= 2;   // Same as: score = score * 2\nscore -= 25;  // Same as: score = score - 25\nconsole.log(score);  // Result: 275",
       "followUp": "The compound operators are super handy for updating game values quickly!",
       "options": [
         {
@@ -159,8 +159,8 @@
     "roundingNumbers": {
       "id": "roundingNumbers",
       "speaker": "Pixel",
-      "text": "Yes! Python has built-in functions for rounding and more!",
-      "codeExample": "health = 85.7\n\n# Round to nearest integer\nrounded = round(health)  # Result: 86\n\n# Round to 1 decimal place\nrounded = round(health, 1)  # Result: 85.7\n\n# Always round down\nimport math\nfloor_value = math.floor(health)  # Result: 85\n\n# Always round up\nceil_value = math.ceil(health)  # Result: 86",
+      "text": "Yes! TypeScript has built-in functions for rounding and more through the Math object!",
+      "codeExample": "let health = 85.7;\n\n// Round to nearest integer\nlet rounded = Math.round(health);  // Result: 86\n\n// Always round down\nlet floorValue = Math.floor(health);  // Result: 85\n\n// Always round up\nlet ceilValue = Math.ceil(health);  // Result: 86",
       "followUp": "Perfect for health bars, scores, and any place you need clean numbers!",
       "options": [
         {
@@ -173,8 +173,8 @@
       "id": "comparisons",
       "speaker": "Pixel",
       "text": "Comparisons are huge in games! They help make decisions - like 'is the player dead?'",
-      "codeExample": "player_health = 75\nenemy_health = 50\n\n# Greater than\nplayer_winning = player_health > enemy_health  # True\n\n# Less than or equal\ngame_over = player_health <= 0  # False\n\n# Equal to\nperfect_score = score == 100  # Check if exactly 100\n\n# Not equal\nhas_moved = new_position != old_position",
-      "followUp": "These return True or False - perfect for making game decisions! We'll use these a lot in the next lesson!",
+      "codeExample": "let playerHealth = 75;\nlet enemyHealth = 50;\n\n// Greater than\nlet isWinning = playerHealth > enemyHealth;  // true\n\n// Less than or equal\nlet isGameOver = playerHealth <= 0;  // false\n\n// Equal to (use triple === for best results!)\nlet isPerfectScore = score === 100;  // Check if exactly 100\n\n// Not equal\nlet isMoved = newPosition !== oldPosition;",
+      "followUp": "These return true or false - perfect for making game decisions! We'll use these a lot in the next lesson!",
       "options": [
         {
           "text": "This is getting interesting!",
@@ -189,11 +189,11 @@
       "followUp": "Calculate the final score: Base points (100) + Combo bonus (50) × Multiplier (3) - Time penalty (25)",
       "options": [
         {
-          "text": "final_score = 100 + 50 * 3 - 25",
+          "text": "let finalScore = 100 + 50 * 3 - 25;",
           "next": "practiceCorrect"
         },
         {
-          "text": "final_score = (100 + 50) * 3 - 25",
+          "text": "let finalScore = (100 + 50) * 3 - 25;",
           "next": "practiceAlternative"
         }
       ]
@@ -202,7 +202,7 @@
       "id": "practiceCorrect",
       "speaker": "Pixel",
       "text": "Excellent! You got 225 points! Your order of operations is perfect!",
-      "codeExample": "base = 100\ncombo_bonus = 50\nmultiplier = 3\ntime_penalty = 25\n\nfinal_score = base + combo_bonus * multiplier - time_penalty\nprint('Final Score:', final_score)  # Result: 225",
+      "codeExample": "let base = 100;\nlet comboBonus = 50;\nlet multiplier = 3;\nlet timePenalty = 25;\n\nlet finalScore = base + comboBonus * multiplier - timePenalty;\nconsole.log('Final Score:', finalScore);  // Result: 225",
       "followUp": "See how the multiplication happens first, then addition and subtraction? You're a natural!",
       "options": [
         {
@@ -215,7 +215,7 @@
       "id": "practiceAlternative",
       "speaker": "Pixel",
       "text": "That gives 425 - a different result! You added base and bonus first, THEN multiplied!",
-      "codeExample": "# Your way:\nfinal_score = (100 + 50) * 3 - 25  # Result: 425\n\n# Original intention:\nfinal_score = 100 + 50 * 3 - 25  # Result: 225",
+      "codeExample": "// Your way:\nlet finalScoreYourWay = (100 + 50) * 3 - 25;  // Result: 425\n\n// Original intention:\nlet finalScoreIntended = 100 + 50 * 3 - 25;  // Result: 225",
       "followUp": "Both are valid calculations - it depends what you want! Parentheses change everything!",
       "options": [
         {
@@ -229,7 +229,7 @@
       "speaker": "Pixel",
       "text": "Final boss challenge! Create a health potion formula!",
       "followUp": "The potion restores 25% of max health, plus 10 bonus points, but caps at max health (100).",
-      "codeExample": "current_health = 60\nmax_health = 100\n\n# Calculate healing\nhealing = max_health * 0.25 + 10  # 25% + 10\nnew_health = current_health + healing\n\n# Cap at max health\nif new_health > max_health:\n    new_health = max_health\n    \nprint('Healed to:', new_health)",
+      "codeExample": "let currentHealth = 60;\nlet maxHealth = 100;\n\n// Calculate healing\nlet healing = maxHealth * 0.25 + 10;  // 25% + 10\nlet newHealth = currentHealth + healing;\n\n// Cap at max health\nif (newHealth > maxHealth) {\n    newHealth = maxHealth;\n}\n    \nconsole.log('Healed to:', newHealth);",
       "options": [
         {
           "text": "I see how math drives game logic!",

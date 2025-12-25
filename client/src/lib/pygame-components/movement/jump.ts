@@ -14,7 +14,7 @@ export const jumpComponent: PygameComponent = {
     A: {
       name: 'Floaty Jump',
       description: 'Hold to jump higher with air control',
-      pythonCode: `
+      code: `
 # Floaty Jump System - Hold space for higher jumps
 class JumpSystem:
     def __init__(self, player):
@@ -60,7 +60,7 @@ class JumpSystem:
     B: {
       name: 'Realistic Jump',
       description: 'Fixed arc jump with no air control',
-      pythonCode: `
+      code: `
 # Realistic Jump System - Fixed arc physics
 class JumpSystem:
     def __init__(self, player):

@@ -15,7 +15,7 @@ export const meleeComponent: PygameComponent = {
     A: {
       name: 'Sword Combat',
       description: 'Slash attacks with combo system',
-      pythonCode: `
+      code: `
 # Sword Combat System with Combos
 class MeleeSystem:
     def __init__(self, player):
@@ -127,7 +127,7 @@ class MeleeSystem:
     B: {
       name: 'Brawler',
       description: 'Fast punches with stun effects',
-      pythonCode: `
+      code: `
 # Brawler Combat System
 class MeleeSystem:
     def __init__(self, player):

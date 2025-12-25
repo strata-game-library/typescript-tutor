@@ -1,19 +1,18 @@
 // PyGame Pong Template
-import type { GameTemplate } from './pygame-template-types';
+import { GameTemplate } from './pygame-template-types';
 
 export const pongTemplate: GameTemplate = {
   id: 'pong',
   name: 'Pong',
   description: 'Classic two-paddle game with bouncing ball and score tracking',
-  wizardDescription:
-    'The classic Pong game! Two paddles hit a ball back and forth. First to 5 points wins! A great way to learn about ball physics and AI opponents.',
+  wizardDescription: 'The classic Pong game! Two paddles hit a ball back and forth. First to 5 points wins! A great way to learn about ball physics and AI opponents.',
   difficulty: 'beginner',
   settings: {
     screenWidth: 800,
     screenHeight: 600,
     backgroundColor: '#000000',
     fps: 60,
-    title: 'Pong Game',
+    title: 'Pong Game'
   },
   components: [
     {
@@ -27,8 +26,8 @@ export const pongTemplate: GameTemplate = {
         speed: 7,
         color: '#FFFFFF',
         playerControlled: true,
-        controls: 'wasd',
-      },
+        controls: 'wasd'
+      }
     },
     {
       type: 'paddle',
@@ -41,8 +40,8 @@ export const pongTemplate: GameTemplate = {
         speed: 7,
         color: '#FFFFFF',
         playerControlled: true,
-        controls: 'arrows',
-      },
+        controls: 'arrows'
+      }
     },
     {
       type: 'ball',
@@ -55,8 +54,8 @@ export const pongTemplate: GameTemplate = {
         velocityY: 3,
         color: '#FFFFFF',
         gravity: 0,
-        bounciness: 1.05,
-      },
+        bounciness: 1.05
+      }
     },
     {
       type: 'scoreText',
@@ -66,8 +65,8 @@ export const pongTemplate: GameTemplate = {
         x: 350,
         y: 50,
         fontSize: 48,
-        color: '#FFFFFF',
-      },
+        color: '#FFFFFF'
+      }
     },
     {
       type: 'scoreText',
@@ -77,15 +76,15 @@ export const pongTemplate: GameTemplate = {
         x: 430,
         y: 50,
         fontSize: 48,
-        color: '#FFFFFF',
-      },
-    },
+        color: '#FFFFFF'
+      }
+    }
   ],
   preview: (ctx: CanvasRenderingContext2D) => {
     // Black background
     ctx.fillStyle = '#000000';
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-
+    
     // Center line
     ctx.strokeStyle = '#FFFFFF';
     ctx.setLineDash([5, 5]);
@@ -94,213 +93,177 @@ export const pongTemplate: GameTemplate = {
     ctx.lineTo(ctx.canvas.width / 2, ctx.canvas.height);
     ctx.stroke();
     ctx.setLineDash([]);
-
+    
     // Paddles
     ctx.fillStyle = '#FFFFFF';
     ctx.fillRect(40, 200, 12, 80);
     ctx.fillRect(ctx.canvas.width - 52, 200, 12, 80);
-
+    
     // Ball
     ctx.beginPath();
     ctx.arc(ctx.canvas.width / 2, ctx.canvas.height / 2, 8, 0, Math.PI * 2);
     ctx.fill();
-
+    
     // Scores
     ctx.font = '36px monospace';
     ctx.textAlign = 'center';
     ctx.fillText('0', ctx.canvas.width / 2 - 50, 50);
     ctx.fillText('0', ctx.canvas.width / 2 + 50, 50);
   },
-  generateCode: () => `import pygame
-import sys
-import random
+  generateCode: () => `import { strata } from './pygame-simulation';
 
-# Initialize Pygame
-pygame.init()
+// Initialize Strata
+strata.init();
 
-# Game settings
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-FPS = 60
-PADDLE_SPEED = 7
-BALL_SPEED = 5
-WINNING_SCORE = 5
+// Game settings
+const SCREEN_WIDTH = 800;
+const SCREEN_HEIGHT = 600;
+const FPS = 60;
+const PADDLE_SPEED = 7;
+const BALL_SPEED = 5;
+const WINNING_SCORE = 5;
 
-# Colors
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
+// Colors
+const BLACK = [0, 0, 0];
+const WHITE = [255, 255, 255];
 
-# Create the screen
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption('Pong Game')
-clock = pygame.time.Clock()
+// Create the screen
+const screen = strata.display.setMode([SCREEN_WIDTH, SCREEN_HEIGHT]);
+strata.display.setCaption('Pong Game');
+const clock = new strata.time.Clock();
 
-class Paddle:
-    def __init__(self, x, y, controls='arrows'):
-        self.x = x
-        self.y = y
-        self.width = 15
-        self.height = 100
-        self.speed = PADDLE_SPEED
-        self.rect = pygame.Rect(x, y, self.width, self.height)
-        self.controls = controls
-        self.score = 0
+class Paddle {
+    constructor(x, y, controls = 'arrows') {
+        this.width = 15;
+        this.height = 100;
+        this.speed = PADDLE_SPEED;
+        this.rect = new strata.Rect(x, y, this.width, this.height);
+        this.controls = controls;
+        this.score = 0;
+    }
     
-    def update(self, keys):
-        if self.controls == 'wasd':
-            if keys[pygame.K_w] and self.rect.top > 0:
-                self.rect.y -= self.speed
-            if keys[pygame.K_s] and self.rect.bottom < SCREEN_HEIGHT:
-                self.rect.y += self.speed
-        elif self.controls == 'arrows':
-            if keys[pygame.K_UP] and self.rect.top > 0:
-                self.rect.y -= self.speed
-            if keys[pygame.K_DOWN] and self.rect.bottom < SCREEN_HEIGHT:
-                self.rect.y += self.speed
+    update(keys) {
+        if (this.controls === 'wasd') {
+            if (keys[strata.K_w] && this.rect.top > 0) {
+                this.rect.y -= this.speed;
+            }
+            if (keys[strata.K_s] && this.rect.bottom < SCREEN_HEIGHT) {
+                this.rect.y += this.speed;
+            }
+        } else if (this.controls === 'arrows') {
+            if (keys[strata.K_UP] && this.rect.top > 0) {
+                this.rect.y -= this.speed;
+            }
+            if (keys[strata.K_DOWN] && this.rect.bottom < SCREEN_HEIGHT) {
+                this.rect.y += this.speed;
+            }
+        }
+    }
     
-    def ai_update(self, ball):
-        # Simple AI that follows the ball
-        if ball.rect.centery < self.rect.centery - 20:
-            self.rect.y -= self.speed
-        elif ball.rect.centery > self.rect.centery + 20:
-            self.rect.y += self.speed
+    draw(screen) {
+        strata.draw.rect(screen, WHITE, this.rect);
+    }
+}
+
+class Ball {
+    constructor() {
+        this.reset();
+    }
+    
+    reset() {
+        const x = SCREEN_WIDTH / 2;
+        const y = SCREEN_HEIGHT / 2;
+        this.radius = 10;
+        this.velocityX = BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
+        this.velocityY = BALL_SPEED * (Math.random() > 0.5 ? 1 : -1);
+        this.rect = new strata.Rect(x - this.radius, y - this.radius, this.radius * 2, this.radius * 2);
+    }
+    
+    update(paddle1, paddle2) {
+        // Move ball
+        this.rect.x += this.velocityX;
+        this.rect.y += this.velocityY;
         
-        # Keep paddle on screen
-        self.rect.top = max(0, self.rect.top)
-        self.rect.bottom = min(SCREEN_HEIGHT, self.rect.bottom)
+        // Bounce off top and bottom walls
+        if (this.rect.top <= 0 || this.rect.bottom >= SCREEN_HEIGHT) {
+            this.velocityY *= -1;
+        }
+        
+        // Check paddle collisions
+        if (this.rect.colliderect(paddle1.rect) && this.velocityX < 0) {
+            this.velocityX *= -1.05; // Speed up slightly on hit
+        } else if (this.rect.colliderect(paddle2.rect) && this.velocityX > 0) {
+            this.velocityX *= -1.05;
+        }
+        
+        // Score points
+        if (this.rect.left <= 0) {
+            paddle2.score++;
+            this.reset();
+            return 'score2';
+        } else if (this.rect.right >= SCREEN_WIDTH) {
+            paddle1.score++;
+            this.reset();
+            return 'score1';
+        }
+        
+        return null;
+    }
     
-    def draw(self, screen):
-        pygame.draw.rect(screen, WHITE, self.rect)
+    draw(screen) {
+        strata.draw.circle(screen, WHITE, [Math.floor(this.rect.centerx), Math.floor(this.rect.centery)], this.radius);
+    }
+}
 
-class Ball:
-    def __init__(self):
-        self.reset()
-    
-    def reset(self):
-        self.x = SCREEN_WIDTH // 2
-        self.y = SCREEN_HEIGHT // 2
-        self.radius = 10
-        self.velocity_x = BALL_SPEED * random.choice([-1, 1])
-        self.velocity_y = BALL_SPEED * random.choice([-1, 1])
-        self.rect = pygame.Rect(self.x - self.radius, self.y - self.radius, 
-                               self.radius * 2, self.radius * 2)
-    
-    def update(self, paddle1, paddle2):
-        # Move ball
-        self.x += self.velocity_x
-        self.y += self.velocity_y
-        self.rect.center = (self.x, self.y)
-        
-        # Bounce off top and bottom walls
-        if self.rect.top <= 0 or self.rect.bottom >= SCREEN_HEIGHT:
-            self.velocity_y *= -1
-        
-        # Check paddle collisions
-        if self.rect.colliderect(paddle1.rect) and self.velocity_x < 0:
-            self.velocity_x *= -1.05  # Speed up slightly on hit
-            self.velocity_y += random.uniform(-2, 2)  # Add some randomness
-        elif self.rect.colliderect(paddle2.rect) and self.velocity_x > 0:
-            self.velocity_x *= -1.05
-            self.velocity_y += random.uniform(-2, 2)
-        
-        # Limit ball speed
-        self.velocity_x = max(-15, min(15, self.velocity_x))
-        self.velocity_y = max(-15, min(15, self.velocity_y))
-        
-        # Score points
-        if self.rect.left <= 0:
-            paddle2.score += 1
-            self.reset()
-            return 'score2'
-        elif self.rect.right >= SCREEN_WIDTH:
-            paddle1.score += 1
-            self.reset()
-            return 'score1'
-        
-        return None
-    
-    def draw(self, screen):
-        pygame.draw.circle(screen, WHITE, (int(self.x), int(self.y)), self.radius)
+// Create game objects
+const paddle1 = new Paddle(50, SCREEN_HEIGHT / 2 - 50, 'wasd');
+const paddle2 = new Paddle(SCREEN_WIDTH - 65, SCREEN_HEIGHT / 2 - 50, 'arrows');
+const ball = new Ball();
 
-# Create game objects
-paddle1 = Paddle(50, SCREEN_HEIGHT//2 - 50, 'wasd')
-paddle2 = Paddle(SCREEN_WIDTH - 65, SCREEN_HEIGHT//2 - 50, 'arrows')
-ball = Ball()
+// Game state
+let isRunning = true;
+let isGameOver = false;
+let winner = null;
 
-# Fonts
-font_large = pygame.font.Font(None, 72)
-font_small = pygame.font.Font(None, 36)
-
-# Game state
-running = True
-game_over = False
-winner = None
-
-# Main game loop
-while running:
-    # Handle events
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_r and game_over:
-                # Reset game
-                paddle1.score = 0
-                paddle2.score = 0
-                ball.reset()
-                game_over = False
-                winner = None
+// Main game loop
+while (isRunning) {
+    const events = strata.event.get();
+    for (let event of events) {
+        if (event.type === strata.QUIT) isRunning = false;
+    }
     
-    # Update
-    if not game_over:
-        keys = pygame.key.get_pressed()
-        paddle1.update(keys)
-        paddle2.update(keys)
-        # paddle2.ai_update(ball)  # Uncomment for AI opponent
+    // Update
+    if (!isGameOver) {
+        const keys = strata.key.getPressed();
+        paddle1.update(keys);
+        paddle2.update(keys);
         
-        scored = ball.update(paddle1, paddle2)
+        ball.update(paddle1, paddle2);
         
-        # Check for winner
-        if paddle1.score >= WINNING_SCORE:
-            game_over = True
-            winner = "Player 1"
-        elif paddle2.score >= WINNING_SCORE:
-            game_over = True
-            winner = "Player 2"
+        // Check for winner
+        if (paddle1.score >= WINNING_SCORE) {
+            isGameOver = true;
+            winner = "Player 1";
+        } else if (paddle2.score >= WINNING_SCORE) {
+            isGameOver = true;
+            winner = "Player 2";
+        }
+    }
     
-    # Draw
-    screen.fill(BLACK)
+    // Draw
+    screen.fill(BLACK);
     
-    # Draw center line
-    for y in range(0, SCREEN_HEIGHT, 20):
-        pygame.draw.rect(screen, WHITE, (SCREEN_WIDTH//2 - 2, y, 4, 10))
+    // Draw center line
+    for (let y = 0; y < SCREEN_HEIGHT; y += 20) {
+        strata.draw.rect(screen, WHITE, [SCREEN_WIDTH / 2 - 2, y, 4, 10]);
+    }
     
-    # Draw game objects
-    paddle1.draw(screen)
-    paddle2.draw(screen)
-    ball.draw(screen)
+    // Draw game objects
+    paddle1.draw(screen);
+    paddle2.draw(screen);
+    ball.draw(screen);
     
-    # Draw scores
-    score1_text = font_large.render(str(paddle1.score), True, WHITE)
-    score2_text = font_large.render(str(paddle2.score), True, WHITE)
-    screen.blit(score1_text, (SCREEN_WIDTH//2 - 80, 50))
-    screen.blit(score2_text, (SCREEN_WIDTH//2 + 40, 50))
-    
-    # Draw instructions or winner
-    if game_over:
-        winner_text = font_large.render(f"{winner} Wins!", True, WHITE)
-        restart_text = font_small.render("Press R to Play Again", True, WHITE)
-        screen.blit(winner_text, (SCREEN_WIDTH//2 - 150, SCREEN_HEIGHT//2 - 50))
-        screen.blit(restart_text, (SCREEN_WIDTH//2 - 130, SCREEN_HEIGHT//2 + 20))
-    else:
-        instructions = font_small.render("Player 1: W/S | Player 2: ↑/↓", True, WHITE)
-        screen.blit(instructions, (SCREEN_WIDTH//2 - 180, SCREEN_HEIGHT - 40))
-    
-    # Update display
-    pygame.display.flip()
-    clock.tick(FPS)
-
-# Quit
-pygame.quit()
-sys.exit()`,
+    strata.display.flip();
+    clock.tick(FPS);
+}`
 };

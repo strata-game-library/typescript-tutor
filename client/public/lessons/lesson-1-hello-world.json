@@ -3,7 +3,7 @@
     "start": {
       "id": "start",
       "speaker": "Pixel",
-      "text": "Welcome to your first Python adventure! 🎮 I'm super excited to teach you programming!",
+      "text": "Welcome to your first Strata adventure! 🎮 I'm super excited to teach you game development with TypeScript!",
       "followUp": "You know what's cool? Every game you've ever played started with someone typing their first line of code, just like you're about to do!",
       "options": [
         {
@@ -20,7 +20,7 @@
       "id": "reassurance",
       "speaker": "Pixel",
       "text": "Not at all! Think of it like learning the controls in a new game - seems tricky at first, but soon it becomes second nature!",
-      "followUp": "We'll start super simple. Want to make Python say hello?",
+      "followUp": "We'll start super simple. Want to make the computer say hello?",
       "options": [
         {
           "text": "Yeah! Let's make it talk!",
@@ -31,9 +31,9 @@
     "firstPrint": {
       "id": "firstPrint",
       "speaker": "Pixel",
-      "text": "Okay, so here's your first superpower - the print() function! It's basically like giving Python a voice!",
-      "codeExample": "print('Hello, World!')",
-      "followUp": "See those quotes? That's how Python knows what to say. Which one looks right to you?",
+      "text": "Okay, so here's your first superpower - the console.log() function! It's basically like giving your game a voice!",
+      "codeExample": "console.log('Hello, World!');",
+      "followUp": "See those quotes? That's how TypeScript knows what to say. Which one looks right to you?",
       "options": [
         {
           "text": "The one with quotes looks right!",
@@ -48,9 +48,9 @@
     "printError": {
       "id": "printError",
       "speaker": "Pixel",
-      "text": "Ooh, so close! But Python's a bit picky - it needs those quotes, like putting quotation marks around someone's speech!",
-      "codeExample": "print('Hello, World!')  # The quotes are important!",
-      "followUp": "Without quotes, Python gets confused and thinks you're talking about something that doesn't exist yet!",
+      "text": "Ooh, so close! But TypeScript is a bit picky - it needs those quotes, like putting quotation marks around someone's speech!",
+      "codeExample": "console.log('Hello, World!'); // The quotes are important!",
+      "followUp": "Without quotes, TypeScript gets confused and thinks you're talking about something that doesn't exist yet!",
       "options": [
         {
           "text": "Ah, got it! With quotes then!",
@@ -65,8 +65,8 @@
     "explainQuotes": {
       "id": "explainQuotes",
       "speaker": "Pixel",
-      "text": "Great question! So here's the thing - without quotes, Python thinks Hello is like... a secret code word it should know!",
-      "codeExample": "print(Hello)  # Python: 'What's Hello? I don't know that!'\nprint('Hello')  # Python: 'Oh! You want me to SAY Hello!'",
+      "text": "Great question! So here's the thing - without quotes, TypeScript thinks Hello is like... a secret code word it should know!",
+      "codeExample": "console.log(Hello); // TypeScript: 'What's Hello? I don't know that!'\nconsole.log('Hello'); // TypeScript: 'Oh! You want me to SAY Hello!'",
       "followUp": "It's like the difference between saying 'Mario' versus 'Say the word Mario' - totally different!",
       "options": [
         {
@@ -79,7 +79,7 @@
       "id": "printSuccess",
       "speaker": "Pixel",
       "text": "🎉 YES! Look at you! You just wrote actual code! You're officially a programmer now!",
-      "followUp": "You can make Python say literally anything - jokes, game messages, whatever! What should we print next?",
+      "followUp": "You can make your game say literally anything - jokes, game messages, whatever! What should we print next?",
       "options": [
         {
           "text": "Something about games!",
@@ -111,8 +111,8 @@
       "id": "variableNames",
       "speaker": "Pixel",
       "text": "Pretty much! It's like creating usernames - you've got freedom but there are a few rules!",
-      "codeExample": "player_name = 'Pixel'  # Perfect!\nhero123 = 'Link'       # Totally works!\n123hero = 'Mario'      # Nope - numbers can't go first!",
-      "followUp": "Just remember: no spaces (use underscores), and numbers can't be first. Easy!",
+      "codeExample": "let playerName = 'Pixel'; // Perfect (camelCase is common in TS!)\nlet hero123 = 'Link';      // Totally works!\nlet 123hero = 'Mario';     // Nope - numbers can't go first!",
+      "followUp": "Just remember: no spaces, and numbers can't be first. In TypeScript, we usually use camelCase where the second word is capitalized!",
       "options": [
         {
           "text": "Makes sense! Let's make some variables!",
@@ -123,9 +123,9 @@
     "variables": {
       "id": "variables",
       "speaker": "Pixel",
-      "text": "Alright, time to create your first variable! Just pick a name, add an equals sign, and boom - storage!",
-      "codeExample": "player_name = 'Pixel'\nprint(player_name)",
-      "followUp": "See that? We just stuffed 'Pixel' into a box called player_name! Now we can use it anywhere!",
+      "text": "Alright, time to create your first variable! In TypeScript, we use 'let' to create a variable that can change!",
+      "codeExample": "let playerName = 'Pixel';\nconsole.log(playerName);",
+      "followUp": "See that? We just stuffed 'Pixel' into a box called playerName! Now we can use it anywhere!",
       "options": [
         {
           "text": "I want to store a number!",
@@ -141,8 +141,8 @@
       "id": "numberVariable",
       "speaker": "Pixel",
       "text": "Boom! You just stored a number! And look - no quotes needed this time!",
-      "codeExample": "score = 100\nlives = 3\nprint('Score:', score)\nprint('Lives:', lives)",
-      "followUp": "Python's smart enough to know 100 is a number. No quotes = it's math time!",
+      "codeExample": "let score = 100;\nlet lives = 3;\nconsole.log('Score:', score);\nconsole.log('Lives:', lives);",
+      "followUp": "TypeScript's smart enough to know 100 is a number. No quotes = it's math time!",
       "options": [
         {
           "text": "Wait, can I add them together?",
@@ -158,7 +158,7 @@
       "id": "stringVariable",
       "speaker": "Pixel",
       "text": "Nice! You just made a 'string' variable - fancy programmer word for text!",
-      "codeExample": "game_title = 'My Awesome Game'\nprint('Now playing:', game_title)",
+      "codeExample": "let gameTitle = 'My Awesome Game';\nconsole.log('Now playing:', gameTitle);",
       "followUp": "Strings are perfect for all the words in your game - character names, dialogue, everything!",
       "options": [
         {
@@ -175,11 +175,11 @@
       "id": "stringCombine",
       "speaker": "Pixel",
       "text": "Oh yeah! Watch this - strings can stick together like LEGO blocks!",
-      "codeExample": "first = 'Super'\nlast = 'Mario'\nfull_name = first + ' ' + last\nprint(full_name)  # Ta-da! Super Mario!",
+      "codeExample": "let first = 'Super';\nlet last = 'Mario';\nlet fullName = first + ' ' + last;\nconsole.log(fullName); // Ta-da! Super Mario!",
       "followUp": "The plus sign is like glue for words! Perfect for building game messages on the fly!",
       "options": [
         {
-          "text": "That's awesome! What else can Python do?",
+          "text": "That's awesome! What else can TypeScript do?",
           "next": "dataTypes"
         }
       ]
@@ -187,8 +187,8 @@
     "mathPreview": {
       "id": "mathPreview",
       "speaker": "Pixel",
-      "text": "Oh absolutely! Python's basically a calculator on steroids! Watch this!",
-      "codeExample": "score = 100\nbonus = 50\ntotal = score + bonus\nprint('Total score:', total)  # Boom! 150!",
+      "text": "Oh absolutely! TypeScript is basically a calculator on steroids! Watch this!",
+      "codeExample": "let score = 100;\nlet bonus = 50;\nlet total = score + bonus;\nconsole.log('Total score:', total); // Boom! 150!",
       "followUp": "Next lesson we'll go crazy with math - for now, just know it works!",
       "options": [
         {
@@ -200,9 +200,9 @@
     "dataTypes": {
       "id": "dataTypes",
       "speaker": "Pixel",
-      "text": "Python's got different types of data - think of them like different items in your inventory!",
-      "codeExample": "# Strings (text)\nplayer = 'Hero'\n\n# Integers (whole numbers)  \nlevel = 5\n\n# Floats (decimals)\nhealth = 95.5\n\n# Booleans (true/false)\ngame_over = False",
-      "followUp": "Each type does different things - we'll use them all to make amazing games!",
+      "text": "TypeScript's got different types of data - think of them like different items in your inventory!",
+      "codeExample": "// Strings (text)\nlet player = 'Hero';\n\n// Numbers (can be whole or decimal!)\nlet level = 5;\nlet health = 95.5;\n\n// Booleans (true/false)\nlet isGameOver = false;",
+      "followUp": "Each type does different things - we'll use them all to make amazing games with Strata!",
       "options": [
         {
           "text": "I think I'm getting it!",
@@ -218,7 +218,7 @@
       "id": "moreExamples",
       "speaker": "Pixel",
       "text": "Check this out - variables working together like an RPG character sheet!",
-      "codeExample": "# Game character stats\ncharacter_name = 'Shadow Knight'\nhealth = 100\nmana = 50\nlevel = 1\nis_alive = True\n\n# Display the stats\nprint('Character:', character_name)\nprint('HP:', health, '/ MP:', mana)\nprint('Level:', level)",
+      "codeExample": "// Game character stats\nlet characterName = 'Shadow Knight';\nlet health = 100;\nlet mana = 50;\nlet level = 1;\nlet isAlive = true;\n\n// Display the stats\nconsole.log('Character:', characterName);\nconsole.log('HP:', health, '/ MP:', mana);\nconsole.log('Level:', level);",
       "followUp": "See? Variables are basically how games remember everything - scores, lives, player names!",
       "options": [
         {
@@ -231,10 +231,10 @@
       "id": "practice",
       "speaker": "Pixel",
       "text": "Time for a mini challenge! Can you create a simple game intro using what you've learned?",
-      "followUp": "Create variables for a game title and player name, then print a welcome message!",
+      "followUp": "Create variables for a game title and player name, then log a welcome message!",
       "options": [
         {
-          "text": "game = 'Dragon Quest' and name = 'Hero'",
+          "text": "let game = 'Dragon Quest'; let name = 'Hero';",
           "next": "practiceCheck"
         },
         {
@@ -247,7 +247,7 @@
       "id": "practiceHint",
       "speaker": "Pixel",
       "text": "No problem! Here's a template to help you out!",
-      "codeExample": "game_title = '???'  # Put your game name here\nplayer_name = '???'  # Put your player name here\nprint('Welcome to', game_title)\nprint('Good luck,', player_name)",
+      "codeExample": "let gameTitle = '???'; // Put your game name here\nlet playerName = '???'; // Put your player name here\nconsole.log('Welcome to ' + gameTitle);\nconsole.log('Good luck, ' + playerName);",
       "followUp": "Just replace the ??? with your own text!",
       "options": [
         {
@@ -259,9 +259,9 @@
     "practiceCheck": {
       "id": "practiceCheck",
       "speaker": "Pixel",
-      "text": "Fantastic work! You've mastered the basics of Python! 🏆",
-      "codeExample": "game_title = 'Dragon Quest'\nplayer_name = 'Hero'\nprint('Welcome to', game_title)\nprint('Good luck,', player_name)",
-      "followUp": "You learned print(), variables, and different data types - that's the foundation of all programming!",
+      "text": "Fantastic work! You've mastered the basics of TypeScript! 🏆",
+      "codeExample": "let gameTitle = 'Dragon Quest';\nlet playerName = 'Hero';\nconsole.log('Welcome to ' + gameTitle);\nconsole.log('Good luck, ' + playerName);",
+      "followUp": "You learned console.log(), variables, and different data types - that's the foundation of all programming!",
       "options": [
         {
           "text": "What's next?",
@@ -272,8 +272,8 @@
     "lessonComplete": {
       "id": "lessonComplete",
       "speaker": "Pixel",
-      "text": "🎊 LEVEL 1 COMPLETE! You're officially a Python programmer now!",
-      "followUp": "You've unlocked the power to make computers do your bidding! Ready to level up?",
+      "text": "🎊 LEVEL 1 COMPLETE! You're officially a TypeScript programmer now!",
+      "followUp": "You've unlocked the power to make computers do your bidding! Ready to level up in Strata?",
       "action": "completeLesson",
       "actionParams": { "lesson": 1, "nextLesson": 2 },
       "options": [
@@ -296,7 +296,7 @@
       "id": "extraPractice",
       "speaker": "Pixel",
       "text": "Great idea! Practice makes perfect! Try these exercises:",
-      "codeExample": "# Exercise 1: Create a character\n# Make variables for: name, class, level, health\n\n# Exercise 2: Print a story\n# Use variables to print a short game intro\n\n# Exercise 3: Mix it up\n# Try storing different types of data",
+      "codeExample": "// Exercise 1: Create a character\n// Make variables for: name, characterClass, level, health\n\n// Exercise 2: Log a story\n// Use variables to print a short game intro\n\n// Exercise 3: Mix it up\n// Try storing different types of data",
       "followUp": "Take your time experimenting! When you're ready, move on to the next lesson!",
       "options": [
         {

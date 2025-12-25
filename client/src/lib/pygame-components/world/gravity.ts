@@ -11,7 +11,7 @@ export const gravityComponent: PygameComponent = {
     A: {
       name: 'Standard Gravity',
       description: 'Earth-like gravity with terminal velocity',
-      pythonCode: `
+      code: `
 # Standard Gravity System
 class GravitySystem:
     def __init__(self):
@@ -60,7 +60,7 @@ class GravitySystem:
     B: {
       name: 'Low Gravity',
       description: 'Moon-like gravity with floaty physics',
-      pythonCode: `
+      code: `
 # Low Gravity System
 class GravitySystem:
     def __init__(self):

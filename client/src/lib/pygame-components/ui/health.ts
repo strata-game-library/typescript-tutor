@@ -14,7 +14,7 @@ export const healthComponent: PygameComponent = {
     A: {
       name: 'Heart System',
       description: 'Classic heart-based health display',
-      pythonCode: `
+      code: `
 # Heart-based Health System
 class HealthSystem:
     def __init__(self, player):
@@ -108,7 +108,7 @@ class HealthSystem:
     B: {
       name: 'Health Bar',
       description: 'Modern health bar with shield system',
-      pythonCode: `
+      code: `
 # Health Bar System with Shields
 class HealthSystem:
     def __init__(self, player):

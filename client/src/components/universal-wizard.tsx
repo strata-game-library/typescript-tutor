@@ -21,7 +21,7 @@ import {
   saveSessionState,
   saveUserPreferences,
 } from '@/lib/persistence';
-import { compilePythonGame, downloadPythonFile } from '@/lib/pygame-game-compiler';
+import { compileStrataGame, downloadTypeScriptFile } from '@/lib/pygame-game-compiler';
 import AssetBrowserWizard from './asset-browser-wizard';
 import PixelMenu from './pixel-menu';
 import PixelMinimizeAnimation from './pixel-minimize-animation';
@@ -548,16 +548,16 @@ export default function UniversalWizard({
         console.log('selectedAssets:', selectedAssets);
 
         try {
-          const pythonCode = compilePythonGame(
+          const pythonCode = compileStrataGame(
             sessionActions.selectedComponents || {},
             selectedAssets
           );
-          console.log('Python code compiled, length:', pythonCode.length);
+          console.log('Strata code compiled, length:', pythonCode.length);
 
-          const filename = `my_game_${Date.now()}.py`;
+          const filename = `my_strata_game_${Date.now()}.ts`;
           console.log('Downloading as:', filename);
 
-          downloadPythonFile(pythonCode, filename);
+          downloadTypeScriptFile(pythonCode, filename);
           console.log('Download triggered successfully');
 
           // Show a success message to the user
@@ -733,16 +733,16 @@ export default function UniversalWizard({
           console.log('selectedAssets:', selectedAssets);
 
           try {
-            const pythonCode = compilePythonGame(
+            const pythonCode = compileStrataGame(
               sessionActions.selectedComponents || {},
               selectedAssets
             );
-            console.log('Python code compiled, length:', pythonCode.length);
+            console.log('Strata code compiled, length:', pythonCode.length);
 
-            const filename = `my_game_${Date.now()}.py`;
+            const filename = `my_strata_game_${Date.now()}.ts`;
             console.log('Downloading as:', filename);
 
-            downloadPythonFile(pythonCode, filename);
+            downloadTypeScriptFile(pythonCode, filename);
             console.log('Download triggered successfully from PixelMenu');
 
             // Show success message if toast is available
