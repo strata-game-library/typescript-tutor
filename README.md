@@ -1,62 +1,45 @@
-# @strata/typescript-tutor
+# Org-Specific Overrides
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Place files here to override enterprise defaults from jbcom/control-center.
 
-## 🏢 Enterprise Context
+## Directory Structure
 
-**Strata** is the Games & Procedural division of the [jbcom enterprise](https://jbcom.github.io). This repository provides an interactive, mascot-driven educational experience for learning TypeScript by building games with [Strata 3D](https://strata.game).
-
-## Features
-
-- 🎓 **Interactive Lessons** - Learn TypeScript by building actual game systems
-- 🤖 **Mascot-Driven** - Guided by Professor Pixel, your AI game development tutor
-- 🎮 **Game-Based Learning** - Concepts applied immediately to real-time 3D environments
-- 🧩 **Modular Structure** - Lessons covering everything from basic types to advanced game architecture
-
-## Getting Started
-
-### Prerequisites
-
-- **Node.js**: >= 20.0.0
-- **pnpm**: >= 10.0.0
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/strata-game-library/typescript-tutor.git
-cd typescript-tutor
-
-# Install dependencies
-pnpm install
+```
+repository-files/
+├── always-sync/          # From enterprise (don't edit)
+├── initial-only/         # From enterprise (don't edit)  
+├── python/               # From enterprise (don't edit)
+├── nodejs/               # From enterprise (don't edit)
+├── go/                   # From enterprise (don't edit)
+├── rust/                 # From enterprise (don't edit)
+├── terraform/            # From enterprise (don't edit)
+└── org-overrides/        # YOUR ORG CUSTOMIZATIONS HERE
+    ├── .github/
+    │   └── workflows/    # Org-specific workflows
+    ├── .cursor/
+    │   └── rules/        # Org-specific Cursor rules
+    ├── CLAUDE.md         # Org-specific Claude instructions
+    └── AGENTS.md         # Org-specific agent instructions
 ```
 
-### Development
+## Merge Order
 
+When syncing to repos, files are applied in this order:
+1. Enterprise `always-sync/` (base)
+2. Language-specific rules (python/, nodejs/, etc.)
+3. **Org overrides** (this directory - wins on conflicts)
+4. `initial-only/` (only if file doesn't exist)
+
+## Examples
+
+### Override CI workflow for your org
 ```bash
-# Start the interactive tutor
-pnpm dev
+cp repository-files/always-sync/.github/workflows/ci.yml \
+   repository-files/org-overrides/.github/workflows/ci.yml
+# Then edit ci.yml with org-specific changes
 ```
 
-The tutor will be available at `http://localhost:5000`.
-
-## Testing
-
+### Add org-specific Cursor rule
 ```bash
-# Run unit tests
-pnpm test
-
-# Run E2E tests (Playwright)
-pnpm test:e2e
+echo "# My Org Rule" > repository-files/org-overrides/.cursor/rules/my-org.mdc
 ```
-
-## Structure
-
-- `client/` - React-based interactive lesson UI
-- `server/` - Node.js backend for lesson state and asset serving
-- `shared/` - Shared schemas and types
-- `assets/` - 3D models, textures, and audio used in lessons
-
-## License
-
-MIT © [Jon Bogaty](https://github.com/jbcom)
